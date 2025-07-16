@@ -25,8 +25,8 @@ rootProject.ext {
                     'debugtoolsfordragonfish': "com.autel.sdk:debugtoolsfordragonfish:1.0.1",
             ],
             'uxsdk': [
-                    'msdk' : "com.autel.sdk.uxsdk:msdk:1.0.0",
-                    'debugtools' : "com.autel.sdk.uxsdk:debugtools:1.0.0",
+                    'msdk' : "com.autel.sdk.uxsdk:msdk:1.0.2",
+                    'debugtools' : "com.autel.sdk.uxsdk:debugtools:1.0.1",
                     'BaseRecyclerViewAdapterHelper' : "com.autel.sdk.uxsdk:BaseRecyclerViewAdapterHelper:1.0.0",
                     'gdal' : "com.autel.sdk.uxsdk:gdal:1.0.0",
                     'log' : "com.autel.sdk.uxsdk:log:1.0.0",
