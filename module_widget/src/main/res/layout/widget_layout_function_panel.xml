@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -48,7 +49,6 @@
                     android:layout_marginEnd="@dimen/common_10dp"
                     android:padding="@dimen/common_10dp"
                     android:src="@drawable/mission_ic_panel_edit" />
-
             </RelativeLayout>
 
             <RelativeLayout
@@ -56,7 +56,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="gone">
-
                 <TextView
                     android:id="@+id/tv_function_save"
                     android:layout_width="wrap_content"
@@ -68,7 +67,6 @@
                     android:text="@string/common_text_save"
                     android:textColor="#FEE15D"
                     android:textSize="@dimen/common_text_size_sp_16" />
-
             </RelativeLayout>
         </LinearLayout>
 
@@ -77,6 +75,38 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/common_line_width"
             android:background="@color/common_color_white_20" />
+
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/ll_live_stream_button"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:background="?attr/selectableItemBackground"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingStart="20dp"-->
+<!--                android:clickable="true"-->
+<!--                android:focusable="true"-->
+<!--                android:enabled="true">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:src="@drawable/mission_ic_panel_edit"-->
+<!--                    app:tint="#FF9800" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="15dp"-->
+<!--                    android:text="RTMP Трансляция"-->
+<!--                    android:textColor="@color/common_color_ff"-->
+<!--                    android:textSize="15sp" />-->
+<!--            </LinearLayout>-->
+<!--        </FrameLayout>-->
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -91,7 +121,16 @@
                     android:id="@+id/ll_group_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" />
+                    android:orientation="vertical">
+
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/common_color_white_20" />
+
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tv_reset_group"
@@ -103,7 +142,6 @@
                     android:textSize="@dimen/common_text_size_sp_15" />
 
             </LinearLayout>
-
         </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>

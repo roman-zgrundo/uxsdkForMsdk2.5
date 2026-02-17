@@ -40,6 +40,7 @@ import android.content.Intent
 import android.provider.Settings
 import android.net.Uri
 import com.autel.map.MapManager
+import com.external.uxdemo.liveStream.LiveStreamSettingsDialog
 
 
 class UxsdkDemoActivity : BaseMainActivity() {
@@ -121,6 +122,10 @@ class UxsdkDemoActivity : BaseMainActivity() {
         uiBinding.attitudeBall.isVisible = DeviceUtils.isSingleControl()
 
         uiBinding.codecToolRight.setMainProvider(this)
+        uiBinding.root.findViewById<View>(R.id.ll_custom_live_stream)?.setOnClickListener {
+            val liveDialog = LiveStreamSettingsDialog()
+            liveDialog.show(supportFragmentManager, "LiveStreamSettings")
+        }
     }
 
     private fun addTestSkyLinkFragment() {
