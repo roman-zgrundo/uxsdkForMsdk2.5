@@ -39,6 +39,7 @@ import android.os.Environment
 import android.content.Intent
 import android.provider.Settings
 import android.net.Uri
+import androidx.fragment.app.DialogFragment
 import com.autel.map.MapManager
 import com.external.uxdemo.liveStream.LiveStreamSettingsDialog
 
@@ -124,6 +125,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
         uiBinding.codecToolRight.setMainProvider(this)
         uiBinding.root.findViewById<View>(R.id.ll_custom_live_stream)?.setOnClickListener {
             val liveDialog = LiveStreamSettingsDialog()
+            liveDialog.setStyle(DialogFragment.STYLE_NORMAL, R.style.WideDialog)
             liveDialog.show(supportFragmentManager, "LiveStreamSettings")
         }
     }

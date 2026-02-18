@@ -125,4 +125,5 @@ class LiveStreamSettingsDialog : DialogFragment() {
         try { requireContext().unbindService(serviceConnection) } catch (e: Exception) {}
         _binding = null
     }
+
 }
