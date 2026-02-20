@@ -44,6 +44,10 @@ class LiveStreamSettingsDialog : DialogFragment() {
     }
 
     private fun setupListeners() {
+        binding.btnClose.setOnClickListener {
+            dismiss() // Закрывает диалоговое окно
+        }
+
         binding.rgQuality.setOnCheckedChangeListener { _, _ -> saveSettings() }
         binding.rgCameraSource.setOnCheckedChangeListener { _, checkedId ->
             viewModel.setCameraPort(checkedId == binding.rbIrCamera.id)

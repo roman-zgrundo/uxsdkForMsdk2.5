@@ -20,7 +20,6 @@ import com.autel.common.lifecycle.LiveDataBus
 import com.autel.common.lifecycle.event.FunctionViewStyleEvent
 import com.autel.common.lifecycle.event.SplitScreenEffectEvent
 import com.autel.common.manager.AutelStorageManager
-import com.autel.common.manager.MiddlewareManager
 import com.autel.common.manager.StorageKey
 import com.autel.common.model.splitscreen.AircraftScreenItem
 import com.autel.common.utils.AnimateUtil
@@ -39,12 +38,17 @@ import android.os.Environment
 import android.content.Intent
 import android.provider.Settings
 import android.net.Uri
+import android.widget.Button
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import com.autel.map.MapManager
 import com.external.uxdemo.liveStream.LiveStreamSettingsDialog
+import com.external.uxdemo.locationTracker.LocationTrackerManager
 
 
 class UxsdkDemoActivity : BaseMainActivity() {
+
+    private val trackerManager = LocationTrackerManager()
 
     private var skyLinkFragment: TestSkyLinkFragment? = null
     var mapWidget : MapWidget? = null
@@ -62,9 +66,20 @@ class UxsdkDemoActivity : BaseMainActivity() {
         val start = SystemClock.elapsedRealtime()
         AutelLog.i("LaunchCheck", "main onCreate start = $start")
         super.onCreate(savedInstanceState)
+
+        val savedTarget = getSharedPreferences("TargetPrefs", Context.MODE_PRIVATE)
+            .getString("last_target", "RNG: 0.0m\nMSL: 0.0m\nNo Data")
+        uiBinding.root.findViewById<TextView>(R.id.tv_fixed_target_data)?.text = savedTarget
+
         BroadcastUtils.sendKillBroadcast(this)
         checkAndRequestAllFilesPermission()
         initView()
+
+        // Проверка подключения при старте (исправлено под твой SDK)
+        if (DeviceUtils.isSingleControlDroneConnected()) {
+            trackerManager.setupSubscriptions()
+        }
+
         AutelLog.i("LaunchCheck", "main onCreate end = ${SystemClock.elapsedRealtime() - start}")
     }
 
@@ -128,8 +143,26 @@ class UxsdkDemoActivity : BaseMainActivity() {
             liveDialog.setStyle(DialogFragment.STYLE_NORMAL, R.style.WideDialog)
             liveDialog.show(supportFragmentManager, "LiveStreamSettings")
         }
-    }
+        uiBinding.root.findViewById<Button>(R.id.btn_fix_target)?.setOnClickListener {
+            saveTargetFix()
+        }
 
+        // Запускаем цикл обновления UI
+        startTrackerUpdateLoop()
+    }
+    private fun saveTargetFix() {
+        val data = trackerManager.getFixData()
+
+        // Обновляем UI
+        uiBinding.root.findViewById<TextView>(R.id.tv_fixed_target_data)?.text = data
+
+        // Сохраняем в память (SharedPrefs)
+        val prefs = getSharedPreferences("TargetPrefs", Context.MODE_PRIVATE)
+        prefs.edit().putString("last_target", data).apply()
+
+        // Можно добавить лог для подтверждения
+        AutelLog.i("LocationTracker", "Target Fixed and Saved")
+    }
     private fun addTestSkyLinkFragment() {
         val fragment = TestSkyLinkFragment()
         fragment.mAutelPlayer =
@@ -325,6 +358,13 @@ class UxsdkDemoActivity : BaseMainActivity() {
     override fun onDroneChangedListener(connected: Boolean, drone: IAutelDroneDevice) {
         super.onDroneChangedListener(connected, drone)
         refreshCodecToolLeft()
+
+        if (connected) {
+            AutelLog.i("LocationTracker", "Дрон подключен, запускаем подписки")
+            trackerManager.setupSubscriptions()
+        } else {
+            AutelLog.i("LocationTracker", "Дрон отключен")
+        }
     }
 
     override fun onControlChange(mode: ControlMode, droneList: List<IAutelDroneDevice>) {
@@ -365,7 +405,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
     }
 
     private fun showMapKeyDialog() {
-        val messageCN = "地图加载失败，请在 MapWidget 的 fun initMap() { val MAPTILER_KEY = \"\" } 处，替换为你自己申请的 MapTiler API Key，否则地图无法显示。"
+        val messageCN = "地图加载失败，请在 MapWidget 的 fun initMap() { val MAPTILER_KEY = \"\" } 处，替换为你自己申请의 MapTiler API Key，否则地图无法显示。"
         val messageEN = "Map loading failed. Please go to MapWidget's fun initMap() { val MAPTILER_KEY = \"\" } and replace it with your own MapTiler API Key, otherwise the map cannot be displayed."
         val isChinese = java.util.Locale.getDefault().language == "zh"
         val message = if (isChinese) messageCN else messageEN
@@ -377,4 +417,38 @@ class UxsdkDemoActivity : BaseMainActivity() {
             .show()
     }
 
+    private fun updateTrackerUI() {
+        // 1. Координаты дрона
+        val dronePos = if (trackerManager.droneLat != 0.0) {
+            "${"%.6f".format(trackerManager.droneLat)}, ${"%.6f".format(trackerManager.droneLon)}"
+        } else "SEARCHING..."
+
+        uiBinding.root.findViewById<TextView>(R.id.tv_tracker_drone_pos)?.text = "Drone: $dronePos"
+
+        // ИСПРАВЛЕНО: Добавили форматирование %.1f для лазера, чтобы не было длинного хвоста из цифр
+        val laserDistFormatted = trackerManager.laserDistance?.let { "${"%.1f".format(it)}m" } ?: "0.0m"
+        val laserInfo = if (trackerManager.isLaserValid) "LRF: $laserDistFormatted" else "LRF: OFF"
+
+        val sensorDetails = "Pitch: ${"%.1f".format(trackerManager.finalPitch)}° | Bear: ${"%.1f".format(trackerManager.finalBearing)}°\n" +
+                "Alt: ${"%.1f".format(trackerManager.droneAlt)}m | $laserInfo"
+
+        uiBinding.root.findViewById<TextView>(R.id.tv_tracker_details)?.text = sensorDetails
+        uiBinding.root.findViewById<TextView>(R.id.tv_tracker_target_pos)?.text = trackerManager.getTargetReport()
+
+        // 2. Дебаг панель
+        uiBinding.root.findViewById<TextView>(R.id.tv_debug_laser_status)?.text = "Keys: ${trackerManager.debugStatus}"
+
+        // Здесь уже будет отформатированная строка из менеджера (где мы написали "%.1f" выше)
+        uiBinding.root.findViewById<TextView>(R.id.tv_debug_raw_data)?.text = trackerManager.rawLaserData
+    }
+
+    private fun startTrackerUpdateLoop() {
+        val updateRunnable = object : Runnable {
+            override fun run() {
+                updateTrackerUI()
+                uiBinding.root.postDelayed(this, 500)
+            }
+        }
+        uiBinding.root.postDelayed(updateRunnable, 1000)
+    }
 }

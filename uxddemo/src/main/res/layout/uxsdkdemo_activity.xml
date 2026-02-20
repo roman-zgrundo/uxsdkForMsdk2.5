@@ -33,7 +33,14 @@
         android:layout_marginStart="@dimen/common_80dp"
         android:layout_marginTop="@dimen/common_100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tv_tracker_target_pos" />
+    </FrameLayout>
 
 
     <com.autel.widget.widget.attitude.AttitudeBallWidget
@@ -168,31 +175,148 @@
         android:id="@+id/ll_custom_live_stream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="70dp"
         android:background="#AA000000"
         android:clickable="true"
         android:focusable="true"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/function_suspension_view">
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/common_shortcuts_function_drone_live_play"
-            app:layout_constraintDimensionRatio="1:1"
             app:tint="#FF9800" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
             android:text="LIVE"
             android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tracker_debug_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#88002244"
+        android:orientation="vertical"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@id/ll_location_tracker_panel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_debug_laser_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SDK Keys: Waiting..."
+            android:textColor="#00FF00"
+            android:fontFamily="monospace"
+            android:textSize="9sp" />
+
+        <TextView
+            android:id="@+id/tv_debug_raw_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raw: P:0.0 | B:0.0"
+            android:textColor="#AFAFAF"
+            android:fontFamily="monospace"
+            android:textSize="9sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_location_tracker_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#88000000"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_tracker_drone_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drone: 0.000000, 0.000000"
+            android:textColor="#FFFFFF"
+            android:fontFamily="monospace"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_tracker_target_pos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Target: 0.000000, 0.000000"
+            android:textColor="#FF9800"
+            android:fontFamily="monospace"
             android:textSize="12sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_tracker_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dist: 0m | Alt: 0m | Pitch: 0°"
+            android:textColor="#BBBBBB"
+            android:fontFamily="monospace"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_fix_target"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="#FF0000"
+        android:alpha="0.7"
+        android:text="ЗАФИКСИРОВАТЬ ЦЕЛЬ"
+        android:textColor="#FFFFFF"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_fixed_target_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="10dp"
+        android:background="#CC222222"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:minWidth="160dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_fix_target">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FIXED TARGET"
+            android:textColor="#FF4444"
+            android:textSize="8sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_fixed_target_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RNG: 0.0m\nMSL: 0.0m\n0.000000, 0.000000"
+            android:textColor="#FFFFFF"
+            android:fontFamily="monospace"
+            android:textSize="11sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
