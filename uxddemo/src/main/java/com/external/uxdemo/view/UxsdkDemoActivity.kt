@@ -41,14 +41,19 @@ import android.net.Uri
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.ViewModelProvider
 import com.autel.map.MapManager
 import com.external.uxdemo.liveStream.LiveStreamSettingsDialog
+import com.external.uxdemo.liveStream.LiveStreamViewModel
 import com.external.uxdemo.locationTracker.LocationTrackerManager
 
 
 class UxsdkDemoActivity : BaseMainActivity() {
 
     private val trackerManager = LocationTrackerManager()
+    private val liveStreamViewModel: LiveStreamViewModel by lazy {
+        ViewModelProvider(this)[LiveStreamViewModel::class.java]
+    }
 
     private var skyLinkFragment: TestSkyLinkFragment? = null
     var mapWidget : MapWidget? = null
@@ -60,6 +65,14 @@ class UxsdkDemoActivity : BaseMainActivity() {
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase)
         AutelLog.i("LaunchCheck", "MainActivity attachBaseContext")
+    }
+
+    private val streamServiceConnection = object : android.content.ServiceConnection {
+        override fun onServiceConnected(name: android.content.ComponentName?, service: android.os.IBinder?) {
+            val binder = service as com.external.uxdemo.liveStream.LiveStreamService.LocalBinder
+            liveStreamViewModel.onServiceConnected(binder.getService())
+        }
+        override fun onServiceDisconnected(name: android.content.ComponentName?) {}
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,6 +94,14 @@ class UxsdkDemoActivity : BaseMainActivity() {
         }
 
         AutelLog.i("LaunchCheck", "main onCreate end = ${SystemClock.elapsedRealtime() - start}")
+
+        val intent = Intent(this, com.external.uxdemo.liveStream.LiveStreamService::class.java)
+        bindService(intent, streamServiceConnection, Context.BIND_AUTO_CREATE)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        try { unbindService(streamServiceConnection) } catch (e: Exception) {}
     }
 
     private fun initView() {
@@ -92,8 +113,16 @@ class UxsdkDemoActivity : BaseMainActivity() {
             showMapKeyDialog()
         }
 
-        uiBinding.codecTabView.setCodecTabSwitchListener {
-            ScreenStateManager.getInstance().updateCodecTabSwitch(ScreenStateManager.getInstance().getPageLocationState().fullScreenType, it)
+
+        uiBinding.codecTabView.setCodecTabSwitchListener { item ->
+            ScreenStateManager.getInstance().updateCodecTabSwitch(
+                ScreenStateManager.getInstance().getPageLocationState().fullScreenType,
+                item
+            )
+
+            val isThermalSelected = item.toString().contains("Thermal", ignoreCase = true)
+            // Теперь этот метод сам сделает стоп -> пауза -> старт
+            liveStreamViewModel.updateCameraSource(isThermalSelected)
         }
 
         uiBinding.statusBar.visibility = if (DeviceUtils.isMainRC()) View.VISIBLE else View.GONE

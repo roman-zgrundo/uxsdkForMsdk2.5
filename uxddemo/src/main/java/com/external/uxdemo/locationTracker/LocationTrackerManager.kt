@@ -80,7 +80,7 @@ class LocationTrackerManager {
                 laserDistance = if (isLaserValid) correctedDist else null
 
                 if (!isLaserValid && correctedDist == 0.0) {
-                    Log.d("LRF_TEST", "Valid: false, Dist: 0")
+//                    Log.d("LRF_TEST", "Valid: false, Dist: 0")
                 }
             }
         })

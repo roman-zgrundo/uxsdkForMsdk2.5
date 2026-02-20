@@ -106,47 +106,6 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/tv_camera_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Источник видео"
-            android:textColor="#888888"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rg_quality" />
-
-        <RadioGroup
-            android:id="@+id/rg_camera_source"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_camera_label">
-
-            <RadioButton
-                android:id="@+id/rb_main_camera"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:checked="true"
-                android:text="Основная"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/rb_ir_camera"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="ИК камера"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-        </RadioGroup>
-
-        <TextView
             android:id="@+id/tv_bitrate_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -156,7 +115,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rg_camera_source" />
+            app:layout_constraintTop_toBottomOf="@id/rg_quality" />
 
         <SeekBar
             android:id="@+id/sb_bitrate"
