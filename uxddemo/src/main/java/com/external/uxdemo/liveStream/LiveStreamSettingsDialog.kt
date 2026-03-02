@@ -34,27 +34,18 @@ class LiveStreamSettingsDialog : DialogFragment() {
     private fun setupListeners() {
         binding.btnClose.setOnClickListener { dismiss() }
 
-        binding.sbBitrate.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(p0: SeekBar?, progress: Int, p2: Boolean) {
-                binding.tvBitrateLabel.text = "Битрейт: $progress kbps"
-            }
-            override fun onStartTrackingTouch(p0: SeekBar?) {}
-            override fun onStopTrackingTouch(p0: SeekBar?) { saveSettings() }
-        })
-
         binding.btnAction.setOnClickListener {
             saveSettings()
             val url = binding.etRtmpUrl.text.toString()
-            val bitrate = binding.sbBitrate.progress
-            viewModel.toggleStream(url, bitrate)
+            if (url.isNotEmpty()) {
+                viewModel.toggleStream(url)
+            }
         }
     }
 
     private fun saveSettings() {
         requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE).edit().apply {
             putString("rtmp_url", binding.etRtmpUrl.text.toString())
-            putInt("bitrate", binding.sbBitrate.progress)
-            putInt("quality_id", binding.rgQuality.checkedRadioButtonId)
             apply()
         }
     }
@@ -62,10 +53,6 @@ class LiveStreamSettingsDialog : DialogFragment() {
     private fun loadSettings() {
         val prefs = requireContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         binding.etRtmpUrl.setText(prefs.getString("rtmp_url", ""))
-        val bitrate = prefs.getInt("bitrate", 3000)
-        binding.sbBitrate.progress = bitrate
-        binding.tvBitrateLabel.text = "Битрейт: $bitrate kbps"
-        binding.rgQuality.check(prefs.getInt("quality_id", binding.rbHd.id))
     }
 
     private fun observeViewModel() {

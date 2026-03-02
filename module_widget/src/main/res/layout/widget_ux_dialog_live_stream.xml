@@ -11,152 +11,63 @@
         android:layout_height="wrap_content"
         android:padding="24dp">
 
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Трансляция"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btn_close"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Закрыть"
-            android:padding="8dp"
-            android:scaleType="fitCenter"
             android:src="@android:drawable/ic_menu_close_clear_cancel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="#FFFFFF" />
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Настройки RTMP"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_url_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Адрес сервера"
-            android:textColor="#888888"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title" />
-
         <EditText
             android:id="@+id/et_rtmp_url"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:background="@android:drawable/edit_text"
             android:backgroundTint="#2C2C2C"
-            android:hint="rtmp://vps.server.com/live"
+            android:hint="rtmp://server/live/stream"
             android:inputType="textUri"
             android:paddingHorizontal="16dp"
-            android:singleLine="true"
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_url_label" />
-
-        <TextView
-            android:id="@+id/tv_quality_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Разрешение"
-            android:textColor="#888888"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_rtmp_url" />
-
-        <RadioGroup
-            android:id="@+id/rg_quality"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_quality_label">
-
-            <RadioButton
-                android:id="@+id/rb_smooth"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:text="SD (480p)"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-
-            <RadioButton
-                android:id="@+id/rb_hd"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:checked="true"
-                android:text="HD (720p)"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/tv_bitrate_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Битрейт: 3000 kbps"
-            android:textColor="#FF9800"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rg_quality" />
-
-        <SeekBar
-            android:id="@+id/sb_bitrate"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:max="8000"
-            android:progress="3000"
-            android:progressTint="#FF9800"
-            android:thumbTint="#FF9800"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_bitrate_label" />
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_action"
             android:layout_width="0dp"
-            android:layout_height="64dp"
-            android:layout_marginTop="32dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
             android:backgroundTint="#FF9800"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="ЗАПУСТИТЬ ТРАНСЛЯЦИЮ"
+            android:text="СТАРТ"
             android:textColor="#000000"
-            android:textSize="16sp"
             android:textStyle="bold"
-            app:cornerRadius="12dp"
+            app:cornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sb_bitrate" />
+            app:layout_constraintTop_toBottomOf="@id/et_rtmp_url" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/status_container"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
             app:cardBackgroundColor="#1E1E1E"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:cardCornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_action">
@@ -166,9 +77,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Статус: Готов к работе"
-                android:textColor="#00FF41"
-                android:textSize="15sp"
+                android:text="Ожидание..."
+                android:textColor="#888888"
+                android:textSize="14sp"
                 android:fontFamily="monospace" />
         </androidx.cardview.widget.CardView>
 

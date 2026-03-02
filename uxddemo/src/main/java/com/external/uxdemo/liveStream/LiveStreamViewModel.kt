@@ -27,20 +27,15 @@ class LiveStreamViewModel : ViewModel(), LiveStreamListener {
     }
 
     // Главная функция запуска/остановки
-    fun toggleStream(url: String, bitrate: Int) {
+    fun toggleStream(url: String) {
         lastUrl = url
-        lastBitrate = bitrate
-
-        if (isStreaming.value == true) {
-            stopStream()
-        } else {
-            startStream()
-        }
+        if (isStreaming.value == true) stopStream() else startStream()
     }
 
     private fun startStream() {
         if (lastUrl.isEmpty()) return
-        boundService?.startStream(lastUrl, lastBitrate, currentPort)
+        // Передаем в сервис только URL и текущий активный порт
+        boundService?.startStream(lastUrl, currentPort)
     }
 
     fun stopStream() {
@@ -48,21 +43,21 @@ class LiveStreamViewModel : ViewModel(), LiveStreamListener {
         isStreaming.postValue(false)
     }
 
-    // Вызывается из UxsdkDemoActivity при клике на табы камер
     fun updateCameraSource(isThermal: Boolean) {
         val newPort = if (isThermal) 16015 else 16010
-        if (newPort == currentPort) return // Ничего не меняем, если порт тот же
+        if (newPort == currentPort) return
 
         currentPort = newPort
         Log.d("StreamDebug", "Смена порта на: $currentPort")
 
-        // Если сейчас идет эфир — перезапускаем автоматически
         if (isStreaming.value == true) {
-            stopStream()
-            // Пауза 500мс дает SDK Autel время закрыть старую сессию
+            // ВАЖНО: Не вызываем stopStream() (который убивает сервис),
+            // а вызываем только остановку вещания через boundService
+            boundService?.stopOnlyStream()
+
             Handler(Looper.getMainLooper()).postDelayed({
                 startStream()
-            }, 500)
+            }, 600) // Чуть увеличим паузу для надежности нативки
         }
     }
 
@@ -70,7 +65,7 @@ class LiveStreamViewModel : ViewModel(), LiveStreamListener {
     override fun onStateChanged(streaming: Boolean) { isStreaming.postValue(streaming) }
     override fun onMessage(msg: String) { streamStatusText.postValue(msg) }
     override fun onError(error: String) { streamStatusText.postValue("Ошибка: $error") }
-    override fun onStats(fps: Int, bps: Int) {
+    override fun onStats(fps: Int) {
         val name = if (currentPort == 16015) "ИК" else "Основная"
         statsText.postValue("Камера: $name | FPS: $fps")
     }

@@ -32,17 +32,33 @@ class LiveStreamService : Service() {
         return START_STICKY
     }
 
-    fun startStream(url: String, bitrate: Int, port: Int) {
-        rtmpManager.stopPublishStream()
-        // Небольшая задержка внутри сервиса для инициализации конфига
+    fun startStream(url: String, port: Int) {
+        // ВАЖНО: Принудительный сброс нативки перед любым новым действием
+        try {
+            rtmpManager.stopPublishStream()
+            rtmpManager.releasePublishStream()
+        } catch (e: Exception) { }
+
+        val internalBitrate = 2500
+
         Handler(Looper.getMainLooper()).postDelayed({
-            rtmpManager.initRtmpConfig(url, bitrate, port, false)
-            rtmpManager.setRtmpPublishListener(createPublishListener(bitrate, port))
-            rtmpManager.startPublishStream()
-        }, 300)
+            try {
+                rtmpManager.initRtmpConfig(url, internalBitrate, port, false)
+                rtmpManager.setRtmpPublishListener(createPublishListener(port))
+                rtmpManager.startPublishStream()
+            } catch (e: Exception) {
+                Log.e("StreamDebug", "Ошибка: ${e.message}")
+            }
+        }, 600) // Даем нативке время "отдуплиться"
     }
 
-    private fun createPublishListener(bitrate: Int, port: Int) = object : IPublishListener {
+    fun stopOnlyStream() {
+        isCurrentlyPublishing = false
+        rtmpManager.stopPublishStream()
+        serviceListener?.onStateChanged(false)
+    }
+
+    private fun createPublishListener(port: Int) = object : IPublishListener {
         override fun onConnecting() { serviceListener?.onMessage("Подключение...") }
         override fun onConnected() { serviceListener?.onMessage("Соединение") }
         override fun onStartPublish() {
@@ -55,7 +71,10 @@ class LiveStreamService : Service() {
             serviceListener?.onStateChanged(false)
         }
         override fun onStopPublish() { isCurrentlyPublishing = false }
-        override fun onFpsStatistic(fps: Int, p1: String?) { serviceListener?.onStats(fps, bitrate) }
+        override fun onFpsStatistic(fps: Int, p1: String?) {
+            // Передаем 0 вместо битрейта в UI, так как он нам не интересен
+            serviceListener?.onStats(fps)
+        }
         // ... остальные методы пустые
         override fun onVideoBitrate(p0: Int, p1: String?) {}
         override fun onPublishSuccess() {}
@@ -66,12 +85,11 @@ class LiveStreamService : Service() {
     }
 
     fun stopForegroundService() {
-        isCurrentlyPublishing = false
-        rtmpManager.stopPublishStream()
-        serviceListener?.onStateChanged(false)
+        stopOnlyStream()
         stopForeground(true)
         stopSelf()
     }
+
 
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
