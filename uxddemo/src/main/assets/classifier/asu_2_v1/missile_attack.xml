@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" destroyed-cross-static="1" moves-arrow="20 0 40 0">
+	<render type="single-static">
+		<ellipse p="-20 -20 20 20"/>
+		<ellipse fill="1" p="-6 -6 6 6"/>
+		<text color="0" font="20 1" p="-71 -24 -41 6" get="1"/>
+		<text color="0" font="20 1" p="-71 -10 -41 20" get="2"/>
+		<text color="0" font="20 1" p="31 -25 61 5" get="3"/>
+		<text color="0" font="20 1" p="31 -6 61 24" get="4"/>
+	</render>
+	<render type="--single">
+		<arrow p="20 0 40 0"/>
+	</render>
+</item>

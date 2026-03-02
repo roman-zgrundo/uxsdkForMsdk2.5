@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="0" moves-arrow="-25 0 25 0" count-text="20 15">
+	<render type="single-90-mirror">
+		<poly p="0 0 0 -75 -60 -75 -60 -45 0 -45"/>
+		<poly p="-15 -21 -8 -28 0 -21 8 -28 15 -21"/>
+		<arrow p="-15 -21 -23 -29" height-m="1.8" length-m="3.5"/>
+		<arrow p="15 -21 23 -29" height-m="1.8" length-m="3.5"/>
+		<text color="0" p="-57 -70 -2 -53" need-mirror-h="1" get="1"/>
+		<text color="0" p="-40 -20 -2 -5" need-mirror-h="1" h-align="1" v-align="0" get="2"/>
+		<cross color="opposite" stroke="line" destroyed="1" p="-55 -85 -5 -35"/>
+	</render>
+</item>

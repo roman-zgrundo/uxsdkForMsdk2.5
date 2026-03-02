@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-26 -25 24 25" moves-arrow="25 0 60 0" count-text="-6 47">
+	<render type="single-no-overturn">
+		<text color="0" p="-29 -7 16 3" need-mirror-h="1" v-align="-1" get="1"/>
+		<poly p="24 0 10 -15 10 -7 -30 -7 -30 7 10 7 10 15 24 0"/>
+		<poly p="23 0 17 -30 -18 -30 -18 -65 17 -65 17 -30"/>
+		<poly p="-6 -34 -6 -44 7 -44 12 -39 7 -34 -5 -34"/>
+		<poly p="-6 -50 -6 -60 7 -60 12 -55 7 -50 -5 -50"/>
+		<line p="7 -59 7 -51"/>
+		<line p="7 -55 -5 -55"/>
+		<text color="0" p="17 -17 62 -6" need-mirror-h="1" get="2"/>
+		<text color="0" p="17 3 62 14" need-mirror-h="1" get="3"/>
+		<text color="0" p="-29 -62 16 -51" need-mirror-h="1" get="4"/>
+		<text color="0" p="-34 -45 11 -34" need-mirror-h="1" get="5"/>
+	</render>
+</item>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" perimeter="1">
+	<render size="15 15" type="segment-fill">
+		<render count="1"/>
+		<line count="1" p="8 -9 0 0"/>
+		<render count="2">
+			<line p="8 9 0 0"/>
+		</render>
+	</render>
+</item>

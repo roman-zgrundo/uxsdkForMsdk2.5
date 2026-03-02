@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-33 -38 33 28" count-text="45 35">
+	<render type="single">
+		<triangle p="-26.05 -30.06 26.05 15.06"/>
+		<rect p="-28 -33 28 23"/>
+		<text color="0" p="-25 -5 25 10" v-align="-1" get="1"/>
+		<text color="0" p="-25 28 25 43" v-align="-1" get="2"/>
+	</render>
+</item>

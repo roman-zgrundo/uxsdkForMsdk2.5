@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="42 14">
+	<render type="single">
+		<arrow p="15 34 15 -15"/>
+		<arrow p="-15 34 -15 -15"/>
+		<text color="0" p="71 38 36 23" v-align="-1" get="1"/>
+		<poly p="-9 40 -15 34 -21 40"/>
+		<poly p="21 41 15 35 9 41"/>
+		<line p="-23 0 23 0"/>
+		<line p="-23 7 23 7"/>
+		<line p="-23 14 23 14"/>
+		<line p="0 15 0 70"/>
+	</render>
+</item>

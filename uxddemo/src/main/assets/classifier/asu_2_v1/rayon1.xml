@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-57 -57 57 57">
+	<render rotate="90" translate="10 0" type="single">
+		<arc stroke="line 0.67" rotate="90" dash="0" p="-47 52 46 -51 -90 180"/>
+		<arc stroke="line 0.67" rotate="90" dash="1" p="-47 52 46 -51 -70 20 25 50 25 20"/>
+		<poly stroke="line 0.75" dash="0" p="-14 -22 -6 -19 4 -19 13 -23"/>
+		<poly stroke="line 0.75" p="-52 -3 -50 -13 -43 -22 -34 -26 -24 -26 -16 -23"/>
+		<poly stroke="line 0.75" p="51 0 50 -12 43 -22 34 -26 24 -26 14 -23"/>
+	</render>
+	<render type="single-static"/>
+	<render type="single-90-mirror">
+		<text font="0 1" color="0" p="-34 -31 25 25" need-mirror-h="1" get="1"/>
+	</render>
+</item>

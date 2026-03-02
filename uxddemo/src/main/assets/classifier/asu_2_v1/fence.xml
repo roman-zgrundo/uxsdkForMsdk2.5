@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" color="side-neutral" perimeter="1">
+	<render size="30 30" type="segment-static-fill">
+		<ellipse p="-5 -5 5 5"/>
+	</render>
+</item>

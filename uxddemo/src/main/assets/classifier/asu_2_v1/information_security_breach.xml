@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-31 -62 29 -2" count-text="25 7">
+	<render color="default" type="single">
+		<text color="0" p="0 -37 0 -37" get="3"/>
+		<poly p="-25 -60 25 -60 25 -19 0 1 -25 -19 -25 -60"/>
+		<text color="0" p="49 -64 94 -39" get="1"/>
+		<text color="0" p="72 -30 72 -30" get="2"/>
+		<line color="0" stroke="line 0.5" p="114 -36 33 -36"/>
+	</render>
+</item>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="45 30">
+	<render type="single">
+		<text color="0" font="20 1" p="30 -15 -30 15" text="Г"/>
+		<rect p="-30 -15 30 15"/>
+		<text color="0" p="-25 15 25 30" v-align="-1" get="1"/>
+	</render>
+</item>

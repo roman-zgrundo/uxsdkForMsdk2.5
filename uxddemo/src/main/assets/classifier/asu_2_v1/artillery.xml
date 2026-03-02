@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-25 -25 25 25" moves-arrow="30 0 50 0" comment="SFERG">
+	<render type="single">
+		<render count="1"/>
+		<line p="-8 7 8 7"/>
+		<line p="-18 0 18 0"/>
+		<line p="-8 -7 8 -7"/>
+		<render count="3">
+			<line p="-19 8 -19 -8"/>
+			<line p="-14 -8 -14 8"/>
+			<line p="-24 -8 -24 8"/>
+		</render>
+		<render count="1">
+			<line p="-19 8 -19 -8"/>
+		</render>
+		<render count="2">
+			<line p="-19 8 -19 -8"/>
+			<line p="-14 -8 -14 8"/>
+		</render>
+		<text color="0" p="15 5 36 19" get="1"/>
+		<text color="0" p="15 15 36 29" get="2"/>
+	</render>
+</item>

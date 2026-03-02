@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-r="15">
+	<render size="20 20" type="segment-fill">
+		<line p="-10 0 3 0"/>
+	</render>
+	<render type="last">
+		<arrow p="-1 0 0 0" bounds="1" line="0"/>
+	</render>
+</item>

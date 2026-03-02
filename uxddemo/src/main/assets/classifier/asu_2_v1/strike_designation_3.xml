@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="0">
+	<render size="20" type="segment-fill">
+		<line p="-19 0 0 0"/>
+	</render>
+	<render type="last">
+		<render count="1">
+			<poly rotate="83" p="6 -4 30 6 6 -35 -19 7 6 -4"/>
+		</render>
+	</render>
+</item>

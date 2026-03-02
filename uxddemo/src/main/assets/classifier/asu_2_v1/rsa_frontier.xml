@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" perimeter="1" first-point-r="20" middle-point-r="20" last-point-same-as-first="1" count-text="15 15">
+	<render type="middle-static">
+		<ref id="s"/>
+	</render>
+	<render id="s">
+		<ellipse fill="1" p="-8 -8 8 8"/>
+		<poly p="0 -5 5 -20 10 -10 15 -25"/>
+		<arrow p="13 -18 16 -28"/>
+	</render>
+	<render type="first-static">
+		<ref id="s"/>
+	</render>
+	<render type="single-static">
+		<ref id="s"/>
+	</render>
+</item>

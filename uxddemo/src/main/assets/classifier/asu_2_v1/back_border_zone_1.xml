@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" color="0" last-point-r="15">
+	<render size="70 50" type="segment-fill">
+		<line p="-43 0 -11 0"/>
+		<cross p="25 7 11 -7"/>
+		<cross p="5 7 -9 -7"/>
+	</render>
+	<render type="last"/>
+</item>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" segment-fill-add-line="0">
+	<script size="20 40" color="0" type="segment-fill">p.setColor(res.color0());
+p.drawLine(10,0,ctx.length(),0);
+</script>
+	<render type="last">
+		<line color="0" p="74 25 74 -25"/>
+		<poly color="0" p="0 0 13 37 25 0"/>
+		<line size="20 20" color="0" stroke="dash 2" p="73 0 25 0"/>
+	</render>
+	<render type="first">
+		<line color="0" p="-76 25 -76 -26"/>
+		<line color="0" stroke="dash 2" p="-75 0 -25 0"/>
+		<poly color="0" p="-25 0 -13 37 0 0"/>
+	</render>
+</item>

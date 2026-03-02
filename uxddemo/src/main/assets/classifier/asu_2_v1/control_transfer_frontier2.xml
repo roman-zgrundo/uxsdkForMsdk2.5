@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" segment-fill-add-line="0" last-point-same-as-first="mirror-h">
+	<script type="segment-before">p.drawLine(0,-5,ctx.length(),-5);
+p.drawLine(0,+5,ctx.length(),+5);</script>
+	<render type="first">
+		<arrow p="0 -6 0 -17"/>
+		<arrow p="0 6 0 17"/>
+	</render>
+</item>

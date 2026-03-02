@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" color="0" segment-fill-add-line="0" last-point-same-as-first="0">
+	<render size="20" type="segment-fill">
+		<line stroke="line" p="-10 0 22 0"/>
+	</render>
+	<render type="first">
+		<ellipse fill="1" p="6 6 -7 -7"/>
+	</render>
+	<render type="last">
+		<arrow stroke="line 1.5" p="0 0 0 0"/>
+	</render>
+</item>

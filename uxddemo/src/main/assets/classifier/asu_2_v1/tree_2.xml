@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" color="plant" destroyed-cross="-18 -36 18 0" count-text="20 10">
+	<render type="single">
+		<poly p="15 0 0 0 0 -38"/>
+		<arc draw="0" fill="1" p="-8 -39 8 -31 -90 180"/>
+		<arc draw="0" fill="1" p="-10 -30 10 -20 -90 180"/>
+		<arc draw="0" fill="1" p="-12 -20 12 -8 -90 180"/>
+		<ellipse p="-8 -39 8 -31"/>
+		<ellipse p="-10 -30 10 -20"/>
+		<ellipse p="-12 -20 12 -8"/>
+	</render>
+</item>

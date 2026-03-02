@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-25 -25 25 25" count-text="50 30">
+	<render type="single">
+		<ellipse p="-30 -14 30 14"/>
+		<arrow p="30 0 43 0"/>
+	</render>
+	<render type="single-static">
+		<string font="0 1" p="0 30" h-align="0" v-align="-1" get="1"/>
+	</render>
+</item>

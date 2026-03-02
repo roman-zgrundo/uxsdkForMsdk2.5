@@ -132,8 +132,14 @@ class LocationTrackerManager {
         val hDist = if (isLaserValid) rng * cos(pitchInRad) else (droneAlt / tan(pitchInRad))
         val target = computeOffset(droneLat, droneLon, hDist, finalBearing)
 
-        return "RNG: ${"%.1f".format(rng)}m\n" +
-                "MSL: ${"%.1f".format(targetMSL)}m\n" +
-                "${"%.6f".format(target.first)}, ${"%.6f".format(target.second)}"
+        // Используем Locale.US, чтобы всегда была ТОЧКА в числах
+        val rngStr = String.format(java.util.Locale.US, "%.1f", rng)
+        val mslStr = String.format(java.util.Locale.US, "%.1f", targetMSL)
+        val latStr = String.format(java.util.Locale.US, "%.6f", target.first)
+        val lonStr = String.format(java.util.Locale.US, "%.6f", target.second)
+
+        return "RNG: ${rngStr}m\n" +
+                "MSL: ${mslStr}m\n" +
+                "$latStr, $lonStr"
     }
 }

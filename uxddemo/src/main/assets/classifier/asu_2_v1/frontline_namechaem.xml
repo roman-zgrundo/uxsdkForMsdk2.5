@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" segment-fill-add-line="0">
+	<script stroke="dash 1" type="segment-before">p.setColor(res.colorFriend());
+p.drawLine(0,+5,ctx.length(),+5);</script>
+	<render type="first">
+		<arc color="friend" stroke="dash 1" p="-15 5 15 35 -90 -90"/>
+	</render>
+	<render type="last">
+		<arc color="friend" stroke="dash 1" p="-15 5 15 35 -90 90"/>
+	</render>
+</item>

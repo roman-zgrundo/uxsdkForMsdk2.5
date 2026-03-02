@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" color="0" last-point-same-as-first="1">
+	<render size="20 20" type="single-static">
+		<rect p="-25 -35 25 34"/>
+		<string font="20 1" p="31 13 61 33" get="1"/>
+	</render>
+</item>

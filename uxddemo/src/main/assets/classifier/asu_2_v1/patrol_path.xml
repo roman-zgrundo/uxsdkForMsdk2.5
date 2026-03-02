@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" perimeter="1" last-point-same-as-first="rotate-180">
+	<render type="first">
+		<path>
+			<arcto p="-10 -20 10 0 90 180"/>
+			<lineto p="15 -20"/>
+		</path>
+		<arrow p="5 -20 10 -20" line="0"/>
+	</render>
+</item>

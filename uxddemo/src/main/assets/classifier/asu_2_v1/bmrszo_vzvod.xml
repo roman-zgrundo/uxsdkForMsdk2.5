@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-15 -30 15 30" moves-arrow="20 0 40 0" count-text="50 30">
+	<render type="single">
+		<rect p="-20 -20 20 20"/>
+		<line p="-20 0 -35 0"/>
+		<line p="20 -20 35 -35"/>
+		<line p="20 20 35 35"/>
+		<line p="20 0 45 0"/>
+		<line p="30 -10 30 10"/>
+	</render>
+</item>

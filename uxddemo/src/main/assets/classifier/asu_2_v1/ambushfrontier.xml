@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1">
+	<render type="single">
+		<arc p="-15 -25 15 25 -90 180"/>
+		<arrow p="0 -25 15 -35"/>
+		<arrow p="0 25 15 35"/>
+	</render>
+	<render type="single-90-mirror">
+		<string font="20" color="0" p="10 -3 23 22" need-mirror-h="1" h-align="-1" v-align="0" get="1"/>
+	</render>
+</item>

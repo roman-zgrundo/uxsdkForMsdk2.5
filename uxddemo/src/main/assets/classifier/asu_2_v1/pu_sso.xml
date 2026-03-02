@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item moves-arrow="-40 0 40 0" count-text="25 20">
+	<render type="single-90-mirror">
+		<path>
+			<lineto p="0 -80"/>
+			<cubicto p="-19 -89 -12 -62 -29 -75"/>
+			<cubicto p="-38 -85 -56 -75 -68 -25"/>
+			<cubicto p="-30 -55 -41 -10 -19 -36"/>
+			<quadto p="-11 -45 -1 -35"/>
+		</path>
+		<text color="0" p="-55 -75 -2 -40" need-mirror-h="1" get="1"/>
+		<text color="0" p="-40 -20 -2 -5" need-mirror-h="1" h-align="1" v-align="0" get="2"/>
+		<cross color="opposite" stroke="line" destroyed="1" p="-75 -88 -5 -18"/>
+	</render>
+</item>

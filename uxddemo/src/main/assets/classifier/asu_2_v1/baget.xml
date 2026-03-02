@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" destroyed-cross="-20 -40 20 0" count-text="35 25">
+	<render size="75" type="segment-fill">
+		<line p="-42 -27 42 -27"/>
+		<line p="-42 27 42 27"/>
+		<line scale="3" p="-13 12 13 12"/>
+		<line scale="3" p="-13 -12 13 -12"/>
+		<line p="-41 26 -20 13"/>
+		<line p="20 -12 41 -25"/>
+		<line p="20 13 42 26"/>
+		<line p="-41 -26 -19 -13"/>
+		<line p="-42 -13 -37 -13"/>
+		<line p="37 -13 42 -13"/>
+		<line p="37 13 42 13"/>
+		<line p="-42 13 -37 13"/>
+		<rhombus scale="1.5" p="-26 16 26 -16"/>
+		<rhombus scale="2" p="-8 4 8 -4"/>
+		<rect p="-9 -3 9 3"/>
+	</render>
+	<render scale="0.79" type="middle-static">
+		<rect color=":FFFFFFFF" fill="1" p="-49 -48 49 48"/>
+		<rect size="2" scale="2" p="-14 -14 13 14"/>
+		<rect scale="2" p="-25 -25 25 25"/>
+	</render>
+</item>

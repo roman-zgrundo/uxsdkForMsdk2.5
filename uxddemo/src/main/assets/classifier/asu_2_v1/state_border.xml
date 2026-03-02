@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" color="0">
+	<render size="80" type="segment-fill">
+		<line color=":FF7EF1FF" stroke="line 2.5" count="-1 1" p="-40 -5 40 -5"/>
+		<line stroke="line 3" p="-20 0 20 0"/>
+		<line p="-25 -10 -25 10"/>
+		<line p="25 -10 25 10"/>
+		<ellipse fill="1" p="-44 -4 -35 5"/>
+		<ellipse fill="1" p="36 -4 45 5"/>
+	</render>
+</item>

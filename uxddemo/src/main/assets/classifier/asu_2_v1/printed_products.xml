@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="side-neutral" destroyed-cross="-25 -25 25 25" count-text="45 30">
+	<render color="enemy" type="single">
+		<line p="0 -25 0 28"/>
+		<poly p="-30 15 0 30 30 15 30 -40 0 -25 -30 -40 -30 15"/>
+	</render>
+</item>

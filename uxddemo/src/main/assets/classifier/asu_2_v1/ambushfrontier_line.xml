@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" perimeter="1" last-point-same-as-first="1">
+	<render type="first">
+		<arrow p="0 0 0 -30"/>
+	</render>
+</item>

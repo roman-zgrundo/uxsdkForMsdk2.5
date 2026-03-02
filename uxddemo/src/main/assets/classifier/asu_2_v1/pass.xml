@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" perimeter="1" last-point-same-as-first="mirror-h">
+	<render type="first">
+		<poly p="-10 -10 0 0 -10 10"/>
+	</render>
+</item>

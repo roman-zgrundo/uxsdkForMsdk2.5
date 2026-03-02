@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="0" destroyed-cross="-25 -45 25 5" destroyed-cross-static="1" count-text="20 15">
+	<render type="single-90-mirror">
+		<arrow p="37 -45 -37 -45" height-m="1.8" length-m="3.5"/>
+		<text color="0" p="9 -44 64 -27" need-mirror-h="1" get="1"/>
+		<text color="0" p="14 -21 52 -6" need-mirror-h="1" h-align="1" v-align="0" get="2"/>
+		<poly p="0 -44 -30 0 30 0 0 -44"/>
+		<ellipse fill="1" p="-6 -23 6 -11"/>
+	</render>
+</item>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" color="0" perimeter="1" last-point-same-as-first="0" area-fill-image-center-zero="1" comment="ete">
+	<render type="center">
+		<rect color=":EEEEEEFF" fill="1" fill-color=":EEEEEEFF" p="25 14 -27 -15"/>
+		<text color=":000000FF" p="-21 -15 19 9" get="1"/>
+		<poly p="-35 0 -20 15 14 15 30 0 15 -16 -20 -16 -35 0"/>
+		<text p="-18 -42 14 -20" get="2"/>
+		<text p="-1 23 -1 23" get="3"/>
+		<text p="-19 35 17 58" get="4"/>
+	</render>
+</item>

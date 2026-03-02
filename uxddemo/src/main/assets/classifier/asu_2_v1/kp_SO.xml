@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item moves-arrow="-25 0 25 0" count-text="20 15">
+	<render type="single-90-mirror">
+		<poly p="0 0 0 -60 -85 -60 -65 -30 0 -30"/>
+		<line p="-78 -59 -60 -31"/>
+		<line p="-81 -59 -62 -30"/>
+		<text color="0" p="-55 -56 -2 -39" need-mirror-h="1" get="1"/>
+		<text color="0" p="-40 -20 -2 -5" need-mirror-h="1" h-align="1" v-align="0" get="2"/>
+		<cross color="opposite" stroke="line" destroyed="1" p="-55 -70 -5 -20"/>
+	</render>
+</item>

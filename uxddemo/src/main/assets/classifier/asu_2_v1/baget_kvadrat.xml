@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1">
+	<render type="single">
+		<rect color=":FFFFFFFF" fill="1" p="-49 -48 49 48"/>
+		<rect size="2" scale="2" p="-14 -14 13 14"/>
+		<rect scale="2" p="-25 -25 25 25"/>
+	</render>
+</item>

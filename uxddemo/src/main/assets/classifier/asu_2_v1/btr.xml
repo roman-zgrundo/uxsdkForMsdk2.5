@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-25 -25 25 25" moves-arrow="30 0 65 0" count-text="-24 53">
+	<render type="single">
+		<poly close="1" p="15 -15 -30 -15 -30 15 15 15 30 0"/>
+		<text p="52 34 20 16" get="1"/>
+		<text p="52 49 20 31" get="2"/>
+		<render count="3">
+			<line p="45 -20 45 20"/>
+			<line p="53 -20 53 20"/>
+			<line p="37 -20 37 20"/>
+			<line p="31 0 62 0"/>
+		</render>
+		<render count="2">
+			<line p="53 -20 53 20"/>
+			<line p="45 -20 45 20"/>
+			<line p="31 0 62 0"/>
+		</render>
+		<render count="0">
+			<line p="53 -20 53 20"/>
+			<line p="31 0 62 0"/>
+		</render>
+	</render>
+</item>

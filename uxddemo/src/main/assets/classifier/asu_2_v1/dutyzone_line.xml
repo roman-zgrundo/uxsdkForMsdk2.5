@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" middle-point-r="15">
+	<script type="segment-before">p.drawLine(0,0,ctx.length(),0);</script>
+	<script type="middle">p.drawArcByCR(0,0,15,ctx.arcStart(),ctx.arcSweep());</script>
+	<render type="first">
+		<arc p="-30 -15 0 15 0 -180"/>
+	</render>
+	<render type="last">
+		<arc p="0 -15 30 15 0 -180"/>
+	</render>
+</item>

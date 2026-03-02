@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="mirror-h">
+	<render size="60" type="segment-fill">
+		<line p="-20 0 20 0"/>
+	</render>
+	<render type="first">
+		<line p="-9 0 -39 0"/>
+		<line p="-40 -15 -40 15"/>
+		<line p="0 -19 0 42"/>
+		<line p="0 -30 3 -19"/>
+		<line p="0 -30 -3 -19"/>
+	</render>
+	<render>
+		<text p="22 22 5 7" get="1"/>
+	</render>
+</item>

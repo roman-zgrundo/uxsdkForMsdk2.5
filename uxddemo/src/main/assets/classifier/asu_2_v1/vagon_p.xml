@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="side-neutral" destroyed-cross="-25 -25 25 25" count-text="45 30">
+	<render type="single">
+		<rect p="-30 -15 30 15"/>
+		<line p="-29 14 29 -14"/>
+	</render>
+</item>

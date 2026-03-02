@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" segment-fill-add-line="0" last-point-same-as-first="mirror-h">
+	<render size="20" type="segment-fill">
+		<line stroke="line" p="-15 -5 5 -5"/>
+		<line stroke="dash 1" p="-15 3 5 3"/>
+	</render>
+</item>

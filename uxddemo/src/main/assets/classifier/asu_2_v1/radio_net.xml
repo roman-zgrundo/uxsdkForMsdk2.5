@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-30 -30 30 30" count-text="45 35">
+	<render id="r">
+		<ellipse p="-20 -20 20 20"/>
+		<poly p="0 -21 10 -38 17 -26"/>
+		<arrow p="17 -26 27 -42"/>
+	</render>
+	<render type="single">
+		<ref translate="-60 0" id="r"/>
+		<ref id="r"/>
+		<ref translate="60 0" id="r"/>
+		<line p="-60 20 60 20"/>
+		<text color="0" p="-15 -18 15 12" get="1"/>
+	</render>
+</item>

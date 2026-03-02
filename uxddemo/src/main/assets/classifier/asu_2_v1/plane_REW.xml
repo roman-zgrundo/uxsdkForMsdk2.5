@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-40 -25 10 25" moves-arrow="17 0 37 0" count-text="19 41">
+	<render type="single">
+		<line p="-50 0 0 0"/>
+		<line p="0 -25 0 25"/>
+	</render>
+	<render type="single">
+		<line p="-50 0 0 0"/>
+		<line p="11 24 -11 -25"/>
+		<line p="-11 25 10 -25"/>
+		<arrow p="-29 21 -26 25"/>
+		<arrow p="-30 -20 -26 -25"/>
+		<render count="0">
+			<line p="-7 -28 -16 -24"/>
+			<line p="16 23 7 27"/>
+			<line p="6 -28 15 -24"/>
+			<line p="-16 23 -7 27"/>
+		</render>
+		<poly translate="-7 -7" p="-26 8 -14 24 -25 24 -21 29"/>
+		<poly p="-33 0 -22 -17 -32 -17 -27 -24"/>
+	</render>
+</item>

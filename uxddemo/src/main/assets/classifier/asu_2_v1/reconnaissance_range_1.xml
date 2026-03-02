@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-r="15">
+	<render size="60 60" type="segment-fill">
+		<line p="-10 0 10 0"/>
+		<line p="38 0 37 0"/>
+		<line p="23 0 22 0"/>
+	</render>
+	<render type="center-static">
+		<round-rect color=":EEEEEEFF" fill="1" fill-color=":EEEEEEFF" p="-28 -14 28 16 3 3"/>
+		<text color=":000000FF" p="-30 -20 27 9" get="1"/>
+	</render>
+</item>

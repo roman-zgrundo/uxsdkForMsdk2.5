@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" color="friend" destroyed-cross="-25 -25 25 25" destroyed-cross-static="1" count-text="-1 44">
+	<render size="60" type="segment-fill">
+		<text color="0" p="-29 -12 31 5" need-mirror-h="1" get="1"/>
+		<ellipse p="-25 -25 25 25"/>
+		<line p="3 -25 -51 -34"/>
+		<line p="3 25 -51 34"/>
+		<line p="34 0 25 0"/>
+	</render>
+</item>

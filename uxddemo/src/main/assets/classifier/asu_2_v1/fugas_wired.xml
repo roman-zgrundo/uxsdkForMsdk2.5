@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="25 30">
+	<render type="single">
+		<ellipse p="-18 -18 18 18"/>
+		<line p="0 -19 -10 -29"/>
+		<line p="0 -19 10 -29"/>
+		<line p="18 0 28 0"/>
+		<arc p="28 -12 52 12 100 160"/>
+	</render>
+</item>

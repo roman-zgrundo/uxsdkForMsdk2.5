@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="mirror-h">
+	<render size="20 20" type="segment-fill">
+		<line p="-10 0 10 0"/>
+	</render>
+	<render type="first">
+		<arc p="-15 0 15 30 -90 -90"/>
+	</render>
+	<render type="center">
+		<arrow p="0 0 0 -30"/>
+		<render count="1">
+			<line p="8 -10 -8 -10"/>
+		</render>
+		<render count="2">
+			<line p="8 -10 -8 -10"/>
+			<line p="8 -17 -8 -17"/>
+		</render>
+		<render count="3">
+			<line p="8 -10 -8 -10"/>
+			<line p="8 -17 -8 -17"/>
+			<line p="8 -23 -8 -23"/>
+		</render>
+	</render>
+</item>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-r="15">
+	<render size="40 40" type="segment-fill">
+		<line p="-10 0 10 0"/>
+		<line p="18 0 17 0"/>
+	</render>
+	<render type="last"/>
+</item>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" perimeter="1">
+	<render size="30" type="area-fill">
+		<line color="plant" stroke="line 0.5" p="-18 15 15 -18"/>
+		<line color="plant" stroke="line 0.5" p="-29 2 4 -31"/>
+		<line color="plant" stroke="line 0.5" p="1 26 34 -7"/>
+		<line color="plant" stroke="line 0.5" p="-23 26 27 -24"/>
+	</render>
+</item>

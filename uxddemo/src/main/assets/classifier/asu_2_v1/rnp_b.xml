@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="35 25">
+	<render type="single">
+		<triangle p="-26.05 -30.06 26.05 15.06"/>
+		<arc rotate="90" p="-83 -15 -52 16 -90 180"/>
+		<line p="0 -30 0 -50"/>
+		<arrow p="-16 -63 -16 -68" line="0"/>
+		<arrow p="15 -63 15 -68" line="0"/>
+		<text color="0" p="-25 -5 25 10" v-align="-1" get="1"/>
+		<text color="0" p="-25 15 25 30" v-align="-1" get="2"/>
+	</render>
+</item>

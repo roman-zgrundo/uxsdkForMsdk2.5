@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" segment-fill-add-line="0" last-point-same-as-first="1" count-text="35 22">
+	<render size="50" type="segment-fill">
+		<ellipse draw="0" fill="1" p="-21 -8 -5 8"/>
+		<ellipse p="7 -6 19 6"/>
+		<line p="-25 -12 25 -12"/>
+		<line p="-25 12 25 12"/>
+	</render>
+	<render type="first">
+		<line p="0 -10 0 10"/>
+	</render>
+	<render type="segment-before">
+		<text p="20 24 47 50" get="1"/>
+		<text p="20 47 45 67" get="2"/>
+	</render>
+</item>

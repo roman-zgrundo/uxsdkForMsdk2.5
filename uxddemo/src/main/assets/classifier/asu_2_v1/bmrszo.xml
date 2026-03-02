@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-15 -30 15 30" moves-arrow="20 0 40 0">
+	<render type="single">
+		<rect p="-20 -20 20 20"/>
+		<line p="-20 0 -35 0"/>
+		<line p="20 -20 35 -35"/>
+		<line p="20 20 35 35"/>
+		<render count="1">
+			<line p="-35 -10 -35 10"/>
+		</render>
+		<text p="40 31 84 57" get="1"/>
+		<text p="44 58 82 79" get="2"/>
+		<render count="2">
+			<line p="-35 -11 -35 11"/>
+			<line p="-30 -11 -30 11"/>
+		</render>
+		<render count="3">
+			<line p="-35 -11 -35 11"/>
+			<line p="-30 -11 -30 11"/>
+			<line p="-41 -10 -41 11"/>
+		</render>
+	</render>
+</item>

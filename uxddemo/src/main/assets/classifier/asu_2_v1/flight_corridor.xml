@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="mirror-h">
+	<render size="20 20" type="segment-fill">
+		<line p="-10 0 10 0"/>
+	</render>
+	<render type="first">
+		<line p="-30 20 -1 0"/>
+	</render>
+	<render type="center-static">
+		<text color="0" p="-14 -31 12 -6" get="1"/>
+	</render>
+	<render type="center">
+		<arrow p="-29 -25 31 -25"/>
+	</render>
+</item>

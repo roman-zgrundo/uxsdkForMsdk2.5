@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-25 -25 25 25" moves-arrow="30 0 50 0" count-text="40 25">
+	<render type="single-no-overturn">
+		<text p="20 -10 -20 5" need-mirror-h="1" text="ПАН"/>
+		<poly p="15 -15 -30 -15 -30 15 15 15"/>
+		<arc p="0 -15 30 15 -90 180"/>
+		<poly p="0 -16 -10 -35 -17 -23"/>
+		<arrow p="-17 -23 -27 -39"/>
+	</render>
+</item>

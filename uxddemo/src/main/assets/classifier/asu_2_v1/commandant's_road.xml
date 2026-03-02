@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" color="0" comment="SFERG">
+	<render type="single">
+		<arrow p="0 37 25 37"/>
+		<arrow p="0 -38 25 -38"/>
+		<render count="1"/>
+		<line p="0 37 0 -38"/>
+		<render count="3">
+			<line p="10 19 -10 19"/>
+			<line p="10 14 -10 14"/>
+			<line p="10 8 -10 8"/>
+		</render>
+		<render count="1">
+			<line p="10 15 -10 15"/>
+		</render>
+		<render count="2">
+			<line p="10 20 -10 20"/>
+			<line p="10 15 -10 15"/>
+		</render>
+		<text color="0" p="15 5 36 19" get="1"/>
+		<text color="0" p="15 15 36 29" get="2"/>
+	</render>
+</item>

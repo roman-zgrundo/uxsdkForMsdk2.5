@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" color="enemy" perimeter="1">
+	<render type="center">
+		<text get="1"/>
+	</render>
+	<render type="segment-center">
+		<rect color=":EEEEEEFF" fill="1" fill-color=":EEEEEEFF" p="-28 -9 26 8"/>
+		<cross p="-5 -4 3 4"/>
+		<cross p="12 -4 20 4"/>
+		<cross p="-21 -4 -13 4"/>
+	</render>
+</item>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-20 -20 20 20" moves-arrow="13 0 35 0">
+	<render type="single">
+		<line p="-5 -11 15 -18"/>
+		<line p="-5 11 15 18"/>
+		<ellipse p="-12 -12 12 12"/>
+		<render count="1">
+			<line p="-27 0 -12 0"/>
+			<line p="-27 -13 -27 13"/>
+		</render>
+		<render count="2">
+			<line p="-27 0 -12 0"/>
+			<line p="-27 -13 -27 13"/>
+			<line p="-22 -13 -22 13"/>
+		</render>
+		<render count="3">
+			<line p="-27 0 -12 0"/>
+			<line p="-27 -13 -27 13"/>
+			<line p="-22 -13 -22 13"/>
+			<line p="-17 -12 -17 12"/>
+		</render>
+		<text p="17 17 43 33" get="1"/>
+		<text p="17 30 43 46" get="2"/>
+	</render>
+</item>

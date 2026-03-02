@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-25 -25 25 25" moves-arrow="30 0 50 0" count-text="0 0">
+	<render type="single">
+		<path rotate="180">
+			<moveto p="0 57"/>
+			<quadto p="-33 49 -37 25"/>
+		</path>
+		<path rotate="180">
+			<moveto p="0 -57"/>
+			<quadto p="-32 -49 -37 -25"/>
+		</path>
+		<line rotate="180" p="-25 0 0 0"/>
+		<line rotate="180" p="-13 -16 -25 0"/>
+		<line rotate="180" p="-13 17 -25 0"/>
+		<arrow rotate="180" p="-13 -16 -23 -16"/>
+		<arrow rotate="180" p="-14 17 -24 17"/>
+	</render>
+	<render type="single-static">
+		<text color=":000000FF" p="52 -29 97 -4" get="1"/>
+		<text color=":000000FF" p="122 32 32 -18" get="2"/>
+	</render>
+</item>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-15 -30 15 30">
+	<render type="single-static">
+		<string color="0" font="40 1" p="66 45 113 5" get="1"/>
+		<ellipse color="0" stroke="line 2.75" p="-50 -54 57 53"/>
+	</render>
+</item>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-32 -32 32 32" count-text="45 35">
+	<render type="single">
+		<ellipse color="0" fill="1" fill-color="0" p="-17 -17 17 17"/>
+		<poly color="0" p="-14 -11 -61 0 -13 13 0 62 13 12 60 0 13 -12 0 -60 -13 -12"/>
+	</render>
+</item>

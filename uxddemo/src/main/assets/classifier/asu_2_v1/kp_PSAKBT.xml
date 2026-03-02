@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item moves-arrow="-25 0 25 0" count-text="1 -42">
+	<render type="single-90-mirror">
+		<poly p="50 -30 50 -66 -50 -66 -50 -30 50 -30"/>
+		<line color="0" stroke="line 0.5" p="67 -44 165 -44"/>
+		<line color="0" stroke="line 0.5" p="-41 -47 42 -47"/>
+		<line p="0 -30 0 0"/>
+		<text color="0" p="86 -67 134 -50" need-mirror-h="1" get="1"/>
+		<text color="0" p="80 -45 118 -30" need-mirror-h="1" h-align="1" v-align="0" get="2"/>
+		<cross color="opposite" stroke="line" destroyed="1" p="-25 -71 25 -21"/>
+		<text p="-28 -67 26 -51" need-mirror-h="1" get="3" text="ППРП"/>
+		<text need-mirror-h="1" get="4"/>
+	</render>
+</item>

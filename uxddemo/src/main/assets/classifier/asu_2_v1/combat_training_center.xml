@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" color="0" destroyed-cross="-30 -30 30 30" count-text="50 35">
+	<render type="single">
+		<render>
+			<rect p="-46 -30 46 30"/>
+			<text color="0" p="-30 -28 28 -4" text="УБЦ"/>
+			<text color="0" p="-27 -10 27 21" v-align="-1" text="СБП"/>
+			<text p="-92 -17 -92 -17" get="1"/>
+			<text p="-92 8 -92 8" get="2"/>
+		</render>
+	</render>
+</item>

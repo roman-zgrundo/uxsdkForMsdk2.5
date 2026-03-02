@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" perimeter="1">
+	<render size="30 30" type="area-fill">
+		<line scale="0.5" p="-30 -1 3 -34"/>
+		<line scale="0.5" p="-1 30 30 -1"/>
+	</render>
+</item>

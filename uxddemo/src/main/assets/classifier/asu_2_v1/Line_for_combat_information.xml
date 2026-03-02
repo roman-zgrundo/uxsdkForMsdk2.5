@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="mirror-h">
+	<render size="20 20" type="segment-fill">
+		<line p="-10 0 10 0"/>
+	</render>
+	<render type="first">
+		<line p="-30 20 -1 0"/>
+	</render>
+	<render type="center-static">
+		<string h-align="0" v-align="0" get="1"/>
+	</render>
+</item>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" color="side-unknown" perimeter="1">
+	<render type="center">
+		<text get="1"/>
+	</render>
+</item>

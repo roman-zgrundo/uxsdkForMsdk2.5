@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="65 41">
+	<render rotate="180" type="single">
+		<triangle p="-26.05 -30.06 26.05 15.06"/>
+		<ellipse p="7 45 -7 32"/>
+		<line p="0 -32 0 -49"/>
+		<line p="-20 -50 20 -50"/>
+		<line p="-32 -40 -12 -60"/>
+		<line p="-41 -41 -21 -61"/>
+		<line p="12 -40 32 -60"/>
+		<line p="23 -40 43 -60"/>
+		<text color="0" rotate="180" p="35 -18 73 4" v-align="-1" get="1"/>
+		<line p="0 15 0 30"/>
+	</render>
+</item>

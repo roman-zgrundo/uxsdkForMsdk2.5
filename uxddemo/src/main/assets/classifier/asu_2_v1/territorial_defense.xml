@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-30 -30 30 30" count-text="45 35">
+	<render type="single">
+		<ellipse p="-30 -30 30 30"/>
+		<text color="0" p="-24 -16 20 10" text="ТВ"/>
+		<text p="83 -28 40 -5" get="1"/>
+		<text p="62 6 62 6" get="2"/>
+	</render>
+</item>

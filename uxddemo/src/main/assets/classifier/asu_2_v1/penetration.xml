@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-15 -15 15 15" count-text="30 25">
+	<render type="single">
+		<poly p="-15 -10 -5 0 -15 10"/>
+		<poly p="15 -10 5 0 15 10"/>
+	</render>
+</item>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-25 -25 25 25" count-text="35 25">
+	<render type="single-no-overturn">
+		<line p="49 -49 0 0"/>
+		<line p="0 0 50 50"/>
+		<arc stroke="dash 2" p="-70 -71 71 71 -45 90"/>
+		<text color="0" p="9 -29 81 5" v-align="-1" get="1"/>
+	</render>
+</item>

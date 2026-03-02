@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="40 25">
+	<render type="single">
+		<rhombus p="-30 -18 30 18"/>
+		<poly p="0 -18 10 -35 17 -23"/>
+		<arrow p="17 -23 27 -39"/>
+		<text color="0" p="-15 -18 15 12" get="1"/>
+		<text color="0" p="-25 15 25 30" v-align="-1" get="2"/>
+	</render>
+</item>

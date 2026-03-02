@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-15 -30 15 30" moves-arrow="20 0 40 0" count-text="50 30">
+	<render type="single">
+		<rect stroke="line 0.75" p="-20 -20 20 20"/>
+		<line p="15 -19 15 19"/>
+		<line p="10 -19 10 19"/>
+		<line p="5 -19 5 19"/>
+		<line p="0 -19 0 19"/>
+		<line p="-5 -19 -5 19"/>
+		<line p="-10 -19 -10 19"/>
+		<line p="-15 -19 -15 19"/>
+		<line stroke="line 0.2" p="20 -16 42 -38"/>
+		<line stroke="line 0.2" p="20 -18 41 -39"/>
+		<line stroke="line 0.2" p="20 17 41 38"/>
+		<line stroke="line 0.2" p="20 19 40 39"/>
+		<line stroke="line 0.2" p="-45 -1 -21 -1"/>
+		<line stroke="line 0.2" p="-45 1 -21 1"/>
+		<line stroke="line 0.2" p="38 38 40 39"/>
+		<line stroke="line 0.2" p="40 36 41 38"/>
+		<line stroke="line 0.2" p="38 -37 41 -39"/>
+		<line stroke="line 0.2" p="40 -35 42 -38"/>
+		<line stroke="line 0.2" p="-45 -1 -42 -2"/>
+		<line stroke="line 0.2" p="-45 1 -42 2"/>
+	</render>
+</item>

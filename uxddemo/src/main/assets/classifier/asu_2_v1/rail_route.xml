@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" perimeter="1" last-point-same-as-first="0" area-fill-image-center-zero="1" comment="ete">
+	<render type="center-static">
+		<ellipse p="25 25 -25 -25"/>
+		<ellipse color="0" fill="1" draw-color=":EEEEEEFF" fill-color=":EEEEEEFF" p="22 22 -22 -22"/>
+		<text color=":000000FF" p="21 17 -20 -24" get="1"/>
+	</render>
+	<render type="last">
+		<arrow/>
+	</render>
+</item>

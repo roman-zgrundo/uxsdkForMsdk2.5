@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-25 -25 25 25" moves-arrow="30 0 50 0">
+	<render type="single">
+		<poly p="-45 -15 -30 0 -45 15"/>
+		<line p="-29 0 27 0"/>
+		<ellipse p="-19 -16 12 15"/>
+		<text p="14 15 34 28" get="1"/>
+		<text p="14 26 34 39" get="2"/>
+	</render>
+</item>

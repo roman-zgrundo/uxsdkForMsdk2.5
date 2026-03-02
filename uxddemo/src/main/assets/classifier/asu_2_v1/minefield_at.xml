@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" perimeter="1" area-fill-size-correction="1" area-fill-alpha="192" area-fill-shift-grid-vertical="1">
+	<render size="30 30" type="area-fill">
+		<ellipse draw="0" fill="1" p="-8 -8 8 8"/>
+	</render>
+</item>

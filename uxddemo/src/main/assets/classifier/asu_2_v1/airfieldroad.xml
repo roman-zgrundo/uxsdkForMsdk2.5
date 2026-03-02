@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="2" segment-fill-add-line="0">
+	<script type="segment-before">p.drawLine(0,-5,ctx.length(),-5);
+p.drawLine(0,+5,ctx.length(),+5);</script>
+	<render size="30 30" type="segment-center">
+		<path draw="0" fill="1" close="1">
+			<moveto p="-16 5"/>
+			<arcto p="-17 -17 17 17 17 145"/>
+		</path>
+		<path draw="0" fill="1" close="1">
+			<moveto p="-16 -5"/>
+			<arcto p="-17 -17 17 17 -17 -145"/>
+		</path>
+		<cross color="opposite" stroke="line" destroyed="1" p="-20 -20 20 20"/>
+	</render>
+</item>

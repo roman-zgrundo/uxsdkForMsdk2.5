@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="mirror-h">
+	<render size="20" type="segment-fill">
+		<line scale="0.5" p="39 -15 -21 -15"/>
+		<line scale="1.8" p="-5 0 10 0"/>
+	</render>
+	<render type="first">
+		<arc p="-30 -15 0 15 0 -180"/>
+	</render>
+</item>

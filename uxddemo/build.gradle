@@ -51,6 +51,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        aidl = true
         buildConfig = true
     }
 }
@@ -156,4 +157,25 @@ dependencies {
     implementation("org.maplibre.gl:android-plugin-annotation-v9:3.0.2")
     implementation("org.maplibre.gl:android-plugin-localization-v9:3.0.2")
     implementation 'mil.nga:mgrs:2.1.2'
+}
+
+// Костыль для удаления проблемных комментариев AIDL
+tasks.withType(JavaCompile).configureEach {
+    doFirst {
+        def aidlGeneratedDir = file("${project.layout.buildDirectory.get().asFile}/generated/aidl_source_output_dir")
+        if (aidlGeneratedDir.exists()) {
+            println "🧹 Cleaning up AIDL comments in ${aidlGeneratedDir}..."
+            aidlGeneratedDir.eachFileRecurse { file ->
+                if (file.name.endsWith(".java")) {
+                    def content = file.getText('UTF-8')
+                    if (content.contains("Using: C:\\Users")) {
+                        // Удаляем ту самую строку с "Using:", которая ломает билд
+                        def lines = content.readLines()
+                        def cleanContent = lines.findAll { !it.contains("Using:") }.join("\n")
+                        file.write(cleanContent, 'UTF-8')
+                    }
+                }
+            }
+        }
+    }
 }

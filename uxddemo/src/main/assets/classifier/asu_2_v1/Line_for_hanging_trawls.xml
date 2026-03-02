@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="mirror-h">
+	<render size="20 20" type="segment-fill">
+		<line p="-10 0 0 0"/>
+	</render>
+	<render type="first">
+		<line p="0 10 0 -10"/>
+	</render>
+	<render type="center">
+		<rhombus fill="1" fill-color=":FFFFFFFF" p="15 29 -15 -24"/>
+		<poly fill-color="0" p="-15 -35 -15 -25 15 -25 15 -35"/>
+	</render>
+</item>

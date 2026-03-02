@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="utf-8"?>
+<classifier>
+<!--	<group name="original-soldat-and-pan">-->
+<!--		<group name="Служебные">-->
+<!--			<type id="10000" points="0" name="Точка" src="point.xml"/>-->
+<!--			<type id="10001" points="1" name="Неизвестный" src="unknown.xml"/>-->
+<!--			<type id="11001" name="Надпись" src="_label.xml" labels="#Надпись"/>-->
+<!--			<type id="11002" name="Надпись (жирный)" src="_label_bold.xml" labels=" #Надпись"/>-->
+<!--			<type id="12001" points="3" name="Линия 1" src="line1.xml"/>-->
+<!--			<type id="12002" points="3" name="Линия 2" src="line2.xml"/>-->
+<!--			<type id="12003" points="3" name="Линия 3" src="line3.xml"/>-->
+<!--			<type id="12011" points="3" name="Линия 1 штрих" src="line1_dash.xml"/>-->
+<!--			<type id="12012" points="3" name="Линия 2 штрих" src="line2_dash.xml"/>-->
+<!--			<type id="12013" points="3" name="Линия 3 штрих" src="line3_dash.xml"/>-->
+<!--			<type id="13001" points="4" name="Район 1" src="line1.xml"/>-->
+<!--			<type id="13002" points="4" name="Район 2" src="line2.xml"/>-->
+<!--			<type id="13003" points="4" name="Район 3" src="line3.xml"/>-->
+<!--			<type id="13011" points="4" name="Район 1 штрих" src="line1_dash.xml"/>-->
+<!--			<type id="13012" points="4" name="Район 2 штрих" src="line2_dash.xml"/>-->
+<!--			<type id="13013" points="4" name="Район 3 штрих" src="line3_dash.xml"/>-->
+<!--		</group>-->
+<!--		<group name="Граница">-->
+<!--			<type id="33333" name="Граница государства" abbr="Гос. граница" src="state_border.xml"/>-->
+<!--		</group>-->
+		<group name="Центурион-2">
+            <type id="99009025" name="разрыв" abbr="разрыв" src="burst.xml"/>
+			<type id="29010101" name="Батарея артиллерийская" abbr="Батарея арт." src="sau_batar.xml"/>
+			<type id="29010102" name="Взвод артиллерийский" abbr="Взвод арт." src="sau_vzvod.xml"/>
+			<type id="29010103" name="Батарея минометная" abbr="Батарея мин." src="mortar_batar.xml"/>
+			<type id="29010104" name="Взвод минометный" abbr="Взвод мин." src="mortar_vzvod.xml"/>
+			<type id="29010201" name="Радиолокационная станция" abbr="РЛС" src="rls.xml"/>
+			<type id="29010202" name="Радиолокационная станция наземной разведки" abbr="РЛС (назем.)" src="rlsn.xml"/>
+			<type id="29010203" name="Взвод зенитных управляемых ракет" abbr="Взвод ЗУР" src="missile_launcher_anti_air_circle.xml"/>
+			<type id="29010204" name="Батарея зенитных управляемых ракет" abbr="Батарея ЗУР" src="missile_launcher_anti_air_circle.xml"/>
+			<type id="29010205" name="Установка зенитных управляемых ракет" abbr="Установка ЗУР" src="missile_launcher_anti_air.xml"/>
+			<type id="29010206" name="Группа радиолокационных станций" abbr="Группа РЛС" src="rls_group.xml"/>
+			<type id="29010301" name="Пехота укрытая" src="group_i.xml"/>
+			<type id="29010302" name="Танки (БТР)" src="tank.xml"/>
+			<type id="29010303" name="Опорный пункт" src="np.xml"/>
+			<type id="29010401" name="Командный пункт дивизиона" abbr="КП дивизиона" src="kp_bat_2.xml"/>
+			<type id="29010503" name="ПТРК" src="ptrk_m.xml"/>
+			<type id="29010504" name="Противотанковое орудие" abbr="ПТ орудие" src="artillery_at.xml"/>
+			<type id="29010701" name="Батарея бронированная" abbr="Батарея бр." src="sau_batar.xml"/>
+			<type id="29010702" name="Взвод бронированный" abbr="Взвод бр." src="sau_vzvod.xml"/>
+			<type id="29010703" name="Взвод минометный бронированный" abbr="Взвод мин. бр." src="mortar_vzvod.xml"/>
+			<type id="29010801" name="Батарея самоходная" abbr="Батарея сам-х." src="sau_batar.xml"/>
+			<type id="29010802" name="Взвод самоходный" abbr="Взвод сам-х." src="mortar_vzvod.xml"/>
+			<type id="29010906" name="Пусковая установка" src="unit_g.xml"/>
+			<type id="29010907" name="Батарея реактивная" abbr="Батарея реакт." src="bmrszo_batar.xml"/>
+			<type id="29010908" name="Взвод реактивный" abbr="Взвод реакт." src="bmrszo_vzvod.xml"/>
+			<type id="29011001" name="Пехота" src="group_i.xml"/>
+			<type id="29011101" name="Установка ПТРК бронированная" abbr="Уст. ПТРК бр." src="ptrk_m.xml"/>
+			<type id="29011102" name="Танк" src="tank.xml"/>
+		</group>
+<!--		<group name="Пункты управления">-->
+<!--			<type id="10001000" name="ПУ Вооруженных Сил" abbr="ПУ ВС" src="pu_vs.xml" labels="ВС\nКП" keywords="Пункт управления \nВооруженных Сил\nМинистерства обороны\nГенерального штаба"/>-->
+<!--			<type id="10002000" name="ПУ ОК рег. гр. войск" abbr="ПУ ОК РГВ" src="pu_ok_reg.xml" labels="ОК РГВ\nКП" keywords="Пункт управления (штаб)\nОбъединенного командования региональной группировки войск"/>-->
+<!--			<type id="10003000" name="ПУ силовых структур" abbr="ПУ сил. стр." src="pu_mvd.xml" labels="\nКП" keywords="Пункт управления силовых структур, министерств и ведомств "/>-->
+<!--			<type id="10003001" name="ПУ МВД" src="pu_mvd.xml" labels="МВД\nКП" keywords="Пункт управления\nМинистерства внутренних дел"/>-->
+<!--			<type id="10004000" name="ПУ вида ВС" src="pu_vida_vs.xml" labels="\nКП" keywords="Пункт управления (штаб)\nвида Вооруженных Сил, фронта, флота, военного округа"/>-->
+<!--			<type id="10004001" name="ПУ сил спец. операций" abbr="ПУ ССО" src="pu_sso.xml" labels="ССО\nКП" keywords="Пункта управления\nсил специальных операций "/>-->
+<!--			<type id="10004002" name="ПУ ВВС и ПВО" src="pu_vida_vs.xml" labels="ВВС и ПВО\nКП" keywords="Пункта управления\nВоенно-воздушных сил и\nПротивовоздушной обороны"/>-->
+<!--			<type id="10005000" name="ПУ Оперативного Командования" abbr="ПУ ОК" src="kp_ok.xml" labels="ОК\nКП" keywords="Пункт управления (штаб)\nоперативного командования, армии, флотилии"/>-->
+<!--			<type id="10008000" name="ПУ бригады" src="kp_brig.xml" labels="\nКП" keywords="Пункт управления (штаб)\nбригады, укреплённого района"/>-->
+<!--			<type id="10009000" name="ПУ штаба зоны терр. обороны" abbr="ПУ ЗТерО" src="kp_ztero.xml" labels="ЗТерО\nКП" keywords="Пункт управления\nштаба зоны территориальной обороны"/>-->
+<!--			<type id="10010000" name="ПУ штаба района терр. обороны" abbr="ПУ РТерО" src="kp_rtero.xml" labels="РТерО\nКП" keywords="Пункт управления\nштаба района территориальной обороны"/>-->
+<!--			<type id="10011000" name="Пункт управления" abbr="ПУ" src="kp_brig_2.xml" keywords="Пункт управления авиационной, зенитно-технической ракетной базы, подвижного танкоремонтного завода,тыловой (госпитальной) базы, передового эшелона тыла центра, передового эшелона тыла фронта, армии, ракетно-технической и других баз, центра подготовки и применения беспилотных авиационных комплексов"/>-->
+<!--			<type id="10012000" name="ПУ полка" src="kp_polk.xml" labels="\nКП" keywords="Пункт управления (штаб)\nполка, группы артиллерии (артиллерийской группы), отряда, комендатуры, центра"/>-->
+<!--			<type id="10012001" name="ПУ полка РЭБ" src="kp_polk_reb.xml" labels="\nКП" keywords="Пункт управления (штаб)\nполка радиоэлектронной борьбы"/>-->
+<!--			<type id="10015000" name="КНП батальона" abbr="КНП бат." src="kp_bat.xml" keywords="Командно-наблюдательный пункт (штаб) батальона\nпункт управления огнем артиллерийского дивизиона, отряда, отдельной эскадрильи,\nвоенный комиссариат района\nпункт управления авиационной комендатуры, комендатуры ВОСО\n"/>-->
+<!--			<type id="10015001" name="КНП батальона РЭБ" abbr="КНП бат. РЭБ" src="kp_bat_reb.xml" keywords="Командно-наблюдательный пункт (штаб)\nбатальона радиоэлектронной борьбы"/>-->
+<!--			<type id="10016000" name="КНП арт. дивизиона" abbr="КНП дивизиона" src="kp_art_div.xml" keywords="Командно-наблюдательный пункт\nартиллерийского дивизиона"/>-->
+<!--			<type id="10017000" name="КНП роты" src="knpr.xml" keywords="Командно-наблюдательный пункт\nроты (батареи)"/>-->
+<!--			<type id="10017001" name="КНП роты РЭБ" src="knpr_reb.xml" keywords="Командно-наблюдательный пункт\nроты радиоэлектронной борьбы"/>-->
+<!--			<type id="10018000" name="Наблюдательный пост" abbr="НП" src="np.xml"/>-->
+<!--			<type id="10018001" name="КНП взвода" src="knpv.xml" keywords="Командно-наблюдательный пункт\nвзвода"/>-->
+<!--			<type id="10019000" name="Радионавигационный пункт (д.)" abbr="Радионав. пункт (д.)" src="rnp_d.xml" keywords="Радионавигационный пункт, станция\nдальнего действия"/>-->
+<!--			<type id="10019001" name="Радионавигационный пункт (б.)" abbr="Радионав. пункт (б.)" src="rnp_b.xml" keywords="Радионавигационный пункт, станция\nближнего действия"/>-->
+<!--			<type id="10020000" name="Пункт наведения авиации" src="pna.xml"/>-->
+<!--			<type id="10020001" name="Пункт наведения авиации (в.)" src="pna_v.xml" keywords="выносной пункт наведения авиации"/>-->
+<!--			<type id="10021000" name="Группа оперативного взаимодействия и управления" abbr="ГОВУ" src="govu.xml" keywords="Группа планирования применения авиации\n(группа оперативного взаимодействия и управления)"/>-->
+<!--			<type id="10022000" name="Группа тактического взаимодействия и управления" abbr="ГТВУ" src="gtvu.xml" keywords="Группа тактического взаимодействия и управления"/>-->
+<!--			<type id="10023000" name="Передовой авианаводчик" abbr="ПАН" src="pan.xml" keywords="Передовой авиационный наводчик"/>-->
+<!--			<type id="10024000" name="Центр боевого управления авиацией" abbr="ЦБУ авиацией" src="cbu_a.xml" keywords="Центр боевого управления авиацией"/>-->
+<!--			<type id="10025000" name="Стартовый командный пункт" abbr="СКП" src="skp.xml" labels="СКП"/>-->
+<!--			<type id="10025001" name="Командно-диспетчерский пункт" abbr="КДП" src="skp.xml" labels="КДП"/>-->
+<!--			<type id="10026000" name="ПУ смешанной ЗРГ" abbr="ПУ ЗРГ" src="pu_z.xml" labels="\nПУ см. зргр" keywords="Пункт управления смешанной зенитной ракетной группы"/>-->
+<!--			<type id="10026001" name="ПУ ЗРАГ" src="pu_z.xml" labels="\nПУ см. зра" keywords="Пункт управления смешанной зенитной ракетно-артиллерийской группы"/>-->
+<!--			<type id="10028000" name="Военный комиссариат" src="rvk.xml" keywords="Военный комиссариат"/>-->
+<!--			<type id="10028001" name="Военный комиссариат района" abbr="РВК" src="rvk.xml" labels="РВК" keywords="Военный комиссариат"/>-->
+<!--		</group>-->
+
+			<group name="Техника">
+				<type id="204" points="1" name="Автомобиль" abbr="Автомобиль" src="automobile.xml"/>
+				<type id="240" points="1" name="Автомобиль грузовой" src="automobile_gruz.xml"/>
+				<type id="241" points="1" name="Автомобиль медицинский" src="automobile_med.xml"/>
+				<type id="201" points="1" name="Боевая машина пехоты" abbr="БМП" src="bmp.xml"/>
+				<type id="202" points="1" name="Бронетранспортёр" abbr="БТР" src="btr.xml"/>
+				<type id="203" points="1" name="Танк" abbr="Танк" src="tank.xml"/>
+				<type id="205" points="1" name="Боевая разведывательная машина" abbr="БРМ" src="brm.xml"/>
+				<type id="206" points="1" name="Бронированная разведывательно-дозорная машина" abbr="БРДМ" src="brdm.xml"/>
+				<type id="207" points="1" name="Боевая машина десанта" abbr="БМД" src="bmd.xml"/>
+				<type id="208" points="1" name="Боевая машина реактивной системы залпового огня" abbr="БМ РСЗО" src="bmrszo.xml"/>
+				<type id="209" points="1" name="Безоткатное орудие (мобильное)" abbr="БЗО (м)" src="bzo_m.xml"/>
+				<type id="210" points="1" name="Самоходная артиллерийская установка" abbr="САУ" src="sau.xml"/>
+				<type id="211" points="1" name="Миномёт (самоходный)" abbr="Миномёт (м)" src="minomet_m.xml"/>
+				<type id="212" points="1" name="Противотанковый ракетный комплекс (мобильный)" abbr="ПТРК (м)" src="ptrk_m.xml"/>
+				<type id="213" points="1" name="Зенитная самоходная установка" abbr="ЗСУ" src="zsu.xml"/>
+				<type id="401" points="1" name="Самолёт" abbr="Самолёт" src="plane.xml"/>
+				<type id="402" points="1" name="Вертолёт" abbr="Вертолёт" src="helicopter.xml"/>
+				<type id="403" points="1" name="БЛА (самолёт)" src="uav.xml"/>
+				<type id="404" points="1" name="БЛА (вертолёт)" src="uav_helicopter.xml"/>
+			</group>
+			<group name="Средства связи">
+				<type id="601" points="0" name="Радиостанция подвижная" src="radio_st_mobile.xml"/>
+				<type id="602" points="0" name="Радиостанция переносная" src="radio_st_perenos.xml"/>
+				<type id="603" points="0" name="Радиостанция танковая" src="radio_st_tank.xml"/>
+				<type id="606" points="0" name="Радиорелейная станция" src="radio_rrs.xml"/>
+				<type id="607" points="0" name="Тропосферная станция" src="radio_trop.xml"/>
+				<type id="608" points="0" name="Спутниковая станция" src="radio_sat.xml"/>
+				<type id="609" points="0" name="РРС цифровая" src="radio_rrs_dig.xml"/>
+				<type id="610" points="0" name="РРС цифровая подвижная" src="radio_rrs_dig_mobile.xml"/>
+			</group>
+<!--			<group name="Действия и задачи">-->
+<!--				<type id="3001" points="4" name="Район" src="tempdislocation.xml"/>-->
+<!--				<type id="3002" points="4" name="Район выполнения задачи" src="taskarea.xml"/>-->
+<!--				<type id="3003" points="4" name="Район оцепления" src="cordon.xml"/>-->
+<!--				<type id="3032" points="4" name="Район сосредоточения" src="taskarea.xml"/>-->
+<!--				<type id="3015" points="1" name="Диверсионно-разведывательная группа" abbr="ДРГ" src="group_i.xml"/>-->
+<!--				<type id="3016" points="1" name="Группа (транспорт)" src="group_v.xml"/>-->
+<!--				<type id="3115" points="4" name="Диверсионно-разведывательная группа (район)" abbr="ДРГ (район)" src="tempdislocation.xml"/>-->
+<!--				<type id="3004" points="3" name="Направление выдвижения" src="movedirection.xml"/>-->
+<!--				<type id="3006" points="3" name="Исходный рубеж" src="frontier.xml"/>-->
+<!--				<type id="3027" points="3" name="Рубеж развёрт. в колонны" src="columnfrontier.xml"/>-->
+<!--				<type id="3007" points="3" name="Рубеж перехода в атаку" src="assaultfrontier.xml"/>-->
+<!--				<type id="3008" points="3" name="Положение подразделения (1)" src="timefrontier1.xml"/>-->
+<!--				<type id="3009" points="3" name="Положение подразделения (2)" src="timefrontier2.xml"/>-->
+<!--				<type id="3010" points="3" name="Положение подразделения (3)" src="timefrontier3.xml"/>-->
+<!--				<type id="3011" points="3" name="Ближайшая задача подразделения" src="currenttaskfrontier.xml"/>-->
+<!--				<type id="3012" points="3" name="Дальнейшая задача подразделения" src="nexttaskfrontier.xml"/>-->
+<!--				<type id="3030" points="3" name="Рубеж обороны" src="defencefrontier.xml"/>-->
+<!--				<type id="3031" points="4" name="Укреплённый район" src="defencearea.xml"/>-->
+<!--				<type id="3401" points="2" name="Граница сектора" src="sectorborder.xml"/>-->
+<!--				<type id="3005" points="3" name="Граница между подразделениями" src="groupsborder.xml"/>-->
+<!--				<type id="3028" points="3" name="Граница между полками" src="polkborder.xml"/>-->
+<!--				<type id="3029" points="3" name="Граница между зонами" src="zoneborder.xml"/>-->
+<!--				<type id="3207" points="0" name="Аэродром" src="airfield.xml"/>-->
+<!--				<type id="3208" points="0" name="Гидроаэродром" src="airfield_water.xml"/>-->
+<!--				<type id="3209" points="0" name="Грунтовой аэродром" src="airfield_ground.xml"/>-->
+<!--				<type id="3215" points="3" name="Аэродромный участок дороги" abbr="АУД" src="airfieldroad.xml"/>-->
+<!--				<type id="3216" points="0" name="База армейской авиации" src="army_airbase.xml"/>-->
+<!--				<type id="3217" points="0" name="Площадка засады" src="ambush_site.xml"/>-->
+<!--				<type id="3218" points="0" name="Площадка подскока" src="jump_site.xml"/>-->
+<!--				<type id="3212" points="0" name="Посадочная площадка" src="landing_site.xml"/>-->
+<!--				<type id="3213" points="1" name="Снайперская позиция" src="sniper_pos.xml"/>-->
+<!--				<type id="3214" points="0" name="Секрет" src="secret.xml"/>-->
+<!--				<type id="3219" points="1" name="Засада" src="ambush_pos.xml"/>-->
+<!--				<type id="3114" points="1" name="Дозор" src="dozor.xml"/>-->
+<!--				<type id="3014" points="3" name="Пеший патруль" src="patrol.xml"/>-->
+<!--				<type id="3033" points="3" name="Патруль (танк)" src="patrol_tank.xml"/>-->
+<!--				<type id="3034" points="3" name="Патруль" src="patrol_any.xml"/>-->
+<!--				<type id="3037" points="4" name="Зона дежурства (2)" src="dutyzonedash.xml"/>-->
+<!--				<type id="3038" points="4" name="Зона" src="zone.xml"/>-->
+<!--				<type id="3301" points="0" name="Авиаудар" src="airstrike.xml"/>-->
+<!--				<type id="3302" points="0" name="Авиаудар групповой" src="airstrike_group.xml"/>-->
+<!--			</group>-->
+			<group name="Пункты управления">
+				<type id="101" points="0" name="Наблюдательный пункт" abbr="НП" src="np.xml"/>
+				<type id="102" points="0" name="КНП взвода" src="knpv.xml"/>
+				<type id="103" points="0" name="КНП роты" src="knpr.xml"/>
+				<type id="110" points="1" name="КП (батальон)" src="kp_bat.xml"/>
+				<type id="104" points="1" name="КП (полк)" src="kp_polk.xml"/>
+				<type id="109" points="1" name="КП (бригада)" src="kp_brig.xml"/>
+				<type id="105" points="1" name="ПУ" src="kp_brig_2.xml"/>
+				<type id="106" points="1" name="ПУ зенитной группой" abbr="ПУ ЗГ" src="pu_z.xml"/>
+				<type id="107" points="1" name="ПУ оперативного командования" abbr="ПУ ОК" src="kp_ok.xml" labels="ОК"/>
+				<type id="108" points="1" name="ПУ вида ВС" src="pu_vida_vs.xml"/>
+				<type id="115" points="1" name="ПУ ССО" src="pu_sso.xml" labels="ССО"/>
+				<type id="116" points="1" name="ПУ ВС" src="pu_vs.xml" labels="ВС"/>
+				<type id="117" points="1" name="ПУ ОК рег. гр. войск" abbr="ПУ ОК РГВ" src="pu_ok_reg.xml" labels="ОК РГВ"/>
+				<type id="118" points="1" name="ПУ стр. и ведомств" src="pu_mvd.xml"/>
+				<type id="119" points="1" name="Военкомат" src="rvk.xml" labels="РВК"/>
+				<type id="120" points="0" name="Группа оперативного взаимодействия и управления" abbr="ГОВУ" src="govu.xml"/>
+				<type id="121" points="0" name="Группа тактического взаимодействия и управления" abbr="ГТВУ" src="gtvu.xml"/>
+				<type id="122" points="0" name="Передовой авианаводчик" src="pan.xml"/>
+				<type id="123" points="0" name="Пункт наведения авиации" src="pna.xml"/>
+				<type id="124" points="0" name="Пункт наведения авиации (в.)" src="pna_v.xml"/>
+				<type id="125" points="0" name="Стартово-командный пункт" abbr="СКП" src="skp.xml" labels="СКП"/>
+				<type id="126" points="0" name="Центр боевого управления авиацией" abbr="ЦБУ авиацией" src="cbu_a.xml"/>
+				<type id="127" points="0" name="Радионавигационный пункт (д)" src="rnp_d.xml"/>
+				<type id="128" points="0" name="Радионавигационный пункт (б)" src="rnp_b.xml"/>
+				<type id="112" points="0" name="Контрольно-пропускной пункт" abbr="КПП" src="kpp.xml"/>
+				<type id="114" points="0" name="Медидицинский пункт" src="med_punkt.xml"/>
+				<type id="134" points="0" name="Больница" src="hospital.xml"/>
+			</group>
+<!--			<group name="Живая сила">-->
+<!--				<type id="1" points="1" name="Стрелок" src="man.xml"/>-->
+<!--				<type id="2" points="1" name="Снайпер" src="man_sniper.xml"/>-->
+<!--				<type id="3" points="1" name="Взрывотехник" src="man_dm.xml"/>-->
+<!--				<type id="4" points="1" name="Диверсионно-разведывательная группа" abbr="ДРГ" src="man_leader.xml"/>-->
+<!--				<type id="5" points="1" name="Санитар" src="man_medic.xml"/>-->
+<!--			</group>-->
+<!--			<group name="Обеспечение операций">-->
+<!--				<type id="3021" points="3" name="Проволока" src="wirefence.xml"/>-->
+<!--				<type id="3022" points="3" name="Проволока (МЗП)" src="wirefence_hidden.xml"/>-->
+<!--				<type id="3017" points="0" name="Фугас (неуправляемый)" src="fugas.xml"/>-->
+<!--				<type id="3018" points="0" name="Фугас (радио)" src="fugas_radio.xml"/>-->
+<!--				<type id="3019" points="0" name="Фугас (проводной)" src="fugas_wired.xml"/>-->
+<!--				<type id="3020" points="0" name="Фугас (имитационный)" src="fugas_fake.xml"/>-->
+<!--				<type id="3025" points="4" name="Минное поле (ПТ)" src="minefield_at.xml"/>-->
+<!--				<type id="3026" points="4" name="Минное поле (ПП)" src="minefield_ap.xml"/>-->
+<!--				<type id="3024" points="3" name="Проход" src="pass.xml"/>-->
+<!--				<type id="3023" points="3" name="Забор" src="fence.xml"/>-->
+<!--			</group>-->
+<!--			<group name="Местные предметы">-->
+<!--				<type id="5035" points="4" name="Здание" src="building.xml"/>-->
+<!--				<type id="5031" points="3" name="Дорога" src="road.xml"/>-->
+<!--				<type id="5032" points="3" name="Пешеходная дорожка" src="footpath.xml"/>-->
+<!--				<type id="5033" points="3" name="Железная дорога" src="railway.xml"/>-->
+<!--				<type id="5034" points="2" name="Мост" src="bridge.xml"/>-->
+<!--				<type id="5025" points="0" name="Дерево (хвоя)" src="tree_1.xml"/>-->
+<!--				<type id="5026" points="0" name="Дерево (лист)" src="tree_2.xml"/>-->
+<!--				<type id="5027" points="0" name="Куст" src="bush.xml"/>-->
+<!--				<type id="5028" points="4" name="Лес" src="forest.xml"/>-->
+<!--				<type id="5029" points="4" name="Озеро" src="lake.xml"/>-->
+<!--				<type id="5030" points="3" name="Река" src="river.xml"/>-->
+<!--			</group>-->
+
+<!--		<group name="Разное">-->
+<!--			<group name="Разное">-->
+<!--				<type id="3210" points="0" name="Место базирования" src="base.xml"/>-->
+<!--				<type id="3211" points="0" name="Место проникновения" src="penetration.xml"/>-->
+<!--				<type id="3201" points="1" name="Эвокуация (автомобиль)" src="evac_automobile.xml"/>-->
+<!--				<type id="3202" points="1" name="Эвокуация (БТР)" src="evac_btr.xml"/>-->
+<!--				<type id="3203" points="1" name="Эвокуация (вертолёт)" src="evac_helicopter.xml"/>-->
+<!--				<type id="3204" points="1" name="Высадка (автомобиль)" src="disembark_automobile.xml"/>-->
+<!--				<type id="3205" points="1" name="Высадка (БТР)" src="disembark_btr.xml"/>-->
+<!--				<type id="3206" points="1" name="Высадка (вертолёт)" src="disembark_helicopter.xml"/>-->
+<!--				<type id="3013" name="Рубеж блокирования" src="ambushfrontier.xml"/>-->
+<!--				<type id="111" points="0" name="Фильтрационный пункт" src="filtr_punkt.xml"/>-->
+<!--				<type id="113" points="0" name="Комендантский пункт" src="komend_punkt.xml"/>-->
+<!--				<type id="604" points="0" name="Радиоретранслятор" src="radio_retr.xml"/>-->
+<!--				<type id="605" points="0" name="Радиосеть" src="radio_net.xml"/>-->
+<!--				<type id="9001" points="0" name="Склад АСП" src="storage_asp.xml"/>-->
+<!--				<type id="9002" points="0" name="Склад горючего" src="storage_fuel.xml"/>-->
+<!--				<type id="9003" points="0" name="Стартово-командный пункт ()" abbr="СКП ()" src="p_u_n.xml"/>-->
+<!--				<type id="9004" points="0" name="Пункт управления и наведения" abbr="ПУиН" src="p_u_n.xml"/>-->
+<!--				<type id="9005" points="0" name="Склад" src="storage.xml"/>-->
+<!--				<type id="9006" points="0" name="Склады" src="storages.xml"/>-->
+<!--				<type id="701" points="1" name="Вагон ж/д" src="vagon.xml"/>-->
+<!--				<type id="702" points="1" name="Вагон пассажирский" src="vagon_p.xml"/>-->
+<!--				<type id="703" points="1" name="Вагон товарный" src="vagon_g.xml"/>-->
+<!--				<type id="704" points="1" name="Тепловоз" src="teplovoz.xml"/>-->
+<!--				<type id="242" points="1" name="Автобус" src="bus.xml"/>-->
+<!--				<type id="243" points="1" name="Троллейбус" src="troll.xml"/>-->
+<!--				<type id="244" points="1" name="Трамвай" src="tram.xml"/>-->
+<!--				<type id="245" points="1" name="Мотоцикл" src="bike.xml"/>-->
+<!--				<type id="4021" points="0" name="Камера наблюдения" src="camera.xml"/>-->
+<!--				<type id="4022" points="1" name="Дверь (а)" src="door_1.xml"/>-->
+<!--				<type id="4023" points="1" name="Дверь (б)" src="door_2.xml"/>-->
+<!--				<type id="3220" points="0" name="Заложник" src="hostage.xml"/>-->
+<!--				<type id="3221" points="0" name="Преступник" src="criminal.xml"/>-->
+<!--				<type id="3222" points="0" name="Место задержания преступника" src="criminal_capture.xml"/>-->
+<!--				<type id="3223" points="0" name="Место уничтожения преступника" src="criminal_destroy.xml"/>-->
+<!--				<type id="3224" points="0" name="Собака" src="dog.xml"/>-->
+<!--			</group>-->
+<!--		</group>-->
+<!--		<group name="1">-->
+<!--			<type id="102502011" name="Маршрут полёта (планируемый)" abbr="Маршрут полёта (план.)" src="movedirection.xml" keywords="09 to 11, removed leading 1"/>-->
+<!--			<type id="102103003" name="Зона дежурства в воздухе" abbr="Зона дежурства" src="dutyzone.xml"/>-->
+<!--		</group>-->
+<!--		<group name="Пустельга">-->
+<!--			<group name="ВООРУЖЕНИЕ И ВОЕННАЯ ТЕХНИКА">-->
+<!--				<group name="Боевая техника и вооружение">-->
+<!--					<type id="502004003" name="Пусковая установка тактических ракет" abbr="Пуск. уст-ка ТР" src="missile_launcher_tactical.xml"/>-->
+<!--					<type id="501604002" name="Пусковая установка оперативно-тактических ракет" abbr="Пуск. уст-ка ОТР" src="missile_launcher_oper_tactical.xml"/>-->
+<!--					<type id="502505018" name="Самоходное артиллерийское орудие" abbr="САО" src="sau.xml"/>-->
+<!--					<type id="502605000" name="(Буксируемые гаубицы и пушки)" abbr="(Букс. Г и П)" src="artillery.xml"/>-->
+<!--					<type id="502605014" name="Артиллерийское орудие" abbr="Арт. орудие" src="artillery.xml"/>-->
+<!--					<type id="502705022" name="Миномёт" src="mortar.xml"/>-->
+<!--					<type id="504405012" name="Противотанковый ракетный комплекс" abbr="ПТРК" src="ptrk_m.xml"/>-->
+<!--					<type id="504505011" name="Переносная ПТУР" abbr="П. ПТУР" src="unit_g.xml"/>-->
+<!--					<type id="504604009" name="Реактивная система залпового огня колёсная" abbr="РСЗО (к)" src="bmrszo.xml"/>-->
+<!--					<type id="513002000" name="(Танки)" src="tank.xml"/>-->
+<!--					<type id="513002020" name="Танк" src="tank.xml"/>-->
+<!--					<type id="513203000" name="(Боевые машина пехоты)" abbr="(БМП)" src="bmp.xml"/>-->
+<!--					<type id="513203017" name="Боевая машина пехоты" abbr="БМП" src="bmp.xml"/>-->
+<!--					<type id="513602000" name="(Бронетранспортеры)" abbr="(БТРы)" src="btr.xml"/>-->
+<!--					<type id="513602020" name="Бронетранспортер" abbr="БТР" src="btr.xml"/>-->
+<!--					<type id="514202000" name="(Автомобили)" src="automobile.xml"/>-->
+<!--					<type id="514403073" name="Автомобиль" src="automobile.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитно-ракетный комплекс ближнего действия">-->
+<!--					<type id="508904000" name="ЗРК ближнего действия" src="anti_air_close_range.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитно-ракетный комплекс малой дальности">-->
+<!--					<type id="508804000" name="ЗРК малой дальности" src="anti_air_close_range_2.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитно-ракетный комплекс средней дальности">-->
+<!--					<type id="508704000" name="ЗРК средней дальности" src="anti_air_mid_range.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитно-ракетный комплекс дальнего действия">-->
+<!--					<type id="508604000" name="ЗРК дальнего действия" src="anti_air_long_range.xml"/>-->
+<!--				</group>-->
+<!--				<group name="ЗСУ и ЗУ">-->
+<!--					<type id="510003000" name="Зенитная самоходная установка" abbr="ЗСУ" src="zsu_circle.xml"/>-->
+<!--					<type id="510103000" name="Зенитная установка" abbr="ЗУ" src="zsu_circle.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитные пушки">-->
+<!--					<type id="510203000" name="Зенитная пушка" abbr="ЗП" src="aa_cannon.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Разведывательная техника">-->
+<!--					<type id="510801000" name="Радиолокационная станция" abbr="РЛС" src="rls.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Воздушная техника">-->
+<!--					<type id="505103000" name="Самолёт" src="plane.xml"/>-->
+<!--					<type id="506303000" name="Вертолёт" src="helicopter.xml"/>-->
+<!--					<type id="505101000" name="Беспилотный летательный аппарат" abbr="БПЛА" src="uav.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Радиостанции">-->
+<!--				</group>-->
+<!--			</group>-->
+<!--			<group name="ОБЪЕКТЫ ИНФРАСТРУКТУРЫ И ИНЖЕНЕРНЫЕ ОБЪЕКТЫ">-->
+<!--				<type id="700503001" name="Аэродром" src="airfield.xml"/>-->
+<!--				<type id="700903007" name="Постоянная взлетно-посадочная площадка" abbr="Пост. ВП площадка" src="landing_site.xml"/>-->
+<!--				<type id="700903001" name="Вертолётная площадка" abbr="Верт. площадка" src="landing_site.xml"/>-->
+<!--				<type id="700503003" name="Аэродромный участок дороги" abbr="АУД" src="airfieldroad.xml"/>-->
+<!--				<type id="106004001" name="Огневые сооружения для орудия" abbr="Соор. для орудия" src="artillery_building.xml"/>-->
+<!--				<type id="106004002" name="Окопы" src="defencefrontier.xml"/>-->
+<!--				<type id="106004004" name="Сооружения для наблюдения" abbr="Соор. для набл." src="observ_building.xml"/>-->
+<!--				<type id="106004006" name="Траншеи" src="defencefrontier.xml"/>-->
+<!--				<type id="1601000" name="Мосты" src="bridge.xml"/>-->
+<!--				<group name="мосты">-->
+<!--					<type id="1702001" name="Мост" src="bridge.xml"/>-->
+<!--					<type id="1802000" name="Мост военный" src="bridge.xml"/>-->
+<!--					<type id="1802002" name="Мост комбинированный" abbr="Мост комб." src="bridge_comb.xml"/>-->
+<!--					<type id="1802007" name="Низководный деревянный мост" abbr="Низковод. дерев. мост" src="bridge.xml"/>-->
+<!--					<type id="1802008" name="Понтонно-мостовая переправа" abbr="Понтон.-мост. переправа" src="bridge.xml"/>-->
+<!--				</group>-->
+<!--				<type id="2601001" name="Насосная станция (нефть)" abbr="Насос. ст. (нефть)" src="nasos_neft.xml" keywords="Насосная станция на нефтепроводе с государственным резервом нефти"/>-->
+<!--				<type id="2601002" name="Компрессорная станция (газ)" abbr="Комп. ст. (газ)" src="compressor_gaz.xml" keywords="Компрессорная станция на газопроводе с государственным резервом газа"/>-->
+<!--				<group name="склады">-->
+<!--					<type id="402102000" name="Склад" src="storage_1.xml"/>-->
+<!--					<type id="402102001" name="Склад ГСМ (армейский полевой)" abbr="Склад ГСМ (арм. п.)" src="storage_1.xml"/>-->
+<!--					<type id="402102004" name="Склад ГСМ" src="storage_1.xml"/>-->
+<!--					<type id="402102006" name="Склад ГСМ полевой (армейский)" abbr="Склад ГСМ п. (арм.)" src="storage_1.xml"/>-->
+<!--					<type id="402102002" name="Склад обычных средств поражения" abbr="Склад об. СП" src="storage_2.xml"/>-->
+<!--					<type id="402102003" name="Склад ядерных боеприпасов" abbr="Склад ЯБП" src="storage_2.xml"/>-->
+<!--					<type id="402102005" name="Склад обычных боеприпасов полевой (армейский)" abbr="Склад об. БП п. (арм.)" src="storage_2.xml"/>-->
+<!--					<type id="402102007" name="Склад продовольствия, вещевого и технического имущества" abbr="Склад прод. вещ. тех." src="storage_2.xml"/>-->
+<!--				</group>-->
+<!--			</group>-->
+<!--			<group name="ВОЙСКОВЫЕ ФОРМИРОВАНИЯ">-->
+<!--				<group name="Сухопутные войска">-->
+<!--					<group name="Ракетные войска">-->
+<!--						<type id="307406000" name="Дивизион РВ" src="missile_launcher_tactical.xml"/>-->
+<!--						<type id="307507000" name="Батарея РВ" src="missile_launcher_tactical.xml"/>-->
+<!--						<type id="307507001" name="Батарея оперативно-тактических ракет" abbr="Батарея ОТР" src="missile_launcher_oper_tactical.xml"/>-->
+<!--						<type id="307507002" name="Батарея тактических ракет" src="missile_launcher_tactical.xml"/>-->
+<!--						<type id="307608000" name="Взвод РВ" src="missile_launcher_tactical.xml"/>-->
+<!--						<type id="307608002" name="Огневой взвод оперативно-тактических ракет" abbr="Огневой взвод ОТР" src="missile_launcher_oper_tactical.xml"/>-->
+<!--						<type id="307608003" name="Огневой взвод тактических ракет" src="missile_launcher_tactical.xml"/>-->
+<!--						<type id="301905000" name="Бригада РВ" src="missile_launcher_tactical.xml"/>-->
+<!--						<type id="307305000" name="Полк РВ" src="missile_launcher_tactical.xml"/>-->
+<!--					</group>-->
+<!--					<group name="Артиллерия">-->
+<!--						<type id="308006000" name="Дивизион артиллерии" src="artillery.xml"/>-->
+<!--						<type id="308107000" name="Батарея артиллерии" src="artillery.xml"/>-->
+<!--						<type id="308107001" name="Артиллерийская батарея" src="artillery.xml"/>-->
+<!--						<type id="308107006" name="Минометная батарея" src="mortar.xml"/>-->
+<!--						<type id="308107010" name="Реактивная артиллерийская батарея" src="bmrszo.xml"/>-->
+<!--						<type id="308207000" name="Рота артиллерии" src="artillery.xml"/>-->
+<!--						<type id="308207003" name="Противотанковая рота" src="artillery.xml"/>-->
+<!--						<type id="308408000" name="Ввзвод артиллерии" src="artillery.xml"/>-->
+<!--						<type id="308408002" name="Минометный взвод" src="mortar.xml"/>-->
+<!--						<type id="308408003" name="Огневой взвод" src="artillery.xml"/>-->
+<!--						<type id="308408004" name="Противотанковый взвод" src="artillery.xml"/>-->
+<!--						<type id="302105000" name="Дивизия артиллерии" src="artillery.xml"/>-->
+<!--						<type id="302205000" name="Бригада артиллерии" src="artillery.xml"/>-->
+<!--					</group>-->
+<!--					<group name="Зенитные войска">-->
+<!--						<type id="310404000" name="Полки ПВО" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310404001" name="Зенитный артиллерийский полк" abbr="ЗАрт полк" src="aa_cannon.xml"/>-->
+<!--						<type id="310404002" name="Зенитный ракетный полк" abbr="ЗРП" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310404006" name="Полк ПВО" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310505000" name="Дивизионы ЗРВ" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310505001" name="Зенитный артиллерийский дивизион" abbr="ЗАрт дивизион" src="aa_cannon.xml"/>-->
+<!--						<type id="310505002" name="Зенитный дивизион" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310505003" name="Зенитный ракетно-артиллерийский дивизион" abbr="ЗРА дивизион" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310505004" name="Зенитный ракетный дивизион" abbr="ЗР дивизион" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310505005" name="Отдельный зенитный ракетно-артиллерийский дивизион" abbr="Отд. ЗРА дивизион" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310505006" name="Отдельный зенитный ракетный дивизион" abbr="Отд. ЗР дивизион" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310505007" name="Зенитный дивизион &quot;Ч-В&quot;" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806000" name="Батареи ПВО" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806001" name="Зенитная артиллерийская батарея" abbr="ЗАрт батарея" src="aa_cannon.xml"/>-->
+<!--						<type id="310806002" name="Зенитная батарея" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806003" name="Зенитная ракетная батарея" abbr="ЗР батарея" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806004" name="Зенитная ракетно-артиллерийская батарея" abbr="ЗРА батарея" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806005" name="Стартовая батарея" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806008" name="Батарея ЗУР" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806009" name="Батарея ПЗРК" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="310806010" name="Отдельная батарея ПЗРК" abbr="Отд. батарея ПЗРК" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="311107000" name="Взводы ПВО" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="311107001" name="Зенитный артиллерийский взвод" abbr="ЗАрт взвод" src="aa_cannon.xml"/>-->
+<!--						<type id="311107002" name="Зенитный взвод" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="311107003" name="Зенитный ракетный взвод" abbr="ЗР взвод" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="311107021" name="Стартовый взвод" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="302604000" name="Дивизия ЗРВ" src="missile_launcher_anti_air.xml"/>-->
+<!--						<type id="302704000" name="Бригада ЗРВ" src="missile_launcher_anti_air.xml"/>-->
+<!--					</group>-->
+<!--				</group>-->
+<!--				<group name="Военно-воздушные силы">-->
+<!--					<type id="310206000" name="Звено (отряд)" src="plane.xml"/>-->
+<!--					<type id="309605000" name="Эскадрилья" src="plane.xml"/>-->
+<!--					<type id="309404000" name="Полк (авиа)" src="plane.xml"/>-->
+<!--					<type id="310005000" name="Батальон (авиа)" src="plane.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Механизированные части и подразделения">-->
+<!--					<type id="306205005" name="Танковый батальон" abbr="Танк. бат." src="tank.xml"/>-->
+<!--					<type id="306205008" name="Механизированный батальон" abbr="Мех. бат." src="bmp.xml"/>-->
+<!--					<type id="306205009" name="Мотопехотный батальон" abbr="Мото-пех. бат." src="bmp.xml"/>-->
+<!--					<type id="306205011" name="Пехотный батальон" abbr="Пех. бат." src="group_i.xml"/>-->
+<!--					<type id="306306005" name="Танковая рота" abbr="Танк. рота" src="tank.xml"/>-->
+<!--					<type id="306306008" name="Механизированная рота" abbr="Мех. рота" src="bmp.xml"/>-->
+<!--					<type id="306306009" name="Мотопехотная рота" abbr="Мото-пех. рота" src="bmp_rota.xml"/>-->
+<!--					<type id="306306012" name="Пехотная рота" abbr="Пех. рота" src="group_i.xml"/>-->
+<!--					<type id="306407005" name="Танковый взвод" abbr="Танк. взвод" src="tank.xml"/>-->
+<!--					<type id="306407008" name="Механизированный взвод" abbr="Мех. взвод" src="bmp.xml"/>-->
+<!--					<type id="306407009" name="Мотопехотный взвод" abbr="Мото-пех. взвод" src="bmp.xml"/>-->
+<!--					<type id="306407011" name="Пехотный взвод" abbr="Пех. взвод" src="group_i.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Мобильные части и подразделения">-->
+<!--					<type id="306705001" name="Мобильный батальон" abbr="Мобил. бат" src="group_v.xml"/>-->
+<!--					<type id="306705002" name="Парашютно-десантный батальон" abbr="Пар-дес. бат" src="group_i.xml"/>-->
+<!--					<type id="306806001" name="Мобильная рота" abbr="Моб. рота" src="group_v.xml"/>-->
+<!--					<type id="307007001" name="Мобильный взвод" abbr="Моб. взвод" src="group_v.xml"/>-->
+<!--					<type id="307007002" name="Парашютно-десантный взвод" abbr="Пар-дес. взвод" src="group_i.xml"/>-->
+<!--				</group>-->
+<!--			</group>-->
+<!--			<group name="МЕСТА РАСПОЛОЖЕНИЯ ОРГАНОВ УПРАВЛЕНИЯ">-->
+<!--				<type id="600202000" name="Пункт управления стратегический" abbr="ПУ стратег." src="pu_vs.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="600302000" name="Пункт управления вида Вооруженных Сил" abbr="ПУ вида ВС" src="pu_vida_vs.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="600402000" name="Пункт управления оперативный" abbr="ПУ опер." src="kp_ok.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="600502000" name="Пункт управления оперативно-тактический" abbr="ПУ о-т" src="kp_otk.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="600803000" name="Пункт управления дивизии" abbr="ПУ дивизии" src="kp_div.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="600803001" name="Командный пункт дивизии" abbr="КП дивизии" src="kp_div.xml"/>-->
+<!--				<type id="600903000" name="Пункт управления бригады" abbr="ПУ бригады" src="kp_brig.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="600903001" name="Командный пункт бригады" abbr="КП бригады" src="kp_brig.xml"/>-->
+<!--				<type id="601103000" name="Пункт управления полка" abbr="ПУ полка" src="kp_polk.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="601303000" name="Пункт управления базы" abbr="ПУ базы" src="kp_brig_2.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="601404000" name="Пункт управления батальона" abbr="ПУ батальона" src="kp_bat.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="601404001" name="Командный пункт батальона" abbr="КП батальона" src="kp_bat_2.xml" labels="КП" keywords="КП, командный пункт"/>-->
+<!--				<type id="601404002" name="Командно-наблюдательный пункт батальона" abbr="КНП батальона" src="kp_bat_2.xml" labels="КНП"/>-->
+<!--				<type id="601504000" name="Пункт управления дивизиона" abbr="ПУ дивизиона" src="kp_bat_2.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="601504001" name="Командный пункт дивизиона" abbr="КП дивизиона" src="kp_bat_2.xml"/>-->
+<!--				<type id="601504002" name="Командно-наблюдательный пункт дивизиона" abbr="КНП дивизиона" src="kp_bat_2.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="601504004" name="Наблюдательный пункт дивизиона" abbr="НП дивизиона" src="np.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="601504006" name="Пункт управления огнем дивизиона" abbr="ПУО дивизиона" src="kp_bat_2.xml" labels="ПУО" keywords="КП, командный пункт"/>-->
+<!--				<type id="601705000" name="Пункт управления роты" abbr="ПУ роты" src="knpr.xml"/>-->
+<!--				<type id="601705001" name="Командно-наблюдательный пункт роты" abbr="КНП роты" src="knpr.xml"/>-->
+<!--				<type id="601705002" name="Командный пункт роты" abbr="КП роты" src="knpr.xml"/>-->
+<!--				<type id="601805001" name="Пункт управления батареи" abbr="ПУ батареи" src="knpr.xml"/>-->
+<!--				<type id="601805002" name="Командно-наблюдательный пункт батареи" abbr="КНП батареи" src="knpr.xml"/>-->
+<!--				<type id="601906001" name="Пункт управления взвода" abbr="ПУ взвода" src="knpv.xml"/>-->
+<!--				<type id="601906002" name="Командно-наблюдательный пункт взвода" abbr="КНП взвода" src="knpv.xml"/>-->
+<!--				<type id="602702004" name="Центр управления и оповещения" abbr="ЦУиО" src="p_u_n_2.xml"/>-->
+<!--				<type id="602702007" name="Пункт наведения и целеуказания" abbr="ПНиЦ" src="pna.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="602702006" name="Передовой авианаводчик" abbr="ПАН" src="pan.xml"/>-->
+<!--				<type id="602702013" name="Передовой авианаводчик своих войск" abbr="ПАН СВ" src="pan.xml"/>-->
+<!--				<type id="602702014" name="Пост управления и оповещения" abbr="ПУиО" src="puio.xml"/>-->
+<!--				<type id="320805001" name="Пункт наведения авиации" abbr="ПНА" src="pna.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="306408001" name="Группа оперативного взаимодействия и управления" abbr="ГОВУ" src="govu.xml" keywords="Группа планирования применения авиаци\nКП, командный пункт"/>-->
+<!--				<type id="306408002" name="Группа тактического взаимодействия и управления" abbr="ГТВУ" src="gtvu.xml" keywords="КП, командный пункт"/>-->
+<!--				<type id="306408003" name="Передовой авианаводчик своих войск" abbr="ПАН СВ" src="pan.xml"/>-->
+<!--			</group>-->
+<!--			<group name="ЛИНИИ,РУБЕЖИ, ЗОНЫ">-->
+<!--				<type id="100902011" name="Передний край" src="frontline.xml"/>-->
+<!--				<type id="400401001" name="Полигон" src="zone_empty.xml"/>-->
+<!--				<group name="Рубежи">-->
+<!--					<type id="100703025" name="Рубеж передачи управления" src="control_transfer_frontier.xml"/>-->
+<!--				</group>-->
+<!--				<group name="ЗОНЫ">-->
+<!--					<type id="102003015" name="Запретная зона" src="zone_empty.xml"/>-->
+<!--					<type id="102103015" name="Зона обнаружения РЛС" src="zone_empty.xml"/>-->
+<!--					<type id="102103016" name="Зона поражения ЗРК" src="zone_empty.xml"/>-->
+<!--				</group>-->
+<!--				<group name="МАРШРУТЫ">-->
+<!--					<type id="102502016" name="Боевой (расчетный) маршрут полёта" abbr="Боевой (расч.) маршрут полёта" src="movedirection.xml" keywords="11 to 16, removed leading 1"/>-->
+<!--					<type id="102502012" name="Маршрут полёта (реальный)" src="movedirection.xml" keywords="removed leading 1"/>-->
+<!--				</group>-->
+<!--			</group>-->
+<!--			<group name="ОГНЕВЫЕ ЗАДАЧИ">-->
+<!--				<group name="Задачи">-->
+<!--				</group>-->
+<!--			</group>-->
+<!--			<group name="КОЛОННЫ">-->
+<!--				<type id="402002" name="Колонна РВ" src="missile_launcher_tactical.xml"/>-->
+<!--				<type id="402003" name="Колонна ЗРВ" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--				<type id="402004" name="Колонна танков" src="tank.xml"/>-->
+<!--				<type id="402005" name="Колонна артиллерии" src="sau.xml"/>-->
+<!--				<type id="402006" name="Колонна автомобилей" src="automobile.xml"/>-->
+<!--			</group>-->
+<!--			<group name="Радиолокация">-->
+<!--				<type id="311107004" name="Отдельный радиолокационный взвод" abbr="Отд. РЛ взвод" src="rls.xml"/>-->
+<!--				<type id="311208002" name="Отдельная радиолокационная станция" abbr="Отд. РЛС" src="rls.xml"/>-->
+<!--				<type id="311504003" name="Отдельный радиотехнический  центр" abbr="Отд. радиотех. центр" src="rls.xml"/>-->
+<!--				<type id="511002000" name="РЛС боевого режима" abbr="РЛС б. р." src="rls.xml" keywords="Радиолокационная станция"/>-->
+<!--				<type id="511102015" name="РЛС маловысотная" abbr="РЛС МВЦ" src="rls.xml" keywords="Радиолокационная станция"/>-->
+<!--			</group>-->
+<!--			<group name="Детализированные ВООРУЖЕНИЕ И ВОЕННАЯ ТЕХНИКА">-->
+<!--				<group name="Зенитно-ракетный комплекс ближнего действия">-->
+<!--					<type id="508904001" name="Войсковой ЗРК &quot;Оса-АКМ&quot;" abbr="ЗРК &quot;Оса-АКМ&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508904002" name="Войсковой ЗРК &quot;Стрела-10&quot;" abbr="ЗРК &quot;Стрела-10&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508904003" name="Войсковой ЗРК &quot;Тор-М2&quot;" abbr="ЗРК &quot;Тор-М2&quot;" src="anti_air_close_range_dd_circle.xml"/>-->
+<!--					<type id="508904004" name="Войсковой ЗРК &quot;Стрела - 10 М3&quot;" abbr="ЗРК &quot;Стрела - 10 М3&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508904005" name="ЗПРК &quot;Панцирь-С1&quot;" src="anti_air_cannon_circle.xml"/>-->
+<!--					<type id="508904006" name="ЗПРК &quot;Тунгуска&quot; (2К22)" abbr="ЗПРК &quot;Тунгуска&quot;" src="anti_air_cannon_circle.xml"/>-->
+<!--					<type id="508904007" name="ЗРК &quot;Оса&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508904008" name="ЗРК &quot;Оса М&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508904009" name="ЗРК &quot;Чапарел&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508904010" name="RBS-70" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508904011" name="ЗРК Лайнбеккер" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="509004001" name="ПЗРК &quot;Игла&quot; (9К38)" abbr="ПЗРК &quot;Игла&quot;" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--					<type id="509004002" name="ПЗРК &quot;Стрела-2&quot;" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--					<type id="509004003" name="ПЗРК &quot;Стрела-3&quot;" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--					<type id="509004004" name="ПЗРК &quot;Ред Ай&quot;" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--					<type id="509004005" name="ПЗРК &quot;Блоупайп&quot;" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--					<type id="509004006" name="ПЗРК &quot;Стингер&quot;" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--					<type id="509004007" name="ПЗРК &quot;Гром&quot;" src="missile_launcher_anti_air_circle.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитно-ракетный комплекс малой дальности">-->
+<!--					<type id="508804001" name="Войсковой ЗРК &quot;Куб&quot;" abbr="ЗРК &quot;Куб&quot;" src="anti_air_close_range_2_circle.xml"/>-->
+<!--					<type id="508804002" name="ЗРК &quot;Бук&quot;" src="anti_air_close_range_2_dd_circle.xml"/>-->
+<!--					<type id="508804003" name="ЗРК &quot;Бук-М1&quot;" src="anti_air_close_range_2_dd_circle.xml"/>-->
+<!--					<type id="508804004" name="ЗРК &quot;Бук-М1-2&quot;" src="anti_air_close_range_2_dd_circle.xml"/>-->
+<!--					<type id="508804005" name="ЗРК &quot;Печора&quot; (С-125 М1)" abbr="ЗРК &quot;Печора&quot;" src="anti_air_close_range_2_circle.xml"/>-->
+<!--					<type id="508804006" name="ЗРК &quot;Печора-2&quot; (С-125 М2)" abbr="ЗРК &quot;Печора-2&quot;" src="anti_air_close_range_2_circle.xml"/>-->
+<!--					<type id="508804007" name="ЗРК &quot;Кроталь&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508804008" name="ЗРК &quot;Рапира&quot;" src="anti_air_close_range_circle.xml"/>-->
+<!--					<type id="508804009" name="ЗРК &quot;Роланд-2&quot;" src="anti_air_close_range_dd_circle.xml"/>-->
+<!--					<type id="508804010" name="ЗРК &quot;Тансам&quot;" src="anti_air_close_range_dd_circle.xml"/>-->
+<!--					<type id="508804012" name="ЗРК С-125 М" src="anti_air_close_range_2_circle.xml"/>-->
+<!--					<type id="508804015" name="ЗРК С-125" src="anti_air_close_range_2_circle.xml"/>-->
+<!--					<type id="508804016" name="ЗРК &quot;Бук-МБ&quot;" src="anti_air_close_range_2_circle.xml"/>-->
+<!--					<type id="508804017" name="ЗРК Авенджер" src="anti_air_close_range_2_circle.xml"/>-->
+<!--					<type id="508804018" name="ЗРК Лайнбеккер" src="anti_air_close_range_2_circle.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитно-ракетный комплекс средней дальности">-->
+<!--					<type id="508704001" name="Войсковой ЗРК С-300 В" abbr="ЗРК С-300 В" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704002" name="Войсковой ЗРК &quot;Круг&quot;" abbr="ЗРК &quot;Круг&quot;" src="anti_air_mid_range_circle.xml"/>-->
+<!--					<type id="508704003" name="ЗРК Антей-2500" src="anti_air_mid_range_circle.xml"/>-->
+<!--					<type id="508704004" name="ЗРК С-75" src="anti_air_mid_range_circle.xml"/>-->
+<!--					<type id="508704005" name="ЗРК С-300" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704006" name="ЗРК С-300 В1" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704009" name="ЗРК С-300 ПС" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704010" name="ЗРК С-300 ПТ" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704011" name="ЗРК &quot;Пэтриот Пак-3&quot;" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704012" name="ЗРК &quot;Пэтриот&quot;" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704013" name="ЗРК &quot;Усовершенствованный Хок&quot;" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704014" name="ЗРК &quot;Хок&quot;" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508704015" name="ЗРК С-300 П(В)" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитно-ракетный комплекс дальнего действия">-->
+<!--					<type id="508604001" name="ЗРК С-200 А" src="anti_air_long_range_circle.xml"/>-->
+<!--					<type id="508604002" name="ЗРК С-200 ВМ" src="anti_air_long_range_circle.xml"/>-->
+<!--					<type id="508604003" name="ЗРК &quot;Найк-Геркулес&quot;" src="anti_air_long_range_circle.xml"/>-->
+<!--					<type id="508604004" name="ЗРК С-200 В" src="anti_air_long_range_circle.xml"/>-->
+<!--					<type id="508604005" name="ЗРК С-200" src="anti_air_long_range_circle.xml"/>-->
+<!--					<type id="508604006" name="ЗРК С-300 ПМУ-1" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--					<type id="508604007" name="ЗРК С-300 ПМУ-2 &quot;Фаворит&quot;" src="anti_air_mid_range_dd2_circle.xml"/>-->
+<!--				</group>-->
+<!--				<group name="ЗСУ и ЗУ">-->
+<!--					<type id="510003001" name="ЗСУ-23-4" src="zsu_circle.xml" keywords="Зенитная самоходная установка"/>-->
+<!--					<type id="510003002" name="ЗСУ &quot;Вулкан&quot;" src="zsu_circle.xml" keywords="Зенитная самоходная установка"/>-->
+<!--					<type id="510003003" name="ЗСУ &quot;Гепард&quot;" src="zsu_circle.xml" keywords="Зенитная самоходная установка"/>-->
+<!--					<type id="510003004" name="ЗСУ M42" src="zsu_circle.xml" keywords="Зенитная самоходная установка"/>-->
+<!--					<type id="510103001" name="23-мм спаренная ЗУ-23-2" abbr="23-мм ЗУ-23-2" src="zsu_circle.xml" keywords="Зенитная установка"/>-->
+<!--					<type id="510103002" name="20-мм 6-ствольная ЗУ М167 &quot;Вулкан&quot;" abbr="20-мм М167 &quot;Вулкан&quot;" src="zsu_circle.xml" keywords="Зенитная установка"/>-->
+<!--					<type id="510103003" name="20-мм спаренная ЗУ МК-20 Rh 202" abbr="20-мм МК-20 Rh 202" src="zsu_circle.xml" keywords="Зенитная установка"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитные пушки">-->
+<!--					<type id="510203001" name="57-мм автоматическая зенитная пушка" abbr="57-мм АЗП" src="aa_cannon_2_circle.xml"/>-->
+<!--					<type id="510203002" name="100-мм зенитная пушка КС-19" abbr="100-мм ЗП КС-19" src="aa_cannon_3_circle.xml"/>-->
+<!--					<type id="510203003" name="130-мм зенитная пушка КС-30" abbr="130-мм ЗП КС-30" src="aa_cannon_3_circle.xml"/>-->
+<!--					<type id="510203004" name="75-мм зенитная автоматическая пушка М-51" abbr="75-мм АЗП М-51" src="aa_cannon_2_circle.xml"/>-->
+<!--					<type id="510203005" name="90-мм зенитная пушка М118" abbr="90-мм ЗП М118" src="aa_cannon_2_circle.xml"/>-->
+<!--				</group>-->
+<!--			</group>-->
+<!--		</group>-->
+<!--		<group name="Центурион-1-OLD">-->
+<!--			<type id="129010101" name="-Командно-наблюдательный пункт роты" abbr="-КНП роты" src="knpr.xml"/>-->
+<!--			<type id="129010102" name="-Командно-наблюдательный пункт батальона" abbr="-КНП батальона" src="kp_bat.xml"/>-->
+<!--			<type id="129010103" name="-Узел связи" src="uzel_sv_st.xml"/>-->
+<!--			<type id="129010104" name="-Пункт управления полка" abbr="-ПУ полка" src="kp_polk.xml"/>-->
+<!--			<type id="129010105" name="-Пункт управления бригады" abbr="-ПУ бригады" src="kp_brig.xml"/>-->
+<!--			<type id="129010106" name="-Пункт управления дивизии" abbr="-ПУ дивизии" src="kp_div.xml"/>-->
+<!--			<type id="129010302" name="-БТР и БМП" src="bmp.xml"/>-->
+<!--			<type id="129010305" name="-Автомобили" src="automobile.xml"/>-->
+<!--			<type id="129010410" name="-Пусковые установки РСЗО" abbr="-БМ РСЗО" src="bmrszo.xml"/>-->
+<!--			<type id="129010411" name="-Пусковые установки ТР" src="missile_launcher_tactical.xml"/>-->
+<!--			<type id="129010412" name="-ЗСУ" src="zsu.xml"/>-->
+<!--			<type id="129010415" name="-Вертолет" src="helicopter.xml"/>-->
+<!--			<type id="129010416" name="-Группа вертолетов" src="helicopters.xml"/>-->
+<!--			<type id="129010504" name="-Станция РЭБ" src="reb_station.xml"/>-->
+<!--			<type id="129010505" name="-Радиотехническая станция" abbr="-Радиотех. станция" src="radioteh.xml"/>-->
+<!--			<type id="129010601" name="-Миномет" src="mortar.xml"/>-->
+<!--			<type id="129010603" name="-Минометный взвод" src="mortar_soedinenie.xml"/>-->
+<!--			<type id="129010607" name="-Пушка" src="artillery.xml"/>-->
+<!--			<type id="129010608" name="-Гаубица" src="artillery.xml"/>-->
+<!--			<type id="129010612" name="-Подвижный разведывательный пункт" abbr="-Подвиж. разведпункт" src="automobile.xml"/>-->
+<!--			<type id="129010701" name="-Мост" src="bridge_point.xml"/>-->
+<!--			<type id="129010702" name="-Взлетно-посадочная полоса" abbr="-ВПП" src="airfield.xml"/>-->
+<!--			<type id="129010703" name="-Долговременное огневое сооружение" abbr="-ДОТ" src="dot.xml"/>-->
+<!--			<type id="129010705" name="-Энергетический объект" src="building_point.xml"/>-->
+<!--			<type id="129010706" name="-Склад боеприпасов" src="storage.xml" labels="Б"/>-->
+<!--			<type id="129010707" name="-Склад вооружения" src="storage.xml" labels="В"/>-->
+<!--			<type id="129010708" name="-Склад горюче-смазочных материалов" abbr="-Склад ГСМ" src="storage.xml" labels="ГСМ"/>-->
+<!--		</group>-->
+<!--	</group>-->
+<!--	<group name="new">-->
+<!--		<group name="асу">-->
+<!--			<group name="знаки1">-->
+<!--				<type id="123400002" name="Багет квадрат" abbr="Багет квадрат" src="baget_kvadrat.xml" keywords="Багет квадрат"/>-->
+<!--				<type id="12340000" name="Багет" abbr="Багет" src="baget.xml" keywords="Багет"/>-->
+<!--				<type id="12340001" points="3" name="Багет линейный" abbr="Багет линейный" src="baget.xml"/>-->
+<!--				<type id="123457" name="Знак 1" abbr="ЗН1" src="znak1.xml"/>-->
+<!--			</group>-->
+<!--		</group>-->
+		<group name="Пункты управления">
+			<type id="99001001" name="ПУ Вооруженных Сил" abbr="ПУ ВС" src="pu_vs.xml" labels="ВС\nКП" keywords="Пункт управления \nВооруженных Сил\nМинистерства обороны\nГенерального штаба"/>
+			<type id="99001002" name="ПУ ОК рег. гр. войск" abbr="ПУ ОК РГВ" src="pu_ok_reg.xml" labels="ОК РГВ\nКП" keywords="Пункт управления (штаб)\nОбъединенного командования региональной группировки войск"/>
+			<type id="99001003" name="ПУ силовых структур" abbr="ПУ сил. стр." src="pu_mvd.xml" labels="\nКП" keywords="Пункт управления силовых структур, министерств и ведомств "/>
+			<type id="99001004" name="ПУ вида ВС" src="pu_vida_vs.xml" labels="\nКП" keywords="Пункт управления (штаб)\nвида Вооруженных Сил, фронта, флота, военного округа"/>
+			<type id="99001005" name="ПУ Оперативного Командования" abbr="ПУ ОК" src="kp_ok.xml" labels="ОК\nКП" keywords="Пункт управления (штаб)\nоперативного командования, армии, флотилии"/>
+			<type id="99001006" name="ПУ Армейского корпуса, ВМБ, Эскадры" abbr="ПУ АК, ВМБ, Эск" src="kp_otk.xml" keywords="ПУ Армейского корпуса, ВМБ, Эскадры"/>
+			<type id="99001007" name="Пункт управления дивизии" abbr="ПУ дивизии" src="kp_div.xml" keywords="КП, командный пункт, Пункт управления дивизии"/>
+			<type id="99001008" name="Пункт управления бригады" abbr="ПУ бригады" src="kp_brig.xml" keywords="КП, командный пункт, пункт управления бригады"/>
+			<type id="99001009" name="ПУ штаба зоны терр. обороны" abbr="ПУ ЗТерО" src="kp_ztero.xml" labels="ЗТерО\nКП" keywords="Пункт управления\nштаба зоны территориальной обороны"/>
+			<type id="99001010" name="ПУ штаба района терр. обороны" abbr="ПУ РТерО" src="kp_rtero.xml" labels="РТерО\nКП" keywords="Пункт управления\nштаба района территориальной обороны"/>
+			<type id="99001011" name="Совет обороны области" abbr="СО области" src="kp_SO.xml" keywords="Совет обороны области"/>
+			<type id="99001012" name="Совет обороны района(города)" abbr="СО района(города)" src="kp_SO_city.xml" keywords="Совет обороны района(города)"/>
+			<type id="99001013" name="Пункт управления базы" abbr="ПУ базы" src="kp_brig_2.xml" keywords="Пункт управления авиационной, зенитно-технической ракетной базы, подвижного танкоремонтного завода,тыловой (госпитальной) базы, передового эшелона тыла центра, передового эшелона тыла фронта, армии, ракетно-технической и других баз, центра подготовки и применения беспилотных авиационных комплексов"/>
+			<type id="99001014" name="Пункт управления полка" abbr="ПУ полка" src="kp_polk.xml" labels="\nКП" keywords="Пункт управления (штаб)\nполка, группы артиллерии (артиллерийской группы), отряда, комендатуры, центра"/>
+			<type id="99001015" name="Пункт управления полка РЭБ" abbr="ПУ полка РЭБ" src="kp_polk_reb.xml" labels="\nКП" keywords="Пункт управления (штаб)\nполка радиоэлектронной борьбы"/>
+			<type id="99001016" name="Пункт управления объединенный учебный центр" abbr="ПУ ОУЦ" src="kp_polkY.xml" keywords="Пункт управления объединенный учебный центр штаб"/>
+			<type id="99001017" name="ПУ военного комиссариата области" abbr="ПУ ВКО(ВКГ)" src="kp_polkVK.xml" keywords="ПУ военного комиссариата области, города"/>
+			<type id="99001018" name="Пункт предварительного сбора военнообязанных, техники" abbr="Пункт предварительного сбора" src="kp_PPSV.xml" keywords="Пункт предварительного сбора военнообязанных, техники"/>
+			<type id="99001019" name="Обособленная группа военного комиссариата" abbr="Обособленная группа ВК" src="kp_OGVK.xml" keywords="Обособленная группа военного комиссариата "/>
+			<type id="99001020" name="Пункт обмена повестками ВК" abbr="Пункт обмена повестками ВК" src="kp_POPVK.xml" keywords="Пункт обмена повестками ВК"/>
+			<type id="99001021" name="Командно-наблюдательный пункт батальона" abbr="КНП батальона" src="kp_bat.xml"/>
+			<type id="99001022" name="КНП батальона РЭБ" abbr="КНП бат. РЭБ" src="kp_bat_reb.xml" keywords="Командно-наблюдательный пункт (штаб)\nбатальона радиоэлектронной борьбы"/>
+			<type id="99001024" name="КНП арт. дивизиона" abbr="КНП дивизиона" src="kp_art_div.xml" keywords="Командно-наблюдательный пункт\nартиллерийского дивизиона"/>
+			<type id="99001025" name="КНП роты" src="knpr.xml" keywords="Командно-наблюдательный пункт\nроты (батареи)"/>
+			<type id="99001026" name="Командно-наблюдательный пункт батареи" abbr="КНП батареи" src="knpr.xml" keywords="противотанковых управляемых ракет, реактивной, артиллерийской"/>
+			<type id="99001027" name="КНП роты РЭБ" src="knpr_reb.xml" keywords="Командно-наблюдательный пункт\nроты радиоэлектронной борьбы"/>
+			<type id="99001028" name="Наблюдательный пост" abbr="НП" src="np.xml"/>
+			<type id="99001029" name="Наблюдательный пункт артиллерийской воинской части" abbr="НП" src="np.xml"/>
+			<type id="99001030" name="Наблюдательный пункт артиллерийской воинской части с дальномером и целеуказателем" abbr="НП" src="np_RTD.xml"/>
+			<type id="99001032" name="Наблюдательный пост подвижный" abbr="НП подвижный" src="np_M.xml"/>
+			<type id="99001033" name="Наблюдательный пункт с сектором наблюдения" abbr="НП с сектором" src="np_SECT.xml"/>
+			<type id="99001034" name="Метеорологический пост" abbr="Метеорологический пост" src="MP.xml"/>
+			<type id="99001035" name="Пункт управления артиллерийской разведкой" abbr="ПУ арт. разведкой" src="PUAR.xml" labels="ПУАР"/>
+			<type id="99001036" name="Радионавигационный пункт (д.)" abbr="Радионав. пункт (д.)" src="rnp_d.xml" keywords="Радионавигационный пункт, станция\nдальнего действия"/>
+			<type id="99001037" name="Радионавигационный пункт (б.)" abbr="Радионав. пункт (б.)" src="rnp_b.xml" keywords="Радионавигационный пункт, станция\nближнего действия"/>
+			<type id="99001038" name="Пункт наведения авиации" abbr="Пункт наведения авиации" src="pna.xml"/>
+			<type id="99001039" name="Пункт наведения авиации вcпомогательный" abbr="Пункт наведения авиации (в.)" src="pna_v.xml" keywords="выносной пункт наведения авиации"/>
+			<type id="99001040" name="Группа оперативного взаимодействия и управления" abbr="ГОВУ" src="govu.xml" keywords="Группа планирования применения авиации\n(группа оперативного взаимодействия и управления)"/>
+			<type id="99001041" name="Группа тактического взаимодействия и управления авиацией" abbr="ГТВУ" src="gtvu.xml" keywords="Группа тактического взаимодействия и управления"/>
+			<type id="99001042" name="Передовой авианаводчик" abbr="ПАН" src="pan.xml"/>
+			<type id="99001043" name="Передовой авианаводчик на автомобильной базе" abbr="ПАН" src="pan_AVT.xml"/>
+			<type id="99001044" name="Центр боевого управления авиацией" abbr="ЦБУ авиацией" src="cbu_a.xml" keywords="Центр боевого управления авиацией"/>
+			<type id="99001045" name="Стартовый командный пункт" abbr="СКП" src="skp.xml" labels="СКП"/>
+			<type id="99001046" name="ПУ смешанной ЗРГ" abbr="ПУ ЗРГ" src="pu_z.xml" labels="\nПУ см. зргр" keywords="Пункт управления смешанной зенитной ракетной группы"/>
+			<type id="99001047" name="Пункт управл. полка резерва личного состава операт. командования" abbr="ПУ полка резерв ОК" src="kp_polk_rezerv_OK.xml" keywords="штабы ПУ полка резерв ОК"/>
+			<type id="99001048" name="Военный комиссариат района" abbr="РВК" src="rvk.xml" labels="РВК" keywords="Военный комиссариат"/>
+			<type id="99001049" name="Участок (штаб) оповещения" abbr="УО" src="kp_brig_2.xml" keywords="Участок штаб оповещения "/>
+			<type id="99001050" name="Наземный пункт управления БАК" abbr="НПУ БАК" src="drone_control_room.xml" keywords="Беспилотный авиационный комплекс"/>
+			<type id="99001051" name="Пункт управления органа ВОСО" abbr="ПУ ВОСО" src="py_VOSO.xml" keywords="Управление ВОСО"/>
+			<type id="99001052" name="Комендатура органа ВОСО" abbr="Комендатура ВОСО" src="py_VOSO_2.xml"/>
+			<type id="99001053" name="Комендатура органа ВОСО железнодорожной станции" abbr="Комендатура ВОСО" src="py_VOSO_3.xml"/>
+			<type id="99001054" name="Пограничная застава" abbr="погз" src="rvk.xml"/>
+		</group>
+<!--		<group name="Объекты">-->
+<!--			<group name="Техника">-->
+<!--				<type id="209259" name="Безоткатное орудие" abbr="БЗО" src="bzo.xml" keywords="Безоткатное орудие "/>-->
+<!--			</group>-->
+<!--			<group name="Действия и задачи">-->
+<!--				<type id="99002001" name="Разграничительная линия между группировками ВС" abbr="Разграничительная линия" src="groupsborder_groupVS.xml" keywords="Разграничительная линия"/>-->
+<!--				<type id="99002002" name="Разграничительная линия между оперативными командованиями" abbr="Разграничительная линия" src="groupsborder_otperativ.xml" keywords="Разграничительная линия"/>-->
+<!--				<type id="99002003" name="Разграничительная линия между зонами ТерО" abbr="Разграничительная линия" src="groupsborder_otvet.xml" keywords="Разграничительная линия между зонами ответственности"/>-->
+<!--				<type id="99002004" points="3" name="Разграничительная линия между зонами" abbr="Разграничительная линия" src="zoneborder.xml" keywords="Разграничительная линия тыловая граница соединения"/>-->
+<!--				<type id="99002005" points="3" name="Разграничительная линия между полками" abbr="Разграничительная линия" src="polkborder.xml" keywords="Разграничительная линия"/>-->
+<!--				<type id="99002006" points="3" name="Разграничительная линия между подразделениями" abbr="Разграничительная линия" src="groupsborder.xml" keywords="Разграничительная линия между \nбатальенами, отрядами, заставами"/>-->
+<!--				<type id="300512" name="Рубеж атаки штурмовой авиации" abbr="Рубеж атаки" src="groupsborder_attack_aircraft.xml" keywords="Рубеж атаки штурмовой авиации"/>-->
+<!--				<type id="321932" name="Засада" src="ambush_norm.xml" keywords="засада нормальная"/>-->
+<!--			</group>-->
+<!--			<group name="Обеспечение операций">-->
+<!--				<type id="3027440" name="Минное поле смешанное" abbr="МПС" src="minefield_mixed.xml" keywords="Минное поле смешанное"/>-->
+<!--				<type id="3027441" name="Минное поле смешанное линейное" abbr="МПС" src="minefield_mixed_L.xml" keywords="Минное поле смешанное линейное"/>-->
+<!--			</group>-->
+<!--		</group>-->
+<!--		<group name="Разное">-->
+<!--		</group>-->
+<!--		<group name="Пустельга">-->
+<!--			<group name="1">-->
+<!--				<type id="102103993" name="Зона дежурства линия" src="dutyzone_line.xml"/>-->
+<!--			</group>-->
+<!--			<group name="ВООРУЖЕНИЕ И ВОЕННАЯ ТЕХНИКА">-->
+<!--				<group name="Боевая техника и вооружение">-->
+<!--					<type id="502605252" name="Артиллерийское орудие калибра" abbr="Арт. орудие калибр" src="artillery_calibr.xml" keywords="Артиллерийское орудие калибра"/>-->
+<!--				</group>-->
+<!--			</group>-->
+<!--			<group name="ЛИНИИ,РУБЕЖИ, ЗОНЫ">-->
+<!--				<type id="99003001" name="Фронт (рубеж), занимаемый войсками сторон в бою" abbr="Фронт" src="frontline.xml" keywords="Фронт (рубеж), занимаемый войсками сторон в бою"/>-->
+<!--				<type id="99003002" name="Фронт (рубеж), намечаемый для занятия войсками" abbr="Рубеж намечаемый" src="frontline_namechaem.xml" keywords="Фронт (рубеж), намечаемый для занятия войсками"/>-->
+<!--				<type id="99003003" points="3" name="Рубеж вероятной встречи с противником" abbr="Рубеж вероятной встречи" src="frontier.xml"/>-->
+<!--				<type id="99003004" points="3" name="Рубеж обороны, позиция, занятая войсками" abbr="Рубеж обороны" src="defencefrontier.xml"/>-->
+<!--				<type id="99003005" name="Исходный рубеж" abbr="Исходный рубеж" src="frontier.xml" keywords="для форсирования, рубеж регулирования"/>-->
+<!--				<type id="99003006" points="3" name="Рубеж развёрт. в колонны" abbr="Рубеж развёртывания" src="columnfrontier.xml" keywords="в ротные и взводные колонны"/>-->
+<!--				<type id="99003007" points="3" name="Рубеж перехода в атаку" src="assaultfrontier.xml" keywords="рубеж ввода в сражение второго эшелона"/>-->
+<!--				<type id="99003008" name="Рубеж развертывания противотанкового резерва" abbr="Рубеж развертывания ПТРез" src="groupsborder_anti-tank_brigade_2.xml" keywords="Бригады в составе противотанкового дивизиона"/>-->
+<!--				<type id="99003009" name="Рубеж развертывания противотанкового резерва" abbr="Рубеж развертывания ПТРез" src="groupsborder_anti-tank_brigade.xml" keywords="оперативного командования в \nв составе батареи птур на боевых машинах"/>-->
+<!--				<type id="99003010" name="Рубеж досягаемости" abbr="РД максимальн." src="zona_dosiagaemosti.xml" keywords="Рубеж досягаемости ракет,\n артиллерии"/>-->
+<!--				<type id="99003011" name="Рубеж досягаемости миним." abbr="Рубеж досягаемости ракет" src="zona_dosiagaemosti.xml" keywords="Огня артиллерии"/>-->
+<!--				<type id="99003012" name="Рубеж развертывания подразделений оптической разведки" abbr="Рубеж развертывания подразделений" src="groupsborder_opt_razv.xml"/>-->
+<!--				<type id="99003013" name="Рубеж безопасного удаления от разрыва снарядов артиллерии" abbr="Рубеж безопасного удаления" src="frontline_bezop_udal.xml" labels="Рубеж безопасного \nудаления от разрыва снарядов артиллерии"/>-->
+<!--				<type id="99003014" name="Рубеж освещения артиллерией" abbr="Рубеж освещения" src="frontline_osvehenia.xml" keywords="Рубеж освещения артиллерией"/>-->
+<!--				<type id="99003015" name="Рубеж ослепления" abbr="Рубеж ослепления" src="groupsborder_sleplenija.xml" keywords="Рубеж ослепления"/>-->
+<!--				<type id="99003016" name="Рубеж атаки боевых вертолетов" abbr="Рубеж атаки" src="groupsborder_ataki_helicopter.xml" keywords="Рубеж атаки боевых вертолетов"/>-->
+<!--				<type id="99003017" name="Рубеж пуска противорадиолокационных ракет" abbr="Рубеж пуска" src="groupsborder_anti-radar_missile_launch.xml" keywords="Рубеж пуска противорадиолокационных ракет"/>-->
+<!--				<type id="99003018" name="Рубеж ввода в бой истребителей" abbr="Рубеж ввода в бой истребителей" src="groupsborder_attack_aircraft_terminat.xml"/>-->
+<!--				<type id="99003019" name="Рубеж вывода истребителей из боя" abbr="Рубеж вывода истребителей из боя" src="groupsborder_aircraft_terminat2.xml"/>-->
+<!--				<type id="99003020" name="Рубеж прикрытия истребительной авиацией из положения дежурства на аэродроме" abbr="Рубеж прикрытия" src="groupsborder_cover_aircraft_aerodrom.xml"/>-->
+<!--				<type id="99003021" name="Рубеж прикрытия истребительной авиацией из положения в воздухе" abbr="Рубеж прикрытия" src="groupsborder_cover_aircraft_air.xml"/>-->
+<!--				<type id="99003022" name="Рубеж освещения подручными средствами" abbr="Рубеж освещения" src="groupsborder_sleplenija_podr.xml"/>-->
+<!--				<type id="99003023" name="Рубеж минирования подвижного отряда заграждений наземный" abbr="Рубеж минирования наземный" src="minefield_mixed_L11.xml"/>-->
+<!--				<type id="99003024" name="Рубеж минирования подвижного отряда заграждений вертолетный" abbr="Рубеж минирования вертолетный" src="minefield_mixed_L11_xelicop.xml"/>-->
+<!--				<type id="99003025" name="Рубеж навешивания тралов" abbr="Рубеж навешивания тралов" src="Line_for_hanging_trawls.xml"/>-->
+<!--				<type id="99003026" name="Рубеж управления огнем зенитного ракетного подраздедения" abbr="Рубеж управления огнем ЗРП" src="Line_for_ZRP.xml" keywords="с указанием высоты и\n скорости полета цели"/>-->
+<!--				<type id="99003027" name="Требуемые рубежи выдачи боевой информации" abbr="Требуемые рубежи выдачи БИ" src="Line_for_combat_information.xml" keywords="Зенитным ракетным войскам"/>-->
+<!--				<type id="99003028" name="Требуемые рубежи выдачи боевой информации" abbr="Требуемые рубежи выдачи БИ" src="Line_for_combat_information2.xml" keywords="Истребительной авиации"/>-->
+<!--				<type id="99003029" name="Полоса передачи(приема)" abbr="Полоса передачи(приема)" src="control_transfer_frontier2.xml" keywords="целей для радиотехнических\nсоединений, воинских частей"/>-->
+<!--				<type id="99003030" name="Полоса передачи(приема)" abbr="Полоса передачи(приема)" src="control_transfer_frontier2.xml" keywords="управления авиацией"/>-->
+<!--				<type id="99003031" name="Полоса оперативных инженерных заграждений с указанием номера, принадлежности соединения, силами которого она устроена, срока устройств" abbr="Полоса оперативн. инж. заграждений" src="zone_2.xml"/>-->
+<!--				<type id="99004003" name="Сектор взаимодействия зенитной ракетной воинской части с истребительной авиацией" abbr="сектор взаимодействия ЗРВЧ с ИА" src="interaction_sector.xml"/>-->
+<!--				<type id="99004004" name="Граница ответственного сектора ведения радиолокационной разведки" abbr="Граница ответственного сектора" src="radio_interference_sector.xml" keywords="радиотехническое подразделение"/>-->
+<!--				<type id="99004005" name="Секторы создания радиопомех" abbr="Секторы создания радиопомех" src="radio_interference_sector2.xml" keywords="основной -сплошной,дополнительный\n-штриховой,запрещенный-штрихпунктирнойт"/>-->
+<!--				<type id="99004006" name="Граница зоны досягаемости ракетного оружия" abbr="Граница зоны досягаемости" src="missile_range_limit.xml" keywords="артиллерийского"/>-->
+<!--				<type id="99004007" name="Граница зоны обнаружения радиолокационной станцией" abbr="Граница зоны обнаружения РЛС" src="zona_dosiagaemosti_2.xml" keywords="с указанием высоты"/>-->
+<!--				<type id="99004008" name="Граница зоны радиоэлектронного подавления средствами РЭБ" abbr="Граница зоны" src="zona_dosiagaemosti_3.xml"/>-->
+<!--				<type id="99004009" name="Граница полосы радиоэлектронного подавления" abbr="Границы полосы" src="stripe_border.xml" keywords="Воинская часть РЭБ-Н"/>-->
+<!--				<type id="99004010" name="Дальность разведки УКВ средств связи" abbr="Дальность разведки УКВ" src="VHF_reconnaissance_range.xml" keywords="радиорелейных"/>-->
+<!--				<type id="99004011" name="Дальность разведки КВ средств связи" abbr="Дальность разведки КВ" src="reconnaissance_range_KV.xml" keywords="глубина"/>-->
+<!--				<type id="99004012" name="Дальность ближней радиотехнической разведки" abbr="Дальность ближней РТР" src="reconnaissance_range_RTR.xml" keywords="Глубина"/>-->
+<!--				<type id="99004013" name="Дальность разведки УКВ самолетных средств связи" abbr="Дальность разведки УКВ самолетных СС" src="reconnaissance_range_air.xml" keywords="Глубина"/>-->
+<!--				<type id="99004014" name="Дальность дальней радиотехнической разведки" abbr="Дальность дальней РТР" src="reconnaissance_range_1.xml" keywords="Глубина"/>-->
+<!--				<type id="99004015" name="Дальность разведки мобильных средств связи" abbr="Дальность разведки МСС" src="reconnaissance_range_2.xml" keywords="Глубина"/>-->
+<!--				<type id="99004016" name="Полоса разведки соединения,подразделения радиоэлектронной разведки бригады" abbr="Полоса разведки бригады" src="reconnaissance_strip.xml" keywords="воинской части"/>-->
+<!--				<type id="99004017" name="Полоса разведки соединения,подразделения радиоэлектронной разведки полка" abbr="Полоса РЭР полка" src="reconnaissance_strip_1.xml" keywords="воинской части"/>-->
+<!--				<type id="99004018" name="Полоса разведки соединения,подразделения радиоэлектронной разведки батальона" abbr="Полоса РЭР батальон" src="reconnaissance_strip_2.xml" keywords="воинской части"/>-->
+<!--				<type id="99004019" name="Полоса разведки соединения,подразделения радиоэлектронной разведки роты" abbr="Полоса РЭР роты" src="reconnaissance_strip_3.xml" keywords="воинской части, \nманевренной группы"/>-->
+<!--				<type id="99004021" name="Границы зоны обзора радиотехнического центра(узла)" abbr="Границы зоны обзора" src="view_area.xml"/>-->
+<!--				<type id="99004022" name="граница зоны огня зенитной ракетной воинской части ЗРВ" abbr="Граница зоны огня ЗРВ" src="zona_dosiagaemosti.xml" keywords="поражения, зенитной ракетной\nподразделения"/>-->
+<!--				<type id="99004023" name="основное направление стрельбы(пуска ракет)" abbr="основное направление стрельбы" src="main_direction_of_fire.xml"/>-->
+<!--				<type id="99004024" name="Граница полосы (сектора) артиллерийской разведки" abbr="Граница полосы арт. разведки" src="main_direction_of_fire.xml"/>-->
+<!--				<group name="Рубежи">-->
+<!--				</group>-->
+<!--				<type id="99004025" name="Рубеж развед-сигнализационной аппаратуры" abbr="Рубеж РСА" src="rsa_frontier.xml" keywords="развед сигнализационная аппаратура"/>-->
+<!--				<group name="ЗОНЫ">-->
+<!--					<type id="99005005" name="Зона разведки и поражения артиллерийской воинской части" abbr="зона разведки и поражения" src="artillery_reconnaissance_zone.xml" keywords="подразделения"/>-->
+<!--					<type id="99005007" name="Зона инженерных заграждений с указанием ее номера воинской части и даты установки" abbr="Зона инженерных заграждений" src="engineering_barrier_zone.xml" keywords="принадлежности, наименования \nсоединения силами которого они устанавливались"/>-->
+<!--					<type id="99005009" name="Прогнозируемая зона затопления местности при полном разрушении плотины" abbr="Прогнозируемая зона затопления" src="predicted_flood_zone.xml" keywords="с указанием направления и параметров\nволны активного затопления в  створ "/>-->
+<!--					<type id="99005010" name="Зона вещания звуковещательной станции" abbr="Зона вещания звуковещ. станции" src="zona_veshchaniya_stantsii.xml" keywords="с указанием дальности вещания"/>-->
+<!--					<type id="99005011" name="Зона ответственности за ведение разведки с указанием принадлежности" abbr="Зона ответственности за вед. разведки" src="reconnaissance_area.xml" keywords="детальной и обзорной, ВС,ОК, Бр"/>-->
+<!--					<type id="99005014" name="Тыльная граница зоны ответственности за выявление радиационной, химической и биологической обстановки батальона" abbr="Тыльная граница зоны ответственности РХБО батальона" src="back_border_zone.xml" keywords="дивизиона"/>-->
+<!--					<type id="99005015" name="Тыльная граница зоны ответственности за выявление радиационной, химической и биологической обстановки бригады" abbr="Тыльная граница зоны ответственности РХБО бригады" src="back_border_zone_1.xml"/>-->
+<!--					<type id="99005016" name="Тыльная граница зоны ответственности за выявление радиационной, химической и биологической обстановки оперативного командования" abbr="Тыльная граница зоны ответственности РХБО оперативного командования" src="back_border_zone_2.xml"/>-->
+<!--					<type id="99005017" name="Зона запретная" abbr="Зона запретная" src="zone_empty.xml" keywords="с указанием ее номера, вертикальных границ \nвремени и даты действия"/>-->
+<!--					<type id="99005018" name="Зона опасная" abbr="Зона опасная" src="zone_empty.xml" keywords="с указанием ее номера, вертикальных границ,\nвремени и даты действия"/>-->
+<!--					<type id="99005019" name="Зона ограничения" abbr="Зона ограничения" src="zone_empty.xml" keywords="с указанием ее номера, вертикальных границ, \nвремени и даты действия."/>-->
+<!--					<type id="99005020" name="Район особого режима использования воздушного пространства" abbr="Район особого режима" src="zone_empty.xml" keywords="с указанием времени и \nдаты действия"/>-->
+<!--					<type id="99005021" name="Зона взлета и посадки" abbr="Зона взлета и посадки" src="zone_empty.xml" keywords="с указанием ее номера, позывного,\nчастот управления вертикальных границ использования"/>-->
+<!--					<type id="99005022" name="Район аэродрома" abbr="Район аэродрома" src="defencearea.xml" keywords="с указанием его номера, позывного, частот\nуправления вертикальных границ использования"/>-->
+<!--					<type id="99005023" name="Пункт обязательного донесения с указанием его наименования" abbr="Пункт обязательного донесения" src="mandatory_reporting_point.xml"/>-->
+<!--					<type id="99005024" name="Пункт донесения по запросу с указанием его наименования" abbr="Пункт донесения по запросу" src="mandatory_reporting_point_2.xml"/>-->
+<!--					<type id="99005025" name="Маршрут ОВД с указанием его названия" abbr="Маршрут ОВД" src="ATS_route.xml" keywords="расстояния между пунктами обязательного донесения(в км)\nи диапазона высот использования (в эшелонах) "/>-->
+<!--					<type id="99005026" name="район воздушной разведки с применением БЛА" abbr="Зона дежурства" src="dutyzone.xml" labels="район воздушной разведки" keywords="с указанием его номера, типа БЛА,\nпринадлежности и времени ведения разведки."/>-->
+<!--					<type id="99005027" name="район освещаемый артиллерией" abbr="район освещаемый артиллерией" src="illuminated_area.xml"/>-->
+<!--					<type id="99005028" name="район освещаемый авиацией" abbr="район освещаемый авиацией" src="illuminated_area_aviation.xml"/>-->
+<!--					<type id="99005036" name="Участок и пункты высадки морского десанта" abbr="Участок высадки морского десанта" src="naval_landing.xml"/>-->
+<!--					<type id="99005037" name="Район формирования конвоя" abbr="Район формирования конвоя" src="convoy_formation_area.xml" keywords="десантного отряда, корабельной\nдесантной группы"/>-->
+<!--					<type id="99005041" name="Район проведения информационной операции" abbr="Район проведения ИО" src="information_operation_area.xml" keywords="акции с указанием кодового названия"/>-->
+<!--					<type id="99005045" name="Район с неблагополучной криминальной обстановкой" abbr="Район с неблагополучной крим. обст." src="crime_ridden_area.xml" keywords="с указанием признака \nвнутри знака"/>-->
+<!--					<type id="99005046" name="Район со сложной социально-политической обстановкой" abbr="Район со слож. соц.-пол. обст. митинги" src="crime_ridden_area_2.xml"/>-->
+<!--					<type id="99005047" name="Район со сложной социально-политической обстановкой" abbr="Район со слож. соц.-пол. обст. забастовки" src="crime_ridden_area_2.xml"/>-->
+<!--					<type id="99005048" name="Район со сложной социально-политической обстановкой" abbr="Район со слож. соц.-пол. обст. массовые беспорядки" src="crime_ridden_area_2.xml"/>-->
+<!--					<type id="99005051" name="Район повышенной религиозной активности" abbr="Район повышенной религиозной активности" src="religious_activity_area.xml"/>-->
+<!--					<type id="99005052" name="Район массовых беспорядков" abbr="Район массовых беспорядков" src="riot_area.xml"/>-->
+<!--					<type id="99005053" name="Район несанкционированного пикетирования" abbr="Район несанкционированного пикетирования" src="area_unauthorized_picketing.xml" keywords="место"/>-->
+<!--					<type id="99005054" name="Граница зоны трансляции радиопередач" abbr="Граница зоны трансляции" src="broadcast_area_boundaries.xml"/>-->
+<!--					<type id="99005055" name="Граница зоны трансляции телепередач" abbr="Граница зоны трансляции" src="broadcast_area_boundaries_TV.xml"/>-->
+<!--				</group>-->
+<!--				<group name="ПУНКТЫ БАЗИРОВАНИЯ">-->
+<!--					<type id="99006001" name="Флотилия разнородных сил, военно-морская база" abbr="военно-морская база" src="naval_base.xml"/>-->
+<!--					<type id="99006002" name="Основной пункт базирования, пункт маневренного базирования" abbr="Основной пункт базирования" src="naval_base_1.xml"/>-->
+<!--					<type id="99006003" name="Пункт посадки десанта на десантно-транспортные средства" abbr="Пункт посадки десанта" src="naval_base_2.xml" keywords="запасной пункт посадки"/>-->
+<!--					<type id="99006004" name="Главная военно-морская база, противник" abbr="Главная военно-морская база" src="naval_base_3.xml"/>-->
+<!--					<type id="99006005" name="Порт противника" abbr="Порт противника" src="naval_base_4.xml"/>-->
+<!--					<type id="99006006" name="Пункт базирования" abbr="Пункт базирования" src="naval_base_5.xml"/>-->
+<!--					<type id="99006007" name="Опорный пункт незаконного вооруженного формирования" abbr="Опорный пункт НВФ" src="naval_base_6.xml"/>-->
+<!--					<type id="99006008" name="Опорная база незаконного вооруженного формирования" abbr="Опорная база НВФ" src="naval_base_7.xml"/>-->
+<!--					<type id="99006009" name="Тыловая база незаконного вооруженного формирования" abbr="Тыловая база НВФ" src="rear_base.xml"/>-->
+<!--					<type id="99006010" name="Пункт сбора с указантем времени и даты их действия" abbr="Пункт сбора" src="collection_point.xml" keywords="основной, запасной."/>-->
+<!--				</group>-->
+<!--				<group name="АЭРОДРОМЫ И БАЗИРОВАНИЕ АВИАЦИИ">-->
+<!--					<type id="99006011" points="0" name="Аэродром" src="airfield.xml"/>-->
+<!--					<type id="99006012" points="0" name="Гидроаэродром" abbr="Гидроаэродром" src="airfield_water.xml"/>-->
+<!--					<type id="99006013" points="0" name="Посадочная площадка" src="landing_site.xml"/>-->
+<!--					<type id="99006014" name="Классификация аэродромов внеклассный с ВПП длиной более 3000м" abbr="Классификация аэродромов" src="landing_site_1.xml"/>-->
+<!--					<type id="99006015" name="Классификация аэродромов первого класса с ВПП длиной более 2500-3000м" abbr="Классификация аэродромов" src="landing_site_2.xml"/>-->
+<!--					<type id="99006016" name="Классификация аэродромов второго класса с ВПП длиной более 1800-2400м" abbr="Классификация аэродромов" src="landing_site_3.xml"/>-->
+<!--					<type id="99006017" name="Классификация аэродромов третьего класса с ВПП длиной более 1200-1700м" abbr="Классификация аэродромов" src="landing_site_4.xml"/>-->
+<!--					<type id="99006018" points="0" name="Грунтовой аэродром" src="airfield_ground.xml" keywords="АБ-асфальтобетонное, Б-бетонное, ГБ-грунтов битумное,\nГН-гравийно-нефтяное, М-металлическое."/>-->
+<!--					<type id="99006019" points="3" name="Аэродромный участок дороги" abbr="АУД" src="airfieldroad.xml" keywords="с указанием его ширины  и длины, подготовленный\nдля взлета и посадки самолета"/>-->
+<!--					<type id="99006020" name="Базирование авиационной воинской части" abbr="Базирование авиационной ВЧ" src="basing_AMU.xml"/>-->
+<!--					<type id="99006021" points="0" name="Площадка базирования воинской части" abbr="Площадка базирования ВЧ" src="army_airbase.xml" keywords="подразделения армейской авиации"/>-->
+<!--					<type id="99006022" points="0" name="Площадка засады" abbr="Площадка засады" src="ambush_site.xml"/>-->
+<!--					<type id="99006023" points="0" name="Площадка подскока" src="jump_site.xml"/>-->
+<!--					<type id="99006024" name="Тактический радиус воздушного судна с аэродрома базирования" abbr="Такт. радиус воздушного судна" src="tactical_radius.xml" keywords="с указанием аэродрома базирования, типа воздушного судна,\nвысоты(м), радиуса(км), боевой зарядки."/>-->
+<!--					<type id="99006025" name="Район расположения(сосредоточения)" abbr="Район расположения" src="rayon1.xml" keywords="Развертывания, исходный район\nсоединения, воинской части."/>-->
+<!--					<type id="99006026" points="4" name="Укреплённый район" abbr="Укреплённый район" src="defencearea.xml"/>-->
+<!--					<type id="99006029" name="Район (территория) контролируемый партизанским формированием" abbr="Район, контролируемый партизанами" src="zone.xml" keywords="с указанием принадлежности, количества\nличного состава и срока действия"/>-->
+<!--					<type id="99006036" name="огневая позиция артиллерии, предназначенная для стрельбы осветительными снарядами" abbr="огневая позиция артиллерии" src="artillery_2.xml" keywords="минами"/>-->
+<!--					<type id="99006044" name="Район массовых потерь ВВСТ" abbr="Район массовых потерь ВВСТ" src="defencearea_mass_loss.xml"/>-->
+<!--					<type id="99006054" name="Подвижный район действий подводных лодок" abbr="Подвижный район д-й подв. лодок" src="submarine.xml"/>-->
+<!--					<type id="99006057" name="место размещения подразделения территориальных войск" abbr="место размещения ТерО." src="territorial_defense.xml" keywords="в числителе-наименование подразделения \nв знаменателе-время и дата занятия"/>-->
+<!--					<type id="99006058" name="район запуска космических аппаратов" abbr="район запуска КА" src="spaceship.xml"/>-->
+<!--					<type id="99006059" name="район посадки космических аппаратов" abbr="район посадки КА" src="spaceship_2.xml"/>-->
+<!--					<type id="99006060" name="пункт передачи материальных средств" abbr="пункт передачи мат-ных средств" src="transfer_point.xml"/>-->
+<!--					<type id="99006061" name="направление ведения информационного противоборства" abbr="направление ведения ИП" src="radio_interference_sector.xml"/>-->
+<!--					<type id="99006062" name="учебно-боевой центр совместной боевой подготовки" abbr="уч. боев. ц-р сов. боев. под-ки" src="combat_training_center.xml" keywords="в числителе - количества обучаемых\nв знаменателе - цикл подготовки в сутках"/>-->
+<!--					<type id="99006063" name="центр подготовки боевиков" abbr="центр подготовки боевиков" src="combat_training_center_2.xml" keywords="в числителе - количество обучаемых\nв знаменателе цикл подготовки в сутках"/>-->
+<!--					<type id="99006065" name="отдельные случаи распространения печатной продукции антигосударственной направленности" abbr="отдельные случаи распр. ППАН" src="printed_products.xml"/>-->
+<!--					<type id="99006067" name="районы компактного проживания населения" abbr="районы компактного проживания" src="area_compact_population.xml" keywords="национальных диаспор"/>-->
+<!--					<type id="99006069" name="пункт встречи пополнения воинской части" abbr="пункт встречи пополнения воинской части" src="replenishment_meeting_point.xml" keywords="ПВП"/>-->
+<!--					<type id="99006070" name="пункт приема личного состава воинской части" abbr="пункт приема личного состава" src="kp_PPLS.xml" keywords="первое число-всего военнообязанных\nвторое число - в том числе офицеров"/>-->
+<!--					<type id="99006071" name="пункт приема техники воинской части" abbr="пункт приема техники" src="kp_PPT.xml" keywords="ППТ с указанием колличества принимаемых\nтранспортных средств"/>-->
+<!--					<type id="99006072" name="пункт приема и распределения пополнения" abbr="пункт приема и распределения" src="kp_PPRP.xml" keywords="ППРП с указанием колличества поступающих ресурсов\nпервое число - всего человек\\ второе число - в том числе офицеров и планир. время прибытия\n"/>-->
+<!--					<type id="99006073" name="пункт сосредоточения автомобильной колонны войскового типа" abbr="пункт сосредоточения автомобильной колонны" src="kp_PSAKBT.xml" keywords="ПС АКВТ с указанием номера, типа колонны,\nорганизации-формирователя и срока сосредоточения"/>-->
+<!--					<type id="99006074" name="пункт приема автомобильной колонны войскового типа" abbr="пункт приема автомобильной колонны" src="kp_PSAKBT.xml" keywords="с указанием номера. типа колонны, наименования\nпункта, кто принимает и срок приема\n"/>-->
+<!--					<type id="99006076" name="район проведения рекогносцировки" abbr="район проведения рекогносцировки" src="reconnaissance_zone.xml"/>-->
+<!--					<type id="99006083" name="нарушение защиты информации" abbr="нарушение защиты информации" src="information_security_breach.xml"/>-->
+<!--				</group>-->
+<!--				<group name="МАРШРУТЫ">-->
+<!--				</group>-->
+<!--			</group>-->
+<!--			<group name="ОГНЕВЫЕ ЗАДАЧИ">-->
+<!--			</group>-->
+<!--			<group name="КОЛОННЫ">-->
+<!--				<type id="99007001" points="1" name="Походная колонны мотострелковых войск" abbr="Походные колонны" src="btr.xml" keywords="БТР,соединений, подразделений"/>-->
+<!--				<type id="99007002" name="Походная колонна танковых войск" abbr="Походныя колонна" src="tank_go.xml" keywords="соединений, подразделений"/>-->
+<!--				<type id="99007003" name="Походная колонна артиллерии" abbr="Походныя колонна" src="artillery_column.xml"/>-->
+<!--				<type id="99007004" name="Походная колонна зенитных ракетных войск и артиллерии" abbr="Походная колонна" src="anti_air_mid_range_circle.xml"/>-->
+<!--				<type id="99007005" name="Походная колонна технического обеспечения" abbr="Походная колонна" src="technical_support.xml"/>-->
+<!--				<type id="99007006" name="Походная колонна тыла" abbr="Походная колонна" src="rearward.xml"/>-->
+<!--				<type id="99007007" name="Перевозка войск по железной дороге" abbr="Перевозка войск" src="transportation_by_rail.xml"/>-->
+<!--				<type id="99007008" name="Перевозка войск на воздушном транспорте" abbr="Перевозка войск" src="transportation_by_air.xml"/>-->
+<!--				<type id="99007009" name="Перевозка войск на морском и речном транспорте" abbr="Перевозка войск" src="transportation_by_water.xml"/>-->
+<!--				<type id="99007010" name="Морская перевозка в составе конвоя" abbr="Морская перевозка конвоя" src="convoy_by_water.xml"/>-->
+<!--				<type id="99007011" name="Переход морского десантного отряда" abbr="Переход десантного отряда" src="landing.xml" keywords="с обозначением  места и времени нахождения"/>-->
+<!--				<type id="99007012" name="Исходный пункт" abbr="Исходный пункт" src="starting_point.xml"/>-->
+<!--				<type id="99007013" name="Пункт управления (штаб) в движении" abbr="Пункт управления (штаб) в движении" src="kp_brig.xml"/>-->
+<!--				<type id="99007014" name="Соединение кораблей на переходе" abbr="Соединение кораблей" src="connection_of_ships.xml" keywords="с указанием наименования группы, \nее состава, курса и скорости"/>-->
+<!--				<type id="99007015" name="маршрут движения подразделений" abbr="маршрут движения подразделений" src="unit's_route.xml" keywords="с указанием его номера, принадлежности и \nрасстояния от исходного рубежа"/>-->
+<!--				<type id="99007016" name="маршрут железнодорожных перевозок" abbr="маршрут железнодорожных перевозок" src="rail_route.xml" keywords="с указанием их интенсивности\n(поездов а сутки)"/>-->
+<!--				<type id="99007018" name="Комендантский (дорожно-комендантский) участок" abbr="Комендантский участок" src="commandant's_road.xml" keywords="батальен, рота, взвод"/>-->
+<!--				<type id="99007019" name="Комендант района" abbr="Комендант" src="district_commandant.xml"/>-->
+<!--				<type id="99007020" name="Комендант маршрута" abbr="Комендант" src="route_commandant.xml"/>-->
+<!--				<type id="99007021" name="Комендант участка" abbr="Комендант" src="site_commandant.xml"/>-->
+<!--				<type id="99007022" name="Начальник ВАД" abbr="Комендант" src="head_WAD.xml"/>-->
+<!--				<type id="99007023" name="Пост регулирования движения" abbr="Пост регулирования движения" src="traffic_control_post.xml"/>-->
+<!--				<type id="99007024" name="Перевалочная база" abbr="Перевалочная база" src="transshipment_base.xml"/>-->
+<!--				<type id="99007025" name="диспетчерский пункт дорожно-комендантской службы" abbr="диспетчерский пункт ДКС" src="control_room.xml"/>-->
+<!--				<group name="Задачи">-->
+<!--					<type id="99008001" points="3" name="Ближайшая задача подразделения" src="currenttaskfrontier.xml"/>-->
+<!--					<type id="99008002" points="3" name="Дальнейшая задача подразделения" src="nexttaskfrontier.xml"/>-->
+<!--					<type id="99008003" name="Планируемое направление наступления соединения" abbr="Планир. напр. наступления" src="timefrontier4.xml" keywords="воинской части, подразделения"/>-->
+<!--					<type id="99008004" name="Участок прорыва" abbr="Участок прорыва" src="defencefrontier_2.xml"/>-->
+<!--					<type id="99008005" points="3" name="Положение настурающих войск к определенному времени" abbr="Полож. войск к опр. времени" src="timefrontier2.xml"/>-->
+<!--					<type id="99008006" points="3" name="Положение настурающих войск к определенному времени" abbr="Полож. войск к опр. врем." src="timefrontier3.xml"/>-->
+<!--					<type id="99008007" name="Положение настурающих войск к определенному времени" abbr="Полож. войск к опр. времени" src="timefrontier22.xml"/>-->
+<!--					<type id="99008008" points="3" name="Положение наступающих войск к определенному времени" abbr="Полож. войск к опр. врем." src="timefrontier1.xml"/>-->
+<!--					<type id="99008009" name="Коридор пролета авиации" abbr="Коридор пролета авиации" src="flight_corridor.xml" keywords="с указанием высоты м\nи направления пролета"/>-->
+<!--					<type id="99008010" name="Прикрытие истребителями войск (объектов)" abbr="Прикрытие истребителями войск" src="patrol_air.xml" keywords="с указанием количества, типа самолетов\nвысоты и времени прикрытия"/>-->
+<!--					<type id="99008011" name="Участок сопровождения истребителями других родов авиации" abbr="Участок сопровождения ИА" src="fighter_escort_area.xml" keywords="с указанием рубежей, времени\nначала и конца сопровождения"/>-->
+<!--				</group>-->
+<!--				<group name="Действия войск">-->
+<!--					<type id="99008012" name="Соединение, воинская часть, подразделение в обороне" abbr="Соединение (в/ч, подр.) в обороне" src="rayon1_2.xml"/>-->
+<!--					<type id="99008013" name="положение обьединения, соединения, воинской части, подразделения в наступлении" abbr="полож. обьединения, соед. (в/ч подр.) в наст." src="timefrontier1.xml" keywords="батальен, рота,взвод соответственно 3,2,1 \nчерточка на стрелке"/>-->
+<!--					<type id="99008015" name="войска остановлены на рубеже (атака отражена)" abbr="войска останов. на рубеже" src="troops_stopped.xml"/>-->
+<!--					<type id="99008016" name="отход войск с занимаемого рубежа" abbr="отход войск" src="departure.xml"/>-->
+<!--					<type id="99008017" name="воздушный бой" abbr="воздушный бой" src="air_battle.xml" keywords="с указанием количества и типов самолетов,\nвысоты, даты, времени и потерь"/>-->
+<!--					<type id="99008018" name="Блокирование аэродрома" abbr="Блокирование аэродрома" src="airfield_blocking.xml" keywords="с указанием количества, типа, принадлежности\nсамолетов и времени блокирования"/>-->
+<!--					<type id="99008019" name="Воздушное сражение" abbr="Воздушное сражение" src="air_battle.xml"/>-->
+<!--					<type id="99008022" name="разведывательный дозор на боевой разведывательной машине(далее-БРМ)" abbr="развед. дозор на БРМ" src="reconnaissance_patrol_BRM.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Удары и огневое поражение">-->
+<!--					<type id="99009001" name="обозначение ударов планируемые удары" abbr="удар на главном направлении" src="strike_designation.xml" keywords="усилий, задач"/>-->
+<!--					<type id="99009002" name="обозначение ударов выполненные удары" abbr="удар на главном направлении" src="strike_designation_2.xml" keywords="задачи"/>-->
+<!--					<type id="99009003" name="обозначение ударов направление другого удара" abbr="направление другого удара" src="strike_designation_3.xml"/>-->
+<!--					<type id="99009004" points="0" name="Удары авиации нанесенный одиночный" abbr="Удары авиации" src="airstrike.xml" keywords="с применением обычного оружия"/>-->
+<!--					<type id="99009005" points="0" name="удар авиации нанесенный груповой" src="airstrike_group.xml" keywords="с применением обычного оружия"/>-->
+<!--					<type id="99009006" name="Удар авиации планируемый групповой" abbr="Удар авиации" src="airstrike_group_plan.xml" keywords="с применением обычного оружия"/>-->
+<!--					<type id="99009007" name="Удар крылатыми ракетами нанесенный одиночный" abbr="Удар крылатыми ракетами" src="airstrike_2.xml"/>-->
+<!--					<type id="99009008" name="Удар крылатыми ракетами нанесенный групповой" abbr="Удар крылатыми ракетами" src="airstrike_group_2.xml"/>-->
+<!--					<type id="99009009" name="Удар крылатыми ракетами планируемый одиночный" abbr="Удар крылатыми ракетами" src="airstrike_group_plan_2.xml"/>-->
+<!--					<type id="99009010" name="Удар ракетных войск одиночный" abbr="Удар ракетных войск" src="missile_attack.xml" keywords="с указанием номера цели и воинской части, типа \nи количества боевых частей, времени нанесения удара"/>-->
+<!--					<type id="99009011" name="Удар ракетных войск групповой" abbr="Удар ракетных войск" src="missile_attack_2.xml" keywords="с указанием номера цели и воинской части, типа \nи количества боевых частей, времени нанесения удара"/>-->
+<!--					<type id="99009012" name="Удар ракетных войск крылатой ракетой" abbr="Удар ракетных войск" src="missile_attack_3.xml" keywords="с указанием номера цели и воинской части, типа \nи количества боевых частей, времени нанесения удара"/>-->
+<!--					<type id="99009013" name="Отмена удара ракетных войск" abbr="Удар ракетных войск" src="missile_attack_4.xml" keywords="с указанием номера цели и воинской части, типа \nи количества боевых частей, времени команды"/>-->
+<!--					<type id="99009015" name="Огонь по отдельной цели с указанием ее номера" abbr="Огонь по отдельной цели" src="single_target_fire.xml"/>-->
+<!--					<type id="99009016" name="Сосредоточенный огонь ствольной артиллерии" abbr="Сосредоточенный огонь" src="frontier_concentrated_fire.xml" keywords="с указанием номера цели (участка)"/>-->
+<!--					<type id="99009017" name="Сосредоточенный огонь реактивной артиллерии" abbr="С огонь" src="frontier_concentrated_fire_2.xml"/>-->
+<!--					<type id="99009018" name="Огневой вал" abbr="Огневой вал" src="frontier_standing_barrage_2.xml"/>-->
+<!--					<type id="99009022" name="Неподвижный заградительный огонь" abbr="НЗ огонь" src="frontier_standing_barrage.xml" keywords="Неподвижный заградительный огонь"/>-->
+<!--					<type id="99009024" name="Подвижный заградительный огонь" abbr="ПЗ огонь" src="mobile_barrage.xml" keywords="одинарный"/>-->
+<!--					<type id="99009025" name="разрыв" abbr="разрыв" src="burst.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Бронетанковая техника и автомобили">-->
+<!--					<type id="1110001001" name="Танки" src="tank.xml"/>-->
+<!--					<type id="1110001003" name="Танк плавающий" src="tank_plav.xml"/>-->
+<!--					<type id="1110001004" name="Танк огнеметный" abbr="Танк огнеметный" src="tank_fire.xml"/>-->
+<!--					<type id="1110001005" name="Танк оснащенный комплексом ПТС" abbr="Танк оснащ. компл. ПТС" src="tank_PTS.xml"/>-->
+<!--					<type id="1110001006" name="Танк (БМП) оснащенный минным тралом" abbr="Танк (БМП) оснащенный минным тралом" src="tank_Mtral.xml" keywords="Боевая машина пехоты"/>-->
+<!--					<type id="1110001007" name="Танк оснащенный бульдозерным оборудованием" abbr="Танк оснащ. бульд. оборуд." src="tank_bulldozer.xml"/>-->
+<!--					<type id="1110001008" name="Танк оснащенный снегоочистителем" abbr="Танк оснащ. снегоочистителем" src="tank_snow.xml"/>-->
+<!--					<type id="1110001009" name="(Боевые машина пехоты)" abbr="(БМП)" src="bmp.xml"/>-->
+<!--					<type id="1110001010" name="Бронетранспортер" abbr="БТР" src="btr.xml"/>-->
+<!--					<type id="1110001011" name="Боевая разведывательная машина" abbr="БРМ" src="brm.xml"/>-->
+<!--					<type id="1110001012" name="Боевая разведывательная дозорная машина" abbr="БРДМ" src="reconnaissance_patrol_BRDM.xml"/>-->
+<!--					<type id="1110001013" name="Боевая разведывательная диверсионная машина" abbr="БРДМ" src="brdm_22.xml"/>-->
+<!--					<type id="1110001014" name="Автомобиль" abbr="Автомобиль" src="automobile.xml"/>-->
+<!--					<type id="1110001016" name="Радиолокационная станция разведки ведущих стрельбу орудий и минометов" abbr="Радиолокационная станция разведки" src="radar_station.xml"/>-->
+<!--					<type id="1110001017" name="Радиолокационная станция наземной разведки" abbr="РЛС (назем.)" src="rlsn.xml" keywords="наземных (надводных) целей"/>-->
+<!--					<type id="1110001018" name="Подвижный разведывательный пункт" abbr="Подвижный разведывательный пункт" src="mobile_reconnaissance_post.xml"/>-->
+<!--					<type id="1110001019" name="Радиодальномер" abbr="Радиодальномер" src="radio_rangefinder.xml"/>-->
+<!--					<type id="1110001020" name="Мотоцикл" src="bike.xml"/>-->
+<!--					<type id="1110001021" name="Санитарный автомобиль" abbr="Санитарный автомобиль" src="automobile_med.xml"/>-->
+<!--					<type id="1110001022" name="Бронированная медицинская машина" abbr="Брон. медицинская машина" src="automobile_med_BR.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Вооружение">-->
+<!--					<type id="1110002001" name="Пусковая установка тактических ракет" abbr="Пуск. уст-ка ТР" src="missile_launcher_tactical.xml"/>-->
+<!--					<type id="1110002002" name="Пусковая установка оперативно-тактических ракет" abbr="Пуск. уст-ка ОТР" src="missile_launcher_oper_tactical.xml"/>-->
+<!--					<type id="1110002003" name="орудие" src="artillery.xml" keywords="калибр до 122, до 152, крупнее152мм."/>-->
+<!--					<type id="1110002007" name="боевая машина реактивной системы залпового огня колёсная" abbr="Боевые машины РСЗО" src="bmrszo.xml" keywords="среднего калибра(до 300мм)\nкрупного калибра(300мм и крупнее)"/>-->
+<!--					<type id="1110002010" name="Самоходное артиллерийское орудие" abbr="САО" src="sau.xml"/>-->
+<!--					<type id="1110002011" name="Противотанковая пушка" abbr="Противотанковая пушка" src="artillery_at.xml" keywords="калибр до 85 мм, до 100мм"/>-->
+<!--					<type id="1110002014" name="ПТРК носимые" abbr="ПТРК Н" src="ptrk_m_nosim.xml"/>-->
+<!--					<type id="1110002015" name="Комплекс противотанковых управляемых ракет на боевой машине" abbr="Комплекс ПТУР" src="ptrk_m.xml"/>-->
+<!--					<type id="1110002016" name="Миномет" abbr="Миномет" src="mortar.xml" keywords="калибр малый до 82мм, средний до 120мм\nкрупный более 120мм"/>-->
+<!--					<type id="1110002020" name="Самоходный миномет" abbr="Самоходный миномет" src="mortar_m.xml" keywords="калибр"/>-->
+<!--					<type id="1110002021" name="Безоткатное орудие" abbr="БЗО" src="bzo.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Авиация">-->
+<!--					<type id="1120001001" name="Самолёт" abbr="Самолёт" src="plane.xml"/>-->
+<!--					<type id="1120001002" name="Вертолет" src="helicopter.xml"/>-->
+<!--					<type id="1120001003" name="Самолёт с вертикальным взлетом" abbr="Самолёт с вертикальным взлетом" src="plane_2.xml"/>-->
+<!--					<type id="1120001004" name="Дирижабль" abbr="Дирижабль" src="airship.xml"/>-->
+<!--					<type id="1120001005" name="Аэростат" abbr="Аэростат" src="airship_2.xml"/>-->
+<!--					<type id="1120001006" name="БЛА (самолёт)" src="uav.xml"/>-->
+<!--					<type id="1120001007" name="БЛА (вертолёт)" src="uav_helicopter.xml"/>-->
+<!--					<type id="1120001011" name="Противолодочный" abbr="Противолодочный" src="plane_marine.xml" keywords="Летательный аппарат"/>-->
+<!--					<type id="1120001012" name="Штурмовик (боевой вертолет)" src="helicopter_shock.xml" keywords="Летательный аппарат"/>-->
+<!--					<type id="1120001013" name="Ракетоносец" src="plane_missile_carrier.xml"/>-->
+<!--					<type id="1120001014" name="Истребитель" src="plane_fighter.xml"/>-->
+<!--					<type id="1120001015" name="Разведчик" src="scout.xml"/>-->
+<!--					<type id="1120001016" name="ПВО" src="plane_PVO_1.xml" keywords="Летательный аппарат"/>-->
+<!--					<type id="1120001017" name="специального назначения" src="plane_PVO.xml" keywords="летательный аппарат"/>-->
+<!--					<type id="1120001018" name="минно-торпедный" src="plane_mine_torpedo.xml" keywords="летательный аппарат"/>-->
+<!--					<type id="1120001019" name="бомбардировщик" src="plane_bomber.xml" keywords="летательный аппарат"/>-->
+<!--					<type id="1120001020" name="истребитель-бомбардировщик" src="plane_fighter_bomber.xml"/>-->
+<!--					<type id="1120001021" name="ударный БПЛА" src="plane_bomber_2.xml"/>-->
+<!--					<type id="1120001025" name="Аварийно спасательный" abbr="Аварийно спасательный" src="rescue_helicopter.xml" keywords="з-заправщик, к-корректировщик, рт-ретранслятор,сс-спасательный, с-связи, \nт-транспортный, рх-радиационно-химический"/>-->
+<!--					<type id="1120001026" name="санитарный" abbr="санитарный" src="plane_medical.xml" keywords="Летательный аппарат"/>-->
+<!--					<type id="1120001027" name="радиолокационного дозора и наведения" abbr="радиолокационного дозора и наведения" src="plane_radar_patrol.xml" keywords="летательный аппарат"/>-->
+<!--					<type id="1120001028" name="РЭБ" abbr="РЭБ" src="plane_REW.xml" keywords="летательный аппарат"/>-->
+<!--					<type id="1120001029" name="ретранслятор" abbr="ретранслятор" src="plane_repeater.xml" keywords="Летательный аппарат"/>-->
+<!--					<type id="1120001030" name="Радиоэлектронная разведка" abbr="РЭР" src="plane_electronic_intelligence.xml" keywords="летательный аппарат"/>-->
+<!--					<type id="1120001031" name="крылатые ракеты" abbr="крылатые ракеты" src="airstrike_distans.xml"/>-->
+<!--					<type id="1120001032" name="крылатые ракеты наземного базирования" abbr="крылатые ракеты" src="airstrike_ground.xml" keywords="на пусковой установке"/>-->
+<!--					<type id="1120001033" name="крылатые ракеты воздушного базирования" abbr="крылатые ракеты" src="airstrike_air.xml"/>-->
+<!--					<type id="1120001034" name="крылатые ракеты морского базирования" abbr="крылатые ракеты" src="airstrike_distans_marine.xml"/>-->
+<!--					<type id="1120001035" name="самолет с ядерным оружием на борту" abbr="самолет с ядерным оружием на борту" src="plane_nuclear.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Зенитные ракетные войска и артиллерия">-->
+<!--					<type id="1120002001" name="Батарея ПЗРК" src="missile_launcher_anti_air.xml"/>-->
+<!--					<type id="1120002002" name="Войсковой ЗРК &quot;Стрела-10&quot;" abbr="ЗРК &quot;Стрела-10&quot;" src="anti_air_close_range.xml"/>-->
+<!--					<type id="1120002003" name="Войсковой ЗРК &quot;Оса&quot;" abbr="ЗРК &quot;Оса&quot;" src="anti_air_close_range_11.xml"/>-->
+<!--					<type id="1120002004" name="ЗРК малой дальности" src="anti_air_close_range_2.xml"/>-->
+<!--					<type id="1120002005" name="ЗРК средней дальности" src="anti_air_mid_range.xml"/>-->
+<!--					<type id="1120002006" name="ЗРК дальнего действия" src="anti_air_long_range.xml"/>-->
+<!--					<type id="1120002007" name="ЗРК многоканальный" src="anti_air_close_range_2_dd.xml"/>-->
+<!--					<type id="1120002008" name="ЗРК пушечно-ракетный" src="anti_air_cannon.xml"/>-->
+<!--					<type id="1120002009" name="ЗРК самоходный многоканальный" src="anti_air_mid_range_dd2.xml"/>-->
+<!--					<type id="1120002010" name="зенитный ракетный дивизион на стартовой позиции" src="anti_air_close_range_2_circle.xml" keywords="батарея общее обозначение"/>-->
+<!--					<type id="1120002011" name="позиция технического дивизиона" src="anti_air_close_range_2_quad.xml" keywords="(батареи) Условный знак по типу ЗР"/>-->
+<!--					<type id="1120002012" name="самоходный зенитный пушечно-ракетный комплекс" abbr="самоходный ЗПРК" src="zsu_armored_personnel_carrier.xml" keywords="на базе бронетранспортера"/>-->
+<!--					<type id="1120002013" name="самоходный зенитный пушечно-ракетный комплекс" abbr="самоходный ЗПРК" src="zsu_crawler.xml" keywords="на базе гусеничного шасси"/>-->
+<!--					<type id="1120002014" name="Пусковая установка ЗРК" abbr="общее обозначение" src="anti_aircraft_system.xml"/>-->
+<!--					<type id="1120002019" name="Зенитные орудия" abbr="общее обозначение" src="aa_cannon.xml"/>-->
+<!--					<type id="1120002020" name="Зенитные орудия" abbr="малого калибра" src="aa_cannon_1.xml"/>-->
+<!--					<type id="1120002021" name="Зенитные орудия" abbr="среднего калибра" src="aa_cannon_2.xml"/>-->
+<!--					<type id="1120002022" name="Зенитные орудия" abbr="крупного калибра" src="aa_cannon_3.xml"/>-->
+<!--					<type id="1120002023" name="Зенитный артиллерийский дивизион на огневой позиции" abbr="Зенитный артиллерийский дивизион" src="aa_cannon_1_circle.xml" keywords="батарея"/>-->
+<!--					<type id="1120002024" name="боевая машина ЗРК ближнрего действия" src="automobile_ZRK.xml"/>-->
+<!--					<type id="1120002025" name="зенитные самоходные установки" src="zsu_crawler_1.xml" keywords="общего назначения"/>-->
+<!--					<type id="1120002026" name="зенитные самоходные установки с радиолокационным комплексом" src="zsu_crawler_radar.xml"/>-->
+<!--					<type id="1120002027" name="боевая машина ЗРК малой дальности" src="zsu_radar.xml"/>-->
+<!--					<type id="1120002028" name="смешанная группа ПВО" src="zsu_crawler_radar_mix.xml"/>-->
+<!--					<type id="1120002029" name="радиолокационная станция наведения ракет" src="radio_rrs_guidance.xml"/>-->
+<!--					<type id="1120002030" name="радиолокатор подсвета цели" src="radio_rrs_illumination.xml"/>-->
+<!--					<type id="1120002031" name="радиодальномер" src="radio_rangefinder_1.xml"/>-->
+<!--					<type id="1120002032" name="радиолокатор подсвета и наведения" src="radio_rrs_guidance_1.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Радиотехнические войска">-->
+<!--					<type id="1120003001" name="радиолокационная станция разведки воздушных целей" abbr="РЛС разведки воздушных целей" src="rls.xml"/>-->
+<!--					<type id="1120003002" name="радиолокационная станция оборудованная вторичным локатором" abbr="радиолокационная станция" src="p_u_n.xml"/>-->
+<!--					<type id="1120003003" name="радиолокационный высотомер" abbr="радиолокационный высотомер" src="radio_altimeter.xml"/>-->
+<!--					<type id="1120003004" name="автоматическая радиолокационная станция" abbr="автоматическая РЛС" src="radar_complex.xml" keywords="комплекс, малавысотная\nрадиолокационная сканция"/>-->
+<!--					<type id="1120003005" name="автоматическая радиолокационная станция подвижная" abbr="автоматическая РЛС подвижная" src="radar_complex_mob.xml" keywords="комплекс"/>-->
+<!--					<type id="1120003006" name="станция пассивной локации" abbr="станция пассивной локации" src="radio_rrs_1.xml"/>-->
+<!--					<type id="1120003007" name="РЛС на аэростате" abbr="РЛС на аэростате" src="radar_complex_air.xml"/>-->
+<!--					<type id="1120003008" name="Стационарные РЛС общего назначения" abbr="стационарные РЛС" src="rls_1.xml"/>-->
+<!--					<type id="1120003009" name="Стационарные РЛС в защитном сооружении" abbr="стационарные РЛС" src="rls_2.xml"/>-->
+<!--					<type id="1120003010" name="отдельный радиотехнический батальен" abbr="ортб" src="p_u_n_2.xml"/>-->
+<!--				</group>-->
+<!--				<group name="ВВСТ метеорологического обеспечения">-->
+<!--					<type id="1120005001" name="метеорологическая станция" abbr="метеорологическая станция" src="MP_2.xml"/>-->
+<!--				</group>-->
+<!--				<group name="Космические аппараты">-->
+<!--					<type id="1120006001" name="космический аппарат" abbr="космический аппарат" src="spacecraft.xml"/>-->
+<!--					<type id="1120006002" name="орбитальная группировка космических аппаратов" abbr="орбитальная группировка" src="constellation_spacecraft.xml"/>-->
+<!--				</group>-->
+<!--			</group>-->
+<!--		</group>-->
+<!--	</group>-->
+</classifier>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-30 -30 30 30" count-text="50 35">
+	<render type="single">
+		<rect p="-35 -20 25 10"/>
+		<rect p="-25 -10 35 20"/>
+		<text color="0" p="-25 -10 25 7" get="1"/>
+		<text color="0" p="-25 20 25 35" v-align="-1" get="2"/>
+	</render>
+</item>

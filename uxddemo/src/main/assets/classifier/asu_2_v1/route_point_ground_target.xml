@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" count-text="25 15">
+	<render type="single-static">
+		<cross p="-9 -9 9 9" strait="1"/>
+		<ellipse color="opposite" p="-10 -10 10 10"/>
+	</render>
+</item>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" perimeter="1" last-point-same-as-first="0" area-fill-image-center-zero="1" comment="ete">
+	<render size="10 10" type="first">
+		<arrow p="-1 0 -6 0"/>
+	</render>
+	<render type="last">
+		<arrow p="0 0 5 0"/>
+	</render>
+	<render type="first-static">
+		<text color=":000000FF" p="-19 15 21 39" get="1"/>
+	</render>
+	<render type="last-static">
+		<text color=":000000FF" p="34 47 -31 -3" get="2"/>
+	</render>
+</item>

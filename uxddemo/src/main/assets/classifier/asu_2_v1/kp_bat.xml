@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item moves-arrow="-25 0 25 0" count-text="20 20">
+	<render type="single-90-mirror">
+		<poly p="0 0 0 -60 -40 -42.5 -1 -25"/>
+		<text color="0" font="20 1" p="-1 25 -126 -28" need-mirror-h="1" h-align="0" v-align="0" get="1"/>
+		<string color="0" p="0 0" need-mirror-h="1" h-align="0" v-align="-1" get="2"/>
+		<cross color="opposite" stroke="line" destroyed="1" p="-35 -62.5 5 -22.5"/>
+	</render>
+</item>

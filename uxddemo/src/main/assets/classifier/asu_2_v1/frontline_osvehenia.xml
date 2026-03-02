@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" segment-fill-add-line="0">
+	<render type="last">
+		<line p="126 25 126 -25"/>
+		<line size="20 20" stroke="line" p="123 -1 75 -1"/>
+		<ellipse p="49 -25 0 24"/>
+		<ellipse p="73 -25 24 24"/>
+	</render>
+	<render type="first">
+		<line p="-125 25 -125 -26"/>
+		<line stroke="line" p="-124 0 -74 0"/>
+		<ellipse p="-49 -25 0 24"/>
+		<ellipse p="-74 -24 -25 25"/>
+	</render>
+	<render size="1 20" type="segment-fill">
+		<line/>
+	</render>
+</item>

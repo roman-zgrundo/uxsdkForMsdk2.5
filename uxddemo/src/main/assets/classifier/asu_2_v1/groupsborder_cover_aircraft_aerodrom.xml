@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="0">
+	<render size="10" type="segment-fill">
+		<line p="-10 0 0 0"/>
+	</render>
+	<render type="first">
+		<line p="-79 0 -109 0"/>
+		<text color=":000000FF" scale="2" p="-87 -56 55 49" get="1"/>
+	</render>
+	<render type="last">
+		<line p="107 0 77 0"/>
+		<ellipse p="76 -37 1 38"/>
+		<text color=":000000FF" scale="2" p="-52 -57 90 48" text="A"/>
+	</render>
+</item>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="plant" destroyed-cross="-20 -20 20 20" count-text="30 30">
+	<render type="single">
+		<ellipse p="-10 -10 10 10"/>
+		<ellipse p="-5 15 5 25"/>
+		<ellipse p="-22 -17 -12 -7"/>
+		<ellipse p="12 -17 22 -7"/>
+	</render>
+</item>

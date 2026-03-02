@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-25 -25 25 25" moves-arrow="30 0 50 0" count-text="0 0">
+	<render type="single">
+		<path>
+			<moveto p="38 51"/>
+			<quadto p="5 50 1 19"/>
+		</path>
+		<path>
+			<moveto p="38 -48"/>
+			<quadto p="6 -47 1 -16"/>
+		</path>
+	</render>
+</item>

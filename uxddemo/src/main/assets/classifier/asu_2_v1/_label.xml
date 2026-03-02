@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1">
+	<render type="single-no-overturn">
+		<string font="20" need-mirror-h="1" h-align="0" v-align="0" get="1"/>
+	</render>
+</item>

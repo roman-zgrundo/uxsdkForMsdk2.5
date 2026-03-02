@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" color="plant" perimeter="1">
+	<render type="center">
+		<text get="1"/>
+	</render>
+	<render type="segment-center">
+		<rect color=":EEEEEEFF" fill="1" fill-color=":EEEEEEFF" p="-19 -9 18 8"/>
+		<cross p="-12 -4 -4 4"/>
+		<cross p="4 -4 12 4"/>
+	</render>
+</item>

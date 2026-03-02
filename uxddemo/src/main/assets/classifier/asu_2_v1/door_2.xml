@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="building" destroyed-cross="-15 -15 15 15" count-text="25 15">
+	<render type="single">
+		<line p="-10 0 5 10"/>
+		<ellipse draw="0" fill="1" p="-14 -4 -6 4"/>
+		<ellipse draw="0" fill="1" p="6 -4 14 4"/>
+	</render>
+</item>

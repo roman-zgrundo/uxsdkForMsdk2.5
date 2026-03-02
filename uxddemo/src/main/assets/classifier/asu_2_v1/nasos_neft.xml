@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-30 -30 30 30" count-text="45 35">
+	<render type="single">
+		<arc draw="0" fill="1" fill-color="building" p="-25 -25 25 25 0 180"/>
+		<ellipse p="-25 -25 25 25"/>
+	</render>
+</item>

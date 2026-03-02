@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-r="15">
+	<render size="60" type="segment-fill">
+		<line p="-33 0 17 0"/>
+		<ellipse fill="1" p="27 8 10 -9"/>
+	</render>
+</item>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-30 -30 30 30" count-text="40 35">
+	<render type="single">
+		<rect p="-20 -20 20 20"/>
+		<line p="0 -20 0 -60"/>
+		<line p="-20 -60 20 -60"/>
+		<line p="-31 -50 -11 -70"/>
+		<line p="-42 -50 -22 -70"/>
+		<line p="11 -50 31 -70"/>
+		<line p="22 -50 42 -70"/>
+		<arrow p="0 -35 15 -35" height-m="1.5" length-m="4" fill="1"/>
+		<arrow p="0 -35 -15 -35" height-m="1.5" length-m="4" fill="1"/>
+		<text color="0" p="-20 -10 20 5" v-align="-1" get="1"/>
+		<text color="0" p="-20 20 20 35" v-align="-1" get="2"/>
+	</render>
+</item>

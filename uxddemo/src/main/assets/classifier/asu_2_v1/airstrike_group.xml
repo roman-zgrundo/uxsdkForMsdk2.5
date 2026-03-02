@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="0 -45 30 -15" count-text="30 15">
+	<render type="single">
+		<arrow p="15 -50 -10 0" bounds="1"/>
+		<arrow p="35 -50 10 0" bounds="1"/>
+		<text color="0" p="-25 0 25 15" v-align="-1" get="1"/>
+	</render>
+</item>

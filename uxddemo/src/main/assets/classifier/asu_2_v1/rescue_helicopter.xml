@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-40 -25 10 25" moves-arrow="17 0 37 0" count-text="19 41">
+	<render type="single">
+		<ellipse fill-color=":EEEEEEFF" p="-21 8 -37 -8"/>
+		<line p="-20 0 0 0"/>
+		<line p="-50 0 -38 0"/>
+		<line p="11 24 -11 -25"/>
+		<line p="-11 25 10 -25"/>
+		<render count="0">
+			<line p="-7 -28 -16 -24"/>
+			<line p="16 23 7 27"/>
+			<line p="6 -28 15 -24"/>
+			<line p="-16 23 -7 27"/>
+		</render>
+		<text color="0" p="-35 2 -22 -5" get="1"/>
+	</render>
+</item>

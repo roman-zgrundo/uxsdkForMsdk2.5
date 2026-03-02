@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<classifier>
+	<type id="1" name="Стрелок" abbr="С" src="unit_s.xml"/>
+	<type id="2" name="Пулемётчик" abbr="П" src="unit_mg.xml"/>
+	<type id="3" name="Гранатомётчик" abbr="Г" src="unit_g.xml"/>
+	<type id="4" name="Помощник гранатомётчика" abbr="ПГ" src="unit_s.xml"/>
+	<type id="5" name="Снайпер" abbr="Сн" src="unit_sn.xml"/>
+	<type id="6" name="Стрелок-санитар" abbr="+" src="unit_s.xml"/>
+	<type id="7" name="Наблюдатель" abbr="Н" src="unit_s.xml"/>
+	<type id="8" name="Взрывотехник" abbr="В" src="unit_s.xml"/>
+	<type id="9" name="Механик-водитель" abbr="МВ" src="unit_s.xml"/>
+	<type id="10" name="Водитель" abbr="В" src="unit_s.xml"/>
+	<type id="11" name="Наводчик-оператор" abbr="НО" src="unit_s.xml"/>
+	<type id="12" name="Авианаводчик" abbr="АН" src="unit_s.xml"/>
+	<type id="122" name="Передовой авианаводчик" abbr="ПАН" src="pan.xml"/>
+	<type id="123" name="ГТВУ" abbr="ГТВУ" src="gtvu.xml"/>
+	<type id="124" name="ГОВУ" abbr="ГОВУ" src="govu.xml"/>
+	<type id="401" name="Самолёт" abbr="СМЛ" src="plane.xml"/>
+	<type id="402" name="Вертолёт" abbr="ВРТ" src="helicopter.xml"/>
+	<type id="15" name="Пилот" abbr="ПИ" src="unit_s.xml"/>
+	<type id="14" name="Второй пилот" abbr="П2" src="unit_s.xml"/>
+	<type id="16" name="Штурман" abbr="ШТ" src="unit_s.xml"/>
+	<type id="202" name="Бронеранспортер" abbr="(БТР)" src="btr.xml"/>
+	<type id="204" name="Автомобиль" abbr="Авт" src="automobile.xml"/>
+	<type id="13" name="Авианаводчик (автомобиль)" abbr="АН" src="pan_car.xml"/>
+</classifier>

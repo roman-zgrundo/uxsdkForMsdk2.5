@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" color="0" perimeter="1" last-point-same-as-first="1">
+	<render type="first">
+		<arrow p="0 0 0 -30"/>
+	</render>
+	<render type="center">
+		<path color="enemy">
+			<quadto p="-11 -19 0 -50"/>
+		</path>
+		<path color="enemy" stroke="line 1 0 2 2">
+			<moveto p="-16 0"/>
+			<quadto p="-29 -21 -16 -50"/>
+		</path>
+		<path color="enemy" stroke="line 1 0 2 2" rotate="180">
+			<moveto p="-16 0"/>
+			<quadto p="-29 -21 -16 -50"/>
+		</path>
+		<path color="enemy" rotate="180">
+			<quadto p="-11 -19 0 -50"/>
+		</path>
+		<path color="enemy" stroke="line 1 0 2 2">
+			<moveto p="16 0"/>
+			<quadto p="7 -22 16 -50"/>
+		</path>
+		<path color="enemy" stroke="line 1 0 2 2" rotate="180">
+			<moveto p="16 0"/>
+			<quadto p="7 -22 16 -50"/>
+		</path>
+	</render>
+</item>

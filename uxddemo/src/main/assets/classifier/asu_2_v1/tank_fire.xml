@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-25 -25 25 25" moves-arrow="30 0 62 0" count-text="-1 40">
+	<render type="single">
+		<rhombus p="-30 -18 30 18"/>
+		<ellipse p="-10 -10 10 10"/>
+		<line p="18 0 11 0"/>
+		<line p="-11 0 -18 0"/>
+		<line p="-4 -8 -4 8"/>
+		<line p="4 -8 4 8"/>
+	</render>
+</item>

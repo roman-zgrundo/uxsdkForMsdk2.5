@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-25 -25 25 25" destroyed-cross-static="1" count-text="40 25">
+	<render type="single-90-mirror">
+		<poly close="1" p="15 -15 -30 -15 -30 15 15 15 30 0"/>
+		<arrow p="-30 -15 -60 -45" bounds="1"/>
+		<text color="0" p="-25 -12 25 8" need-mirror-h="1" v-align="-1" get="1"/>
+		<text color="0" p="-25 15 25 30" need-mirror-h="1" v-align="-1" get="2"/>
+	</render>
+</item>

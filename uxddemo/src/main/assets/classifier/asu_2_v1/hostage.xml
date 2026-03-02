@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="enemy" destroyed-cross="-25 -25 25 25" destroyed-cross-static="1" moves-arrow="25 0 40 0" count-text="25 30">
+	<render type="single-static">
+		<ellipse p="-20 -20 20 20"/>
+		<ellipse p="-11 -11 -3 -3"/>
+		<ellipse p="3 -11 11 -3"/>
+		<arc p="-10 14 10 4 -150 120"/>
+	</render>
+</item>

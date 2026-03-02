@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" color="0" destroyed-cross="-30 -30 30 30" count-text="50 35">
+	<render type="single">
+		<render>
+			<rect p="-30 -15 30 15"/>
+			<text color="0" p="-29 -14 29 10" get="1" text="ПУАР"/>
+			<text color="0" p="-25 15 25 30" v-align="-1" get="2"/>
+		</render>
+	</render>
+</item>

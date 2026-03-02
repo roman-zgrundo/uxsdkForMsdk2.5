@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="20 20 -20 -20" moves-arrow="23 0 33 0" count-text="30 15">
+	<render type="single-90-mirror">
+		<ellipse p="-20 -20 20 20"/>
+		<poly p="0 -20 0 -73 -40 -55.5 -1 -38"/>
+		<text p="-20 -13 21 7" need-mirror-h="1" v-align="-1" text="КР"/>
+	</render>
+</item>

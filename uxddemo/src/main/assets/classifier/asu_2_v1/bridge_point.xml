@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" color="building" destroyed-cross="-10 -20 10 20" count-text="30 25">
+	<render type="single">
+		<poly p="-25 -15 -15 -5 15 -5 25 -15"/>
+		<poly p="-25 15 -15 5 15 5 25 15"/>
+	</render>
+</item>

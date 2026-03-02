@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-30 -25 31 25" moves-arrow="30 0 50 0">
+	<render type="single-static">
+		<line p="-25 35 25 25"/>
+		<ref translate="-26 53" id="block1"/>
+		<ref translate="25 43" id="block1"/>
+	</render>
+	<render id="block1">
+		<triangle p="-13 -21 17 5"/>
+		<string font="12 1" p="-10 25" text="123"/>
+	</render>
+</item>

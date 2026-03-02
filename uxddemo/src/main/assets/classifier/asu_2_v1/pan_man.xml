@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="35 25">
+	<render type="single">
+		<ellipse p="-20 -20 20 20"/>
+		<poly p="0 -21 10 -38 17 -26"/>
+		<arrow p="17 -26 27 -42"/>
+		<text p="-15 -18 15 12" text="АН"/>
+		<text color="0" p="-25 15 25 30" v-align="-1" get="1"/>
+	</render>
+</item>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" last-point-same-as-first="mirror-h">
+	<render size="20 20" type="segment-fill">
+		<line p="-10 0 10 0"/>
+		<ref translate="0 8" id="x"/>
+	</render>
+	<render type="first">
+		<arc p="-15 0 15 30 -90 -90"/>
+		<ref translate="-6 12" id="x"/>
+	</render>
+	<render type="center">
+		<arrow p="0 0 0 -30"/>
+	</render>
+	<render id="x">
+		<cross p="-3 -3 3 3"/>
+	</render>
+</item>

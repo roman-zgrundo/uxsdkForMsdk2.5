@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item color="0" moves-arrow="-25 0 25 0" count-text="20 15">
+	<render type="single-90-mirror">
+		<arrow p="37 -45 -37 -45" height-m="1.8" length-m="3.5"/>
+		<text color="0" p="9 -44 64 -27" need-mirror-h="1" get="1"/>
+		<text color="0" p="14 -21 52 -6" need-mirror-h="1" h-align="1" v-align="0" get="2"/>
+		<cross color="opposite" stroke="line" destroyed="1" p="-25 -69 25 -19"/>
+		<line p="0 -44 0 0"/>
+	</render>
+</item>

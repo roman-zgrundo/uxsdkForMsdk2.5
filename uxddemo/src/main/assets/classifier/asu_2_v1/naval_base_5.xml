@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-30 -30 30 30" count-text="45 35">
+	<render color="enemy" type="single">
+		<ellipse p="-30 -30 30 30"/>
+		<text color="enemy" p="0 -3 0 -3" text="ПБ"/>
+	</render>
+</item>

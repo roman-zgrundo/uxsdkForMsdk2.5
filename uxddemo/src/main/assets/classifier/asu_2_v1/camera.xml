@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item destroyed-cross="-25 -25 25 25" count-text="35 25">
+	<render type="single">
+		<ellipse p="-7 -7 7 7"/>
+		<rect p="-15 -15 15 15"/>
+	</render>
+</item>

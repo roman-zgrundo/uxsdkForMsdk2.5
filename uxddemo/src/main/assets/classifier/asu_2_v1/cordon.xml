@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4">
+	<render size="30 30" type="segment-fill">
+		<line stroke="line 1 0 3 3 0.5 4" p="-15 0 15 0"/>
+	</render>
+</item>

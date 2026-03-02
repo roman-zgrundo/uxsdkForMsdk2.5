@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" color="building" perimeter="1">
+	<render size="10 10" type="area-fill">
+		<line stroke="line 0.5" p="-10 10 10 -10"/>
+		<line stroke="line 0.5" p="-10 -10 10 10"/>
+	</render>
+</item>

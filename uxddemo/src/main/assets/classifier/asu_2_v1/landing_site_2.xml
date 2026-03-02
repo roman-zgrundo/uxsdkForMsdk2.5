@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-25 -25 25 25" count-text="35 30">
+	<render type="single">
+		<ellipse fill="1" p="-25 -25 25 25"/>
+		<line color=":FFFFFFFF" stroke="line 5" p="0 -9 0 9"/>
+		<ellipse color=":FFFFFFFF" p="-20 -20 20 20"/>
+		<ellipse color=":FFFFFFFF" p="-24 -24 24 24"/>
+	</render>
+</item>

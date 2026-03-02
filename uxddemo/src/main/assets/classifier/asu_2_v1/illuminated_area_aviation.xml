@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="4" color="friend" perimeter="1" area-fill-size-correction="1" area-fill-alpha="192">
+	<render size="50 50" type="area-fill">
+		<ellipse p="-8 -8 8 8"/>
+		<ellipse p="-15 -15 15 15"/>
+	</render>
+</item>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="3" segment-fill-add-line="0">
+	<script type="segment-before">p.drawLine(0,-5,ctx.length(),-5);
+p.drawLine(0,+5,ctx.length(),+5);</script>
+</item>

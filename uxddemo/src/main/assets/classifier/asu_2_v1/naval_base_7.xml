@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="0" destroyed-cross="-30 -30 30 30" count-text="45 35">
+	<render color="enemy" type="single">
+		<text color="0" p="0 -3 0 -3" text="ОБ"/>
+		<poly p="-22 -16 0 -30 23 -15 23 15 -22 15 -22 -16"/>
+	</render>
+</item>

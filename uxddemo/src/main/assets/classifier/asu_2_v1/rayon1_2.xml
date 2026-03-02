@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-57 -57 57 57">
+	<render rotate="90" type="single">
+		<arc stroke="line 0.25" rotate="90" p="-47 52 46 -51 -90 180"/>
+		<poly stroke="line 0.25" p="-52 -1 -51 -12 -46 -29"/>
+		<poly stroke="line 0.25" p="51 0 50 -17 47 -32"/>
+	</render>
+</item>

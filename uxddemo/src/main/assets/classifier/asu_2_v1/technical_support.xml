@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<item points="1" destroyed-cross="-25 -43 25 7" moves-arrow="-55 0 60 0" count-text="-11 58">
+	<render type="single">
+		<rect p="-30 -37 29 -1"/>
+		<text color="0" p="-25 7 25 22" v-align="-1" get="1"/>
+		<ellipse p="-2 -19 1 -16"/>
+	</render>
+</item>
