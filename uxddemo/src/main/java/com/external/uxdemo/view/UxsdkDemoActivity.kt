@@ -62,6 +62,7 @@ import com.external.uxdemo.liveStream.LiveStreamSettingsDialog
 import com.external.uxdemo.liveStream.LiveStreamViewModel
 import com.external.uxdemo.locationTracker.LocationTrackerManager
 import androidx.core.content.edit
+import com.external.uxdemo.remoteController.RCCustomKeyManager
 import com.external.uxdemo.soldatServiceConnection.ClassifierUIHelper
 import com.external.uxdemo.soldatServiceConnection.SoldatManager
 
@@ -413,8 +414,16 @@ class UxsdkDemoActivity : BaseMainActivity() {
         if (connected) {
             Log.e("LocationTracker", "Дрон подключен, запускаем подписки")
             trackerManager.setupSubscriptions()
+
+            // Добавляем инициализацию кнопок с задержкой,
+            // чтобы KeyManager дрона успел "проснуться"
+            uiBinding.root.postDelayed({
+                RCCustomKeyManager.init()
+            }, 500)
+
         } else {
             Log.e("LocationTracker", "Дрон отключен")
+            RCCustomKeyManager.release()
         }
     }
 

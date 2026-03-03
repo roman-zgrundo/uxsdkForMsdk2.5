@@ -6,64 +6,56 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import com.autel.common.base.BaseAircraftFragment
-import com.autel.common.manager.AppInfoManager
 import com.autel.common.manager.AutelStorageManager
 import com.autel.common.manager.SameResourceHelper
-import com.autel.common.manager.StorageKey
 import com.autel.setting.R
 import com.autel.setting.databinding.SettingControllerCustomKeyFragmentBinding
-import com.autel.common.utils.CustomKeyUtils
+import com.autel.setting.utils.CustomKeyConfig
 
 class SettingControllerCustomKeyFragment : BaseAircraftFragment() {
 
-    companion object {
-        const val TAG = "SettingControllerCustomKeyFragment"
-        const val DEFAULT_POSITION = 0
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        val binding = SettingControllerCustomKeyFragmentBinding.inflate(inflater, container, false)
+        setupSpinners(binding)
+        setupUI(binding)
+        return binding.root
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = SettingControllerCustomKeyFragmentBinding.inflate(inflater, container, false)
-        initView(rootView)
-        return rootView.root
-    }
+    private fun setupSpinners(binding: SettingControllerCustomKeyFragmentBinding) {
+        val storage = AutelStorageManager.getPlainStorage()
 
-    private fun initView(rootView: SettingControllerCustomKeyFragmentBinding) {
+        // Конфигурация для C1
+        binding.tvSelectC1Spinner.apply {
+            dataList = CustomKeyConfig.displayNames
+            val saved = storage.getIntValue(CustomKeyConfig.KEY_C1_ACTION, -1)
+            val index = CustomKeyConfig.actions.indexOfFirst { it.second.ordinal == saved }
+            setDefaultText(if (index != -1) index else 0)
 
-        val customKeys = ArrayList<String>()
-        CustomKeyUtils.getCustomKeyList().forEach {
-            customKeys.add(getString(it.id))
+            setSpinnerViewListener { position ->
+                storage.setIntValue(CustomKeyConfig.KEY_C1_ACTION, CustomKeyConfig.actions[position].second.ordinal)
+            }
         }
 
-        //自定义C1按键
-        rootView.tvSelectC1Spinner.dataList = customKeys
-        rootView.tvSelectC1Spinner.setDefaultText(CustomKeyUtils.getDefineCustomC1Index())
-        rootView.tvSelectC1Spinner.setSpinnerViewListener { position ->
-            AutelStorageManager.getPlainStorage()
-                .setIntValue(StorageKey.PlainKey.KEY_C1_CUSTOM_DEFINE_KEY, CustomKeyUtils.getCustomKeyList()[position].value)
+        // Конфигурация для C2
+        binding.tvSelectC2Spinner.apply {
+            dataList = CustomKeyConfig.displayNames
+            val saved = storage.getIntValue(CustomKeyConfig.KEY_C2_ACTION, -1)
+            val index = CustomKeyConfig.actions.indexOfFirst { it.second.ordinal == saved }
+            setDefaultText(if (index != -1) index else 0)
+
+            setSpinnerViewListener { position ->
+                storage.setIntValue(CustomKeyConfig.KEY_C2_ACTION, CustomKeyConfig.actions[position].second.ordinal)
+            }
         }
-
-        //自定义C2按键
-        rootView.tvSelectC2Spinner.dataList = customKeys
-        rootView.tvSelectC2Spinner.setDefaultText(CustomKeyUtils.getDefineCustomC2Index())
-        rootView.tvSelectC2Spinner.setSpinnerViewListener { position ->
-            AutelStorageManager.getPlainStorage()
-                .setIntValue(StorageKey.PlainKey.KEY_C2_CUSTOM_DEFINE_KEY, CustomKeyUtils.getCustomKeyList()[position].value)
-        }
-
-        //小屏适配
-        rootView.tvKeyDefine.text =
-            getString(if (AppInfoManager.isLargeScreen()) R.string.common_text_c1_c2_key_define else R.string.common_text_c_key_define)
-        rootView.llCustomRight.isVisible = AppInfoManager.isLargeScreen()
-        rootView.tvCustomLeft.isVisible = AppInfoManager.isLargeScreen()
-        rootView.ivKeyDefine.setImageResource(SameResourceHelper.getRemoteCustomDefineRes())
     }
 
-    override fun getData() {
-
+    private fun setupUI(binding: SettingControllerCustomKeyFragmentBinding) {
+        binding.tvKeyDefine.text = getString(R.string.common_text_c1_c2_key_define)
+        binding.llCustomRight.isVisible = true
+        binding.tvCustomLeft.isVisible = true
+        binding.ivKeyDefine.setImageResource(SameResourceHelper.getRemoteCustomDefineRes())
     }
 
-    override fun addListen() {
-
-    }
-
+    override fun getData() {}
+    override fun addListen() {}
 }
