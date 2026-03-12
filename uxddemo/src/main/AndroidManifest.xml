@@ -80,7 +80,7 @@
         </provider>
 
         <service
-            android:name="com.external.uxdemo.liveStream.LiveStreamService"
+            android:name="com.autel.setting.liveStream.LiveStreamService"
             android:foregroundServiceType="connectedDevice"
             android:exported="false" />
     </application>

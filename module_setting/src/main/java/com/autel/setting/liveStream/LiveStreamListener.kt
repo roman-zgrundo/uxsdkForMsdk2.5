@@ -1,4 +1,4 @@
-package com.external.uxdemo.liveStream
+package com.autel.setting.liveStream
 
 interface LiveStreamListener {
     fun onStateChanged(isStreaming: Boolean)

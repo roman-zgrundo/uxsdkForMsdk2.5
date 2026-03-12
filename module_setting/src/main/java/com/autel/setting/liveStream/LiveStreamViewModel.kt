@@ -1,6 +1,5 @@
-package com.external.uxdemo.liveStream
+package com.autel.setting.liveStream
 
-import android.annotation.SuppressLint
 import android.os.Handler
 import android.os.Looper
 import android.util.Log

@@ -29,6 +29,7 @@ import com.autel.setting.provider.function.DataSecurityFunctionEntry
 import com.autel.setting.provider.function.DownFillLightFunctionEntry
 import com.autel.setting.provider.function.GNSSFunctionEntry
 import com.autel.setting.provider.function.GimbalFillLightFunctionEntry
+import com.autel.setting.provider.function.LivePlayFunctionEntry
 import com.autel.setting.provider.function.NavigationLightFunctionEntry
 import com.autel.setting.provider.function.ObstacleAvoidanceFunctionEntry
 import com.autel.setting.provider.function.RangingFunctionEntry
@@ -118,6 +119,9 @@ class SettingModuleImpl : ISettingModule {
             list.add(SingleMatchFunctionEntry(mainProvider))
         }
         if (DeviceUtils.isMainRC()) {
+
+            list.add(LivePlayFunctionEntry(mainProvider))
+
             if (AppInfoManager.isSupportNavigationLight()) {
                 val bottomLightEntry = DownFillLightFunctionEntry(mainProvider)
                 list.add(bottomLightEntry)

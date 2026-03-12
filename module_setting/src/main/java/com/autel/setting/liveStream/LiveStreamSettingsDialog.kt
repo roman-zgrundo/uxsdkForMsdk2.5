@@ -1,10 +1,9 @@
-package com.external.uxdemo.liveStream
+package com.autel.setting.liveStream
 
 import android.content.*
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.*
-import android.widget.SeekBar
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.autel.widget.databinding.WidgetUxDialogLiveStreamBinding

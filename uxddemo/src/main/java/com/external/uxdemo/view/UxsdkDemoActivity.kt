@@ -3,11 +3,6 @@ package com.external.uxdemo.view
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Typeface
-import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -19,7 +14,6 @@ import android.util.Log
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
@@ -33,7 +27,6 @@ import androidx.core.view.marginBottom
 import androidx.core.view.marginEnd
 import androidx.core.view.marginStart
 import androidx.core.view.updateLayoutParams
-import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.external.uxdemo.soldatServiceConnection.SoldatServiceViewModel
@@ -58,10 +51,10 @@ import com.autel.player.player.AutelPlayerManager
 import com.autel.player.player.autelplayer.AutelPlayer
 import com.autel.widget.widget.map.MapWidget
 import com.external.uxddemo.R
-import com.external.uxdemo.liveStream.LiveStreamSettingsDialog
-import com.external.uxdemo.liveStream.LiveStreamViewModel
+import com.autel.setting.liveStream.LiveStreamViewModel
 import com.external.uxdemo.locationTracker.LocationTrackerManager
 import androidx.core.content.edit
+import com.autel.setting.liveStream.LiveStreamService
 import com.external.uxdemo.remoteController.RCCustomKeyManager
 import com.external.uxdemo.soldatServiceConnection.ClassifierUIHelper
 import com.external.uxdemo.soldatServiceConnection.SoldatManager
@@ -93,7 +86,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
 
     private val streamServiceConnection = object : android.content.ServiceConnection {
         override fun onServiceConnected(name: android.content.ComponentName?, service: android.os.IBinder?) {
-            val binder = service as com.external.uxdemo.liveStream.LiveStreamService.LocalBinder
+            val binder = service as LiveStreamService.LocalBinder
             liveStreamViewModel.onServiceConnected(binder.getService())
         }
         override fun onServiceDisconnected(name: android.content.ComponentName?) {}
@@ -127,7 +120,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
             trackerManager.setupSubscriptions()
         }
 
-        val intent = Intent(this, com.external.uxdemo.liveStream.LiveStreamService::class.java)
+        val intent = Intent(this, LiveStreamService::class.java)
         bindService(intent, streamServiceConnection, Context.BIND_AUTO_CREATE)
     }
 
@@ -171,9 +164,9 @@ class UxsdkDemoActivity : BaseMainActivity() {
         uiBinding.attitudeBall.isVisible = DeviceUtils.isSingleControl()
         uiBinding.codecToolRight.setMainProvider(this)
 
-        uiBinding.root.findViewById<View>(R.id.ll_custom_live_stream)?.setOnClickListener {
-            LiveStreamSettingsDialog().apply { setStyle(DialogFragment.STYLE_NORMAL, R.style.WideDialog) }.show(supportFragmentManager, "LiveStreamSettings")
-        }
+//        uiBinding.root.findViewById<View>(R.id.ll_custom_live_stream)?.setOnClickListener {
+////            LiveStreamSettingsDialog().apply { setStyle(DialogFragment.STYLE_NORMAL, R.style.WideDialog) }.show(supportFragmentManager, "LiveStreamSettings")
+//        }
 
         startTrackerUpdateLoop()
 

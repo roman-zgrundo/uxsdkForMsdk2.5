@@ -1,5 +1,6 @@
-package com.external.uxdemo.liveStream
+package com.autel.setting.liveStream
 
+import android.R
 import android.app.*
 import android.content.Intent
 import android.os.*
@@ -28,7 +29,7 @@ class LiveStreamService : Service() {
         createNotificationChannel()
         startForeground(1, NotificationCompat.Builder(this, "STREAM_CHANNEL")
             .setContentTitle("Autel Live Streaming")
-            .setSmallIcon(android.R.drawable.ic_media_play).build())
+            .setSmallIcon(R.drawable.ic_media_play).build())
         return START_STICKY
     }
 
