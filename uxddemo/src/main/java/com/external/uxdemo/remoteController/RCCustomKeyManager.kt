@@ -53,13 +53,18 @@ object RCCustomKeyManager {
 
         when (action) {
             CustomRemoteKeyEnum.GIMBAL_ANGLE -> cycleGimbalAngle()
-            CustomRemoteKeyEnum.MAP_FPV_SWITCH -> LiveDataBus.of<Boolean>("switch_map_fpv").post(true)
+//            CustomRemoteKeyEnum.MAP_FPV_SWITCH -> LiveDataBus.of<Boolean>("switch_map_fpv").post(true)
+            CustomRemoteKeyEnum.DOWN_LIGHT_SWITCH -> toggleDownFillLight()
             CustomRemoteKeyEnum.ARM_LIGHT_SWITCH -> toggleStealthMode()
             CustomRemoteKeyEnum.UNKNOWN -> LiveDataBus.of<Boolean>("switch_unknown").post(true)
             else -> {}
         }
     }
 
+    private fun toggleDownFillLight() {
+        Log.i(TAG, "Нажата настраиваемая кнопка: переключение нижней подсветки через шину событий")
+        LiveDataBus.of<Boolean>("EVENT_TOGGLE_DOWN_LIGHT").post(true)
+    }
     private fun cycleGimbalAngle() {
         val angles = floatArrayOf(0f, 45f, 90f)
         gimbalStep = (gimbalStep + 1) % angles.size
@@ -69,17 +74,24 @@ object RCCustomKeyManager {
         droneKM.performAction(AutelKey.create(GimbalKey.KeyAngleDegreeControl), targetAngle, null)
     }
 
-    private fun toggleStealthMode() {
-        val droneKM = DeviceManager.getDeviceManager().getFirstDroneDevice()?.getKeyManager() ?: return
-        val silentKey = AutelKey.create(FlightPropertyKey.KeySilentModeStatus)
+//    private fun toggleStealthMode() {
+//        val droneKM = DeviceManager.getDeviceManager().getFirstDroneDevice()?.getKeyManager() ?: return
+//        val silentKey = AutelKey.create(FlightPropertyKey.KeySilentModeStatus)
+//
+//        droneKM.getValue(silentKey, object : CompletionCallbackWithParam<Boolean> {
+//            override fun onSuccess(currentValue: Boolean?) {
+//                droneKM.setValue(silentKey, !(currentValue ?: false), null)
+//            }
+//            override fun onFailure(error: IAutelCode, msg: String?) {}
+//        })
+//    }
 
-        droneKM.getValue(silentKey, object : CompletionCallbackWithParam<Boolean> {
-            override fun onSuccess(currentValue: Boolean?) {
-                droneKM.setValue(silentKey, !(currentValue ?: false), null)
-            }
-            override fun onFailure(error: IAutelCode, msg: String?) {}
-        })
+    private fun toggleStealthMode() {
+        Log.i(TAG, "Нажата кнопка: переключение режима тишины (Stealth Mode)")
+        // Просто уведомляем систему, а Entry сам разберется с логикой
+        LiveDataBus.of<Boolean>("EVENT_TOGGLE_STEALTH_MODE").post(true)
     }
+
 
     fun release() {
         activeKeyManager?.let { it.cancelListen(infoListener ?: return) }

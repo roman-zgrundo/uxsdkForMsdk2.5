@@ -9,6 +9,7 @@ import com.autel.common.delegate.IMainProvider
 import com.autel.common.delegate.function.AbsDelegateFunction
 import com.autel.common.delegate.function.FunctionType
 import com.autel.common.delegate.function.FunctionViewType
+import com.autel.common.lifecycle.LiveDataBus
 import com.autel.common.sdk.business.DroneLightVM
 import com.autel.common.utils.DeviceUtils
 import com.autel.common.utils.UIUtils
@@ -45,6 +46,17 @@ class DownFillLightFunctionEntry(mainProvider: IMainProvider) : AbsDelegateFunct
     override fun onFunctionCreate() {
         super.onFunctionCreate()
         droneLightVM.addObserver()
+
+        LiveDataBus.of<Boolean>("EVENT_TOGGLE_DOWN_LIGHT")
+            .observe(mainProvider.getMainLifecycleOwner()) {
+                val dummyView = View(mainProvider.getMainContext())
+                if (functionModel.isOn) {
+                    onFunctionStop(FunctionViewType.Bar, dummyView)
+                } else {
+                    onFunctionStart(FunctionViewType.Bar, dummyView)
+                }
+            }
+
         droneLightVM.bottomLightLD.observe(mainProvider.getMainLifecycleOwner()) {
             AutelLog.i(DownFillLightTag, "开关 observe:$it")
             refreshBottomLightOn()

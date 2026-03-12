@@ -7,6 +7,7 @@ import com.autel.common.delegate.IMainProvider
 import com.autel.common.delegate.function.AbsDelegateFunction
 import com.autel.common.delegate.function.FunctionType
 import com.autel.common.delegate.function.FunctionViewType
+import com.autel.common.lifecycle.LiveDataBus
 import com.autel.common.sdk.business.DroneLightVM
 import com.autel.setting.R
 
@@ -33,6 +34,18 @@ class NavigationLightFunctionEntry(mainProvider: IMainProvider) : AbsDelegateFun
     override fun onFunctionCreate() {
         super.onFunctionCreate()
         viewModel.queryAllLedLight()
+
+        // Подписка на событие пульта для режима тишины
+        LiveDataBus.of<Boolean>("EVENT_TOGGLE_STEALTH_MODE").observe(mainProvider.getMainLifecycleOwner()) {
+            // Получаем текущее состояние из ViewModel
+            val isSilent = viewModel.silenceModeStatusLD.value ?: false
+            // Переключаем на противоположное
+            viewModel.switchSilenceModeStatus()
+            // Примечание: Метод setLedSilentMode должен быть в DroneLightVM
+            // Если его там нет, используй привычный тебе способ через KeyManager,
+            // но здесь, внутри Entry, это заставит UI обновиться.
+        }
+
         viewModel.navigationLightLD.observe(mainProvider.getMainLifecycleOwner()) {
             refreshNavLightOn()
         }

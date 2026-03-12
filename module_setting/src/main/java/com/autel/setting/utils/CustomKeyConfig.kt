@@ -10,6 +10,7 @@ object CustomKeyConfig {
     // Централизованный список доступных действий
     val actions = listOf(
         "Наклон. центр./45°/опустить стабилиз-р" to CustomRemoteKeyEnum.GIMBAL_ANGLE,
+        "Нижняя подсветка" to CustomRemoteKeyEnum.DOWN_LIGHT_SWITCH,
 //        "Переключить карту" to CustomRemoteKeyEnum.MAP_FPV_SWITCH,
         "Режим НЕВИДИМКА" to CustomRemoteKeyEnum.ARM_LIGHT_SWITCH,
         "Пусто" to CustomRemoteKeyEnum.UNKNOWN
