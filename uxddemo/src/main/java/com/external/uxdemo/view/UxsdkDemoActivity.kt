@@ -193,6 +193,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
 
         uiBinding.root.findViewById<View>(R.id.btn_burst_now)?.setOnClickListener {
             getCoordsFromReport()?.let { (lat, lon) ->
+                soldatManager.sendMarker(lat, lon)
                 soldatManager.sendObject(lat, lon, BURST_TYPE_ID, "РАЗРЫВ")
                 it.performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS)
             }
