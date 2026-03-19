@@ -183,6 +183,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
 
         uiBinding.root.findViewById<View>(R.id.btn_open_classifier)?.setOnClickListener {
             it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+            saveTargetFix()
             getCoordsFromReport()?.let { (lat, lon) ->
                 soldatManager.sendMarker(lat, lon)
                 uiBinding.root.findViewById<View>(R.id.side_panel_classifier).apply {
@@ -194,6 +195,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
         }
 
         uiBinding.root.findViewById<View>(R.id.btn_burst_now)?.setOnClickListener {
+            saveTargetFix()
             getCoordsFromReport()?.let { (lat, lon) ->
                 soldatManager.sendMarker(lat, lon)
                 soldatManager.sendObject(lat, lon, BURST_TYPE_ID, "РАЗРЫВ")

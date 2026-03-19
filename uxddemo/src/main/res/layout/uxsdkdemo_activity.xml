@@ -280,6 +280,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:backgroundTint="#FF0000"
+        android:visibility="invisible"
         android:alpha="0.7"
         android:text="ЗАФИКСИРОВАТЬ ЦЕЛЬ"
         android:textColor="#FFFFFF"
