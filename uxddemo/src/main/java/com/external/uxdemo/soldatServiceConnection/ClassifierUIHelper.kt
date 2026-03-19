@@ -102,6 +102,7 @@ class ClassifierUIHelper(
         } catch (e: Exception) { }
 
         btn.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
             soldatManager.sendObject(lat, lon, id, name)
             onObjectSent()
         }

@@ -12,6 +12,7 @@ import android.provider.Settings
 import android.text.InputType
 import android.util.Log
 import android.view.Gravity
+import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
@@ -177,10 +178,11 @@ class UxsdkDemoActivity : BaseMainActivity() {
 
         uiBinding.root.findViewById<View>(R.id.btn_fix_target)?.setOnClickListener {
             saveTargetFix()
-            it.performHapticFeedback(android.view.HapticFeedbackConstants.VIRTUAL_KEY)
+            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
         }
 
         uiBinding.root.findViewById<View>(R.id.btn_open_classifier)?.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
             getCoordsFromReport()?.let { (lat, lon) ->
                 soldatManager.sendMarker(lat, lon)
                 uiBinding.root.findViewById<View>(R.id.side_panel_classifier).apply {
@@ -195,11 +197,12 @@ class UxsdkDemoActivity : BaseMainActivity() {
             getCoordsFromReport()?.let { (lat, lon) ->
                 soldatManager.sendMarker(lat, lon)
                 soldatManager.sendObject(lat, lon, BURST_TYPE_ID, "РАЗРЫВ")
-                it.performHapticFeedback(android.view.HapticFeedbackConstants.LONG_PRESS)
+                it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
             }
         }
 
         uiBinding.root.findViewById<Button>(R.id.btn_close_classifier)?.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
             uiBinding.root.findViewById<View>(R.id.side_panel_classifier)?.visibility = View.GONE
         }
     }
