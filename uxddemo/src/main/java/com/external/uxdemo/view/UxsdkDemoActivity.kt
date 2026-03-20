@@ -56,10 +56,10 @@ import com.autel.setting.liveStream.LiveStreamViewModel
 import com.external.uxdemo.locationTracker.LocationTrackerManager
 import androidx.core.content.edit
 import com.autel.setting.liveStream.LiveStreamService
+import com.autel.setting.view.WidgetSettingsDialog
 import com.external.uxdemo.remoteController.RCCustomKeyManager
 import com.external.uxdemo.soldatServiceConnection.ClassifierUIHelper
 import com.external.uxdemo.soldatServiceConnection.SoldatManager
-
 
 class UxsdkDemoActivity : BaseMainActivity() {
 
@@ -134,7 +134,8 @@ class UxsdkDemoActivity : BaseMainActivity() {
         // --- AUTEL SDK UI SETUP ---
         mapWidget = MapWidget(this)
         uiBinding.autelSplitScreenContainer.getMapContainer().addView(mapWidget, ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT)
-        if (MapManager.getMapToken().isNullOrEmpty()) showMapKeyDialog()
+//        if (MapManager.getMapToken().isNullOrEmpty()) showMapKeyDialog()
+        syncSdkState()
 
         uiBinding.codecTabView.setCodecTabSwitchListener { item ->
             ScreenStateManager.getInstance().updateCodecTabSwitch(ScreenStateManager.getInstance().getPageLocationState().fullScreenType, item)
@@ -176,10 +177,10 @@ class UxsdkDemoActivity : BaseMainActivity() {
 
         uiBinding.root.findViewById<Button>(R.id.btn_set_address)?.setOnClickListener { showTargetAddressDialog() }
 
-        uiBinding.root.findViewById<View>(R.id.btn_fix_target)?.setOnClickListener {
-            saveTargetFix()
-            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
-        }
+//        uiBinding.root.findViewById<View>(R.id.btn_fix_target)?.setOnClickListener {
+//            saveTargetFix()
+//            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
+//        }
 
         uiBinding.root.findViewById<View>(R.id.btn_open_classifier)?.setOnClickListener {
             it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
@@ -207,6 +208,28 @@ class UxsdkDemoActivity : BaseMainActivity() {
             it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
             uiBinding.root.findViewById<View>(R.id.side_panel_classifier)?.visibility = View.GONE
         }
+
+        ScreenStateManager.getInstance().observerScreenState(this, Observer {
+            refreshCodecToolLeft()
+            refreshCodecToolRight()
+            refreshCodecTab()
+            refreshAttitudeBall()
+
+            // Применяем пользовательские скрытия виджетов
+            uiBinding.root.post {
+                WidgetSettingsDialog.applyAllSavedSettings(this)
+            }
+        })
+    }
+
+    // Метод для "прочистки мозгов" SDK
+    private fun syncSdkState() {
+        val state = ScreenStateManager.getInstance().getPageLocationState()
+        ScreenStateManager.getInstance().updateCodecTabSwitch(
+            state.fullScreenType,
+            state.getFirstCodecWidget() ?: AircraftScreenItem.Empty
+        )
+        WidgetSettingsDialog.applyAllSavedSettings(this)
     }
 
     private fun saveTargetFix() {
@@ -446,6 +469,9 @@ class UxsdkDemoActivity : BaseMainActivity() {
             SpeedModeManager.changeToNormalSpeed(device, 3) {
                 Log.e("MainActivity", "MainActivity onResume change speed normal:$it")
             }
+        }
+        uiBinding.root.post {
+            syncSdkState()
         }
     }
 

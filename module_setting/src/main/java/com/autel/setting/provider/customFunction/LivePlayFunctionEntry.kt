@@ -1,4 +1,4 @@
-package com.autel.setting.provider.function
+package com.autel.setting.provider.customFunction
 
 import android.view.View
 import androidx.fragment.app.DialogFragment

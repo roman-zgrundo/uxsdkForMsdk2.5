@@ -12,13 +12,11 @@ import com.autel.common.delegate.function.AbsDelegateFunction
 import com.autel.common.feature.route.RouteManager
 import com.autel.common.feature.route.RouterConst
 import com.autel.common.manager.AppInfoManager
-import com.autel.common.manager.MiddlewareManager
 import com.autel.common.manager.module.ISettingModule
 import com.autel.common.utils.BusinessType
 import com.autel.common.utils.DeviceUtils
 import com.autel.common.widget.BasePopWindow
 import com.autel.drone.sdk.vmodelx.interfaces.IAutelDroneDevice
-import com.autel.drone.sdk.vmodelx.manager.keyvalue.value.payload.bean.tracer.main
 import com.autel.log.AutelLog
 import com.autel.setting.provider.delegate.AiTargetDelegateActivity
 import com.autel.setting.provider.delegate.GimbalAdjustDelegateActivity
@@ -29,7 +27,8 @@ import com.autel.setting.provider.function.DataSecurityFunctionEntry
 import com.autel.setting.provider.function.DownFillLightFunctionEntry
 import com.autel.setting.provider.function.GNSSFunctionEntry
 import com.autel.setting.provider.function.GimbalFillLightFunctionEntry
-import com.autel.setting.provider.function.LivePlayFunctionEntry
+import com.autel.setting.provider.customFunction.LivePlayFunctionEntry
+import com.autel.setting.provider.customFunction.WidgetsMenuFunctionEntry
 import com.autel.setting.provider.function.NavigationLightFunctionEntry
 import com.autel.setting.provider.function.ObstacleAvoidanceFunctionEntry
 import com.autel.setting.provider.function.RangingFunctionEntry
@@ -150,6 +149,10 @@ class SettingModuleImpl : ISettingModule {
             }
             list.add(GimbalFillLightFunctionEntry(mainProvider))
         }
+
+        // кастомные кнопки (автоматически из CustomWidgetAction)
+//        list.add(CameraToggleFunctionEntry(mainProvider))
+        list.add(WidgetsMenuFunctionEntry(mainProvider))
 
         return list
     }

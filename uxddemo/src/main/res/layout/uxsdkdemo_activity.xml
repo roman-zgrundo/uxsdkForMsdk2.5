@@ -172,36 +172,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/function_view" />
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/ll_custom_live_stream"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:background="#AA000000"-->
-<!--        android:clickable="true"-->
-<!--        android:focusable="true"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="vertical"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/codec_tool_right"-->
-<!--        app:layout_constraintEnd_toEndOf="@id/codec_tool_right"-->
-<!--        app:layout_constraintStart_toStartOf="@id/codec_tool_right">-->
-
-<!--        <ImageView-->
-<!--            android:layout_width="32dp"-->
-<!--            android:layout_height="32dp"-->
-<!--            android:src="@drawable/common_shortcuts_function_drone_live_play"-->
-<!--            app:tint="#FF9800" />-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="2dp"-->
-<!--            android:text="LIVE"-->
-<!--            android:textColor="#FFFFFF"-->
-<!--            android:textSize="10sp"-->
-<!--            android:textStyle="bold" />-->
-<!--    </LinearLayout>-->
-
     <LinearLayout
         android:id="@+id/ll_tracker_debug_panel"
         android:layout_width="wrap_content"
@@ -274,21 +244,21 @@
             android:textSize="10sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_fix_target"
-        android:layout_width="160dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:backgroundTint="#FF0000"
-        android:visibility="invisible"
-        android:alpha="0.7"
-        android:text="ЗАФИКСИРОВАТЬ ЦЕЛЬ"
-        android:textColor="#FFFFFF"
-        android:textSize="11sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/btn_fix_target"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:backgroundTint="#FF0000"-->
+<!--        android:visibility="invisible"-->
+<!--        android:alpha="0.7"-->
+<!--        android:text="ЗАФИКСИРОВАТЬ ЦЕЛЬ"-->
+<!--        android:textColor="#FFFFFF"-->
+<!--        android:textSize="11sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <LinearLayout
         android:id="@+id/ll_fixed_target_panel"
@@ -300,8 +270,9 @@
         android:orientation="vertical"
         android:padding="10dp"
         android:minWidth="160dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_fix_target">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:layout_width="wrap_content"
