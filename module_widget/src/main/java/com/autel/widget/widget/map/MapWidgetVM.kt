@@ -3,10 +3,8 @@ package com.autel.widget.widget.map
 import androidx.lifecycle.Observer
 import com.autel.common.base.BaseApp
 import com.autel.common.base.widget.BaseWidgetModel
-import com.autel.common.feature.compass.Compass
 import com.autel.common.feature.phone.AutelPhoneLocationManager
 import com.autel.common.utils.DeviceUtils
-import com.autel.drone.sdk.log.SDKLog
 import com.autel.map.bean.AutelLatLng
 import com.autel.map.bean.AutelLatLng.Companion.isValid
 import com.autel.map.util.CompassManager
@@ -18,6 +16,10 @@ import kotlinx.coroutines.flow.MutableSharedFlow
  *
  */
 class MapWidgetVM : BaseWidgetModel() {
+    // Автоматически эмулируем пульт, если включен дебаг
+    private val IS_DEBUG = false
+    private var droneOffsetLat = 0.0
+    private var droneOffsetLng = 0.0
     var droneInfoChanged: MutableSharedFlow<List<DroneInfoModel>> = MutableSharedFlow(replay = 1, extraBufferCapacity = 1)
     var rcLocationChanged: MutableSharedFlow<DroneInfoModel> = MutableSharedFlow(replay = 1, extraBufferCapacity = 1)
 
@@ -43,27 +45,34 @@ class MapWidgetVM : BaseWidgetModel() {
     }
 
     fun updateDroneInfo() {
-        val devices = DeviceUtils.allDrones()
         val list = mutableListOf<DroneInfoModel>()
-        devices.forEach {
-            it.getDeviceStateData().flightControlData.let { data ->
-                val droneInfo = DroneInfoModel(
-                    id = it.deviceNumber(),
-                    latitude = data.droneLatitude,
-                    longitude = data.droneLongitude,
-                    height = data.altitude.toFloat(),
-                    heading = data.droneAttitudeYaw.toFloat(),
-                    homeLatitude = data.homeLatitude,
-                    homeLongitude = data.homeLongitude
-                )
-                if (!AutelLatLng(data.droneLatitude, data.droneLongitude).isValid()) {
-                    return@let
+
+        if (IS_DEBUG) {
+            // Эмуляция дрона
+            list.add(getFakeDrone())
+        } else {
+            // Работа с реальным железом
+            val devices = DeviceUtils.allDrones()
+            devices.forEach {
+                it.getDeviceStateData().flightControlData.let { data ->
+                    if (AutelLatLng(data.droneLatitude, data.droneLongitude).isValid()) {
+                        list.add(DroneInfoModel(
+                            id = it.deviceNumber(),
+                            latitude = data.droneLatitude,
+                            longitude = data.droneLongitude,
+                            height = data.altitude,
+                            heading = data.droneAttitudeYaw,
+                            homeLatitude = data.homeLatitude,
+                            homeLongitude = data.homeLongitude
+                        ))
+                    }
                 }
-                list.add(droneInfo)
             }
         }
         droneInfoChanged.tryEmit(list)
-       // testRc()
+
+        // Автоматически эмулируем пульт, если включен дебаг
+        if (IS_DEBUG) testRc()
     }
 
     private fun addRCObserver() {
@@ -82,6 +91,21 @@ class MapWidgetVM : BaseWidgetModel() {
         }
     }
 
+    private fun getFakeDrone(): DroneInfoModel {
+        // Увеличиваем смещение при каждом вызове
+        droneOffsetLat += 0.0001
+        droneOffsetLng += 0.0001
+
+        return DroneInfoModel(
+            id = 555,
+            latitude = 22.57672069857987 + 0.002 + droneOffsetLat,
+            longitude = 114.03794480921324 + 0.002 + droneOffsetLng,
+            height = 20f,
+            heading = 45f, // Можно менять, чтобы он поворачивался
+            homeLatitude = 22.57672069857987,
+            homeLongitude = 114.03794480921324
+        )
+    }
     private fun testRc() {
         val rcInfo = DroneInfoModel(
             id = -1, // RC ID

@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.BitmapFactory
 import android.util.AttributeSet
 import com.autel.common.base.widget.ConstraintLayoutWidget
-import com.autel.common.manager.AutelMapTokenConstant
 import com.autel.drone.sdk.log.SDKLog
 import com.autel.map.MapManager
 import com.autel.map.annotation.AutelPointAnnotation
@@ -48,7 +47,7 @@ class MapWidget @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     }
 
     fun initMap() {
-        val MAPTILER_KEY = "" // Replace with your MapTiler API key
+        val MAPTILER_KEY = "rgEFGBMZ0ahwpglRNXRL" // Replace with your MapTiler API key
         MapManager.setMapToken(MAPTILER_KEY)
 
         mapManager = MapManager(context)
@@ -139,19 +138,24 @@ class MapWidget @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     }
 
     private fun updateDroneLine(droneMarker: DroneMarker) {
-        var line = droneMarker.lineAnnotation
-        if (line == null) {
-            val options = AutelPolylineAnnotationOptions().apply {
-                withPoints(droneMarker.points)
-                withLineColor(0xFFEEEEEE.toInt())
-                withLineWidth(5.0)
-                withLayerPriority(LayerPriority.HIGH)
+        try {
+            var line = droneMarker.lineAnnotation
+            if (line == null) {
+                val options = AutelPolylineAnnotationOptions().apply {
+                    withPoints(droneMarker.points)
+//                withLineColor(0xFFEEEEEE.toInt())
+                    withLineColor("#EEEEEE")
+                    withLineWidth(5.0)
+                    withLayerPriority(LayerPriority.HIGH)
+                }
+                line = mapManager.addPolyline(options)
+                droneMarker.lineAnnotation = line
+            } else {
+                line.options.withPoints(droneMarker.points)
+                mapManager.updatePolyline(line)
             }
-            line = mapManager.addPolyline(options)
-            droneMarker.lineAnnotation = line
-        } else {
-            line.options.withPoints(droneMarker.points)
-            mapManager.updatePolyline(line)
+        } catch (e: Exception) {
+            SDKLog.e(TAG, "Update line error: ${e.message}")
         }
     }
     private fun updateRcMarker(rcModel: DroneInfoModel) {
