@@ -1,8 +1,10 @@
 package com.external.uxdemo.view
 
 import android.app.AlertDialog
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.ServiceConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -55,6 +57,7 @@ import com.external.uxddemo.R
 import com.autel.setting.liveStream.LiveStreamViewModel
 import com.external.uxdemo.locationTracker.LocationTrackerManager
 import androidx.core.content.edit
+import com.autel.common.feature.phone.AutelPhoneLocationManager
 import com.autel.setting.liveStream.LiveStreamService
 import com.autel.setting.view.WidgetSettingsDialog
 import com.external.uxdemo.remoteController.RCCustomKeyManager
@@ -85,12 +88,36 @@ class UxsdkDemoActivity : BaseMainActivity() {
     private var skyLinkFragment: TestSkyLinkFragment? = null
     var mapWidget: MapWidget? = null
 
-    private val streamServiceConnection = object : android.content.ServiceConnection {
-        override fun onServiceConnected(name: android.content.ComponentName?, service: android.os.IBinder?) {
+
+    private val locationLauncher = registerForActivityResult(
+        androidx.activity.result.contract.ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            // Разрешение получено, сообщаем менеджеру локации Autel, что можно работать
+            AutelPhoneLocationManager.initRequest()
+        } else {
+            Toast.makeText(this, "Без GPS иконка пульта на карте не отобразится", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun checkMapLocationPermission() {
+        val permission = android.Manifest.permission.ACCESS_FINE_LOCATION
+        if (androidx.core.content.ContextCompat.checkSelfPermission(this, permission)
+            == android.content.pm.PackageManager.PERMISSION_GRANTED) {
+            // Разрешение уже было дано ранее в настройках
+            AutelPhoneLocationManager.initRequest()
+        } else {
+            // Разрешения нет, показываем системное окно
+            locationLauncher.launch(permission)
+        }
+    }
+
+    private val streamServiceConnection = object : ServiceConnection {
+        override fun onServiceConnected(name: ComponentName?, service: android.os.IBinder?) {
             val binder = service as LiveStreamService.LocalBinder
             liveStreamViewModel.onServiceConnected(binder.getService())
         }
-        override fun onServiceDisconnected(name: android.content.ComponentName?) {}
+        override fun onServiceDisconnected(name: ComponentName?) {}
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -115,6 +142,7 @@ class UxsdkDemoActivity : BaseMainActivity() {
 
         BroadcastUtils.sendKillBroadcast(this)
         checkAndRequestAllFilesPermission()
+        checkMapLocationPermission()
         initView()
 
         if (DeviceUtils.isSingleControlDroneConnected()) {
