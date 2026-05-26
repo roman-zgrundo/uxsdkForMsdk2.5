@@ -49,7 +49,6 @@ import com.autel.drone.sdk.vmodelx.interfaces.IAutelDroneDevice
 import com.autel.drone.sdk.vmodelx.manager.SpeedModeManager
 import com.autel.drone.sdk.vmodelx.manager.data.ControlMode
 import com.autel.drone.sdk.vmodelx.utils.BroadcastUtils
-import com.autel.map.MapManager
 import com.autel.player.player.AutelPlayerManager
 import com.autel.player.player.autelplayer.AutelPlayer
 import com.autel.widget.widget.map.MapWidget
@@ -63,9 +62,11 @@ import com.autel.setting.view.WidgetSettingsDialog
 import com.external.uxdemo.remoteController.RCCustomKeyManager
 import com.external.uxdemo.soldatServiceConnection.ClassifierUIHelper
 import com.external.uxdemo.soldatServiceConnection.SoldatManager
+import com.external.uxdemo.mapControls.MapControlsManager
 
 class UxsdkDemoActivity : BaseMainActivity() {
 
+    private lateinit var mapControlsManager: MapControlsManager
     private lateinit var soldatManager: SoldatManager
     private lateinit var classifierUI: ClassifierUIHelper
     private val trackerManager = LocationTrackerManager()
@@ -158,96 +159,12 @@ class UxsdkDemoActivity : BaseMainActivity() {
         try { unbindService(streamServiceConnection) } catch (e: Exception) {}
     }
 
+
     private fun initView() {
-        // --- AUTEL SDK UI SETUP ---
-        mapWidget = MapWidget(this)
-        uiBinding.autelSplitScreenContainer.getMapContainer().addView(mapWidget, ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT)
-//        if (MapManager.getMapToken().isNullOrEmpty()) showMapKeyDialog()
-        syncSdkState()
-
-        uiBinding.codecTabView.setCodecTabSwitchListener { item ->
-            ScreenStateManager.getInstance().updateCodecTabSwitch(ScreenStateManager.getInstance().getPageLocationState().fullScreenType, item)
-            liveStreamViewModel.updateCameraSource(item.toString().contains("Thermal", ignoreCase = true))
-        }
-
-        uiBinding.statusBar.visibility = if (DeviceUtils.isMainRC()) View.VISIBLE else View.GONE
-        uiBinding.rsStatus.visibility = if (DeviceUtils.isMainRC()) View.GONE else View.VISIBLE
-        uiBinding.statusBar.multipleClicks.observe(this) {
-            if (skyLinkFragment == null) addTestSkyLinkFragment() else removeTestSkyLinkFragment()
-        }
-
-        uiBinding.ivBarCollapse.setOnClickListener {
-            val state = if (functionBarVm.functionBarLD.value == FunctionBarState.Unfolded) FunctionBarState.Folding else FunctionBarState.Unfolding
-            functionBarVm.updateFunctionBarLD(state)
-        }
-
-        uiBinding.functionSuspensionView.setOnClickListener {
-            val locationArray = IntArray(2)
-            it.getLocationOnScreen(locationArray)
-            uiBinding.functionFloatWindowView.show(locationArray)
-            uiBinding.functionSuspensionView.visibility = View.GONE
-            getMainHandler().hiddenFunctionPanel()
-        }
-        uiBinding.functionFloatWindowView.setDismissListener { uiBinding.functionSuspensionView.visibility = View.VISIBLE }
-
-        refreshFunctionViewType(FunctionViewType.find(AutelStorageManager.getPlainStorage().getIntValue(StorageKey.PlainKey.KEY_FUNCTION_QUICK_ACTION)))
-        uiBinding.attitudeBall.isVisible = DeviceUtils.isSingleControl()
-        uiBinding.codecToolRight.setMainProvider(this)
-
-//        uiBinding.root.findViewById<View>(R.id.ll_custom_live_stream)?.setOnClickListener {
-////            LiveStreamSettingsDialog().apply { setStyle(DialogFragment.STYLE_NORMAL, R.style.WideDialog) }.show(supportFragmentManager, "LiveStreamSettings")
-//        }
-
-        startTrackerUpdateLoop()
-
-        // --- SOLDAT SERVICE UI SETUP ---
-        loadSettings()
-
-        uiBinding.root.findViewById<Button>(R.id.btn_set_address)?.setOnClickListener { showTargetAddressDialog() }
-
-//        uiBinding.root.findViewById<View>(R.id.btn_fix_target)?.setOnClickListener {
-//            saveTargetFix()
-//            it.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY)
-//        }
-
-        uiBinding.root.findViewById<View>(R.id.btn_open_classifier)?.setOnClickListener {
-            it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
-            saveTargetFix()
-            getCoordsFromReport()?.let { (lat, lon) ->
-                soldatManager.sendMarker(lat, lon)
-                uiBinding.root.findViewById<View>(R.id.side_panel_classifier).apply {
-                    bringToFront()
-                    visibility = View.VISIBLE
-                }
-                classifierUI.fillPanel(lat, lon)
-            } ?: Toast.makeText(this, "Сначала нажмите ФИКС ЦЕЛЬ", Toast.LENGTH_SHORT).show()
-        }
-
-        uiBinding.root.findViewById<View>(R.id.btn_burst_now)?.setOnClickListener {
-            saveTargetFix()
-            getCoordsFromReport()?.let { (lat, lon) ->
-                soldatManager.sendMarker(lat, lon)
-                soldatManager.sendObject(lat, lon, BURST_TYPE_ID, "РАЗРЫВ")
-                it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
-            }
-        }
-
-        uiBinding.root.findViewById<Button>(R.id.btn_close_classifier)?.setOnClickListener {
-            it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
-            uiBinding.root.findViewById<View>(R.id.side_panel_classifier)?.visibility = View.GONE
-        }
-
-        ScreenStateManager.getInstance().observerScreenState(this, Observer {
-            refreshCodecToolLeft()
-            refreshCodecToolRight()
-            refreshCodecTab()
-            refreshAttitudeBall()
-
-            // Применяем пользовательские скрытия виджетов
-            uiBinding.root.post {
-                WidgetSettingsDialog.applyAllSavedSettings(this)
-            }
-        })
+        initAutelSdkUi()            // 1. Системный UI от Autel
+        initSoldatServiceUi()       // 2. Кнопки вашего сервиса (прицел, разрыв)
+        initMapControlsManager()    // 3. Наша новая кастомная панель карт
+        initScreenStateObserver()   // 4. Динамическая перерисовка разметки при смене экранов
     }
 
     // Метод для "прочистки мозгов" SDK
@@ -408,6 +325,14 @@ class UxsdkDemoActivity : BaseMainActivity() {
 
     private fun refreshAttitudeBall() {
         val state = ScreenStateManager.getInstance().getPageLocationState()
+
+        // Переменная для хранения актуального нижнего отступа
+        val currentBottomMargin = if (state.deviceListShow) {
+            resources.getDimensionPixelOffset(R.dimen.common_variety_device_list_height)
+        } else {
+            0
+        }
+
         uiBinding.attitudeBall.isVisible = DeviceUtils.isSingleControl()
         if (state.deviceListShow) {
             uiBinding.attitudeBall.updateLayoutParams<ConstraintLayout.LayoutParams> {
@@ -558,7 +483,12 @@ class UxsdkDemoActivity : BaseMainActivity() {
     private fun startTrackerUpdateLoop() {
         val updateRunnable = object : Runnable {
             override fun run() {
+                // Оставляем только обновление остального UI трекера, если оно вам нужно
                 updateTrackerUI()
+
+                // ВЕСЬ БЛОК с widget.setMapBearing(heading) УДАЛЕН!
+                // Виджет теперь поворачивает себя сам при получении новых координат.
+
                 uiBinding.root.postDelayed(this, 500)
             }
         }
@@ -673,5 +603,121 @@ class UxsdkDemoActivity : BaseMainActivity() {
                 Pair(lat, lon)
             } else null
         } catch (e: Exception) { null }
+    }
+
+    // --- 1. ИНИЦИАЛИЗАЦИЯ СИСТЕМНОГО UI AUTEL SDK ---
+    private fun initAutelSdkUi() {
+        mapWidget = MapWidget(this)
+        uiBinding.autelSplitScreenContainer.getMapContainer().addView(
+            mapWidget,
+            ConstraintLayout.LayoutParams.MATCH_PARENT,
+            ConstraintLayout.LayoutParams.MATCH_PARENT
+        )
+        syncSdkState()
+
+        uiBinding.codecTabView.setCodecTabSwitchListener { item ->
+            ScreenStateManager.getInstance().updateCodecTabSwitch(ScreenStateManager.getInstance().getPageLocationState().fullScreenType, item)
+            liveStreamViewModel.updateCameraSource(item.toString().contains("Thermal", ignoreCase = true))
+        }
+
+        uiBinding.statusBar.visibility = if (DeviceUtils.isMainRC()) View.VISIBLE else View.GONE
+        uiBinding.rsStatus.visibility = if (DeviceUtils.isMainRC()) View.GONE else View.VISIBLE
+        uiBinding.statusBar.multipleClicks.observe(this) {
+            if (skyLinkFragment == null) addTestSkyLinkFragment() else removeTestSkyLinkFragment()
+        }
+
+        uiBinding.ivBarCollapse.setOnClickListener {
+            val state = if (functionBarVm.functionBarLD.value == FunctionBarState.Unfolded) FunctionBarState.Folding else FunctionBarState.Unfolding
+            functionBarVm.updateFunctionBarLD(state)
+        }
+
+        uiBinding.functionSuspensionView.setOnClickListener {
+            val locationArray = IntArray(2)
+            it.getLocationOnScreen(locationArray)
+            uiBinding.functionFloatWindowView.show(locationArray)
+            uiBinding.functionSuspensionView.visibility = View.GONE
+            getMainHandler().hiddenFunctionPanel()
+        }
+        uiBinding.functionFloatWindowView.setDismissListener { uiBinding.functionSuspensionView.visibility = View.VISIBLE }
+
+        refreshFunctionViewType(FunctionViewType.find(AutelStorageManager.getPlainStorage().getIntValue(StorageKey.PlainKey.KEY_FUNCTION_QUICK_ACTION)))
+        uiBinding.attitudeBall.isVisible = DeviceUtils.isSingleControl()
+        uiBinding.codecToolRight.setMainProvider(this)
+
+        startTrackerUpdateLoop()
+    }
+
+    // --- 2. ИНИЦИАЛИЗАЦИЯ UI ВАШЕГО СЕРВИСА (КЛАССИФИКАТОР / РАЗРЫВ) ---
+    private fun initSoldatServiceUi() {
+        loadSettings()
+
+        uiBinding.root.findViewById<Button>(R.id.btn_set_address)?.setOnClickListener { showTargetAddressDialog() }
+
+        uiBinding.root.findViewById<View>(R.id.btn_open_classifier)?.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+            saveTargetFix()
+            getCoordsFromReport()?.let { (lat, lon) ->
+                soldatManager.sendMarker(lat, lon)
+                uiBinding.root.findViewById<View>(R.id.side_panel_classifier).apply {
+                    bringToFront()
+                    visibility = View.VISIBLE
+                }
+                classifierUI.fillPanel(lat, lon)
+            } ?: Toast.makeText(this, "Сначала нажмите ФИКС ЦЕЛЬ", Toast.LENGTH_SHORT).show()
+        }
+
+        uiBinding.root.findViewById<View>(R.id.btn_burst_now)?.setOnClickListener {
+            saveTargetFix()
+            getCoordsFromReport()?.let { (lat, lon) ->
+                soldatManager.sendMarker(lat, lon)
+                soldatManager.sendObject(lat, lon, BURST_TYPE_ID, "РАЗРЫВ")
+                it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+            }
+        }
+
+        uiBinding.root.findViewById<Button>(R.id.btn_close_classifier)?.setOnClickListener {
+            it.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+            uiBinding.root.findViewById<View>(R.id.side_panel_classifier)?.visibility = View.GONE
+        }
+    }
+
+    // --- 3. ПОДКЛЮЧЕНИЕ МЕНЕДЖЕРА УПРАВЛЕНИЯ КАРТОЙ ---
+    private fun initMapControlsManager() {
+        mapControlsManager = MapControlsManager(this, uiBinding.root, mapWidget)
+        mapControlsManager.setup()
+    }
+
+    // --- 4. СЛУШАТЕЛЬ ИЗМЕНЕНИЯ ГЕОМЕТРИИ ЭКРАНА (БЕЗ ДУБЛИРУЮЩИХ ВЫЗОВОВ МЕТОДОВ) ---
+    private fun initScreenStateObserver() {
+        ScreenStateManager.getInstance().observerScreenState(this, Observer {
+            val state = ScreenStateManager.getInstance().getPageLocationState()
+            val isMapFullScreen = state.isMapWidgetFullScreen()
+
+            // Показываем/скрываем инклюд с кнопками карты в зависимости от полноэкранного режима
+            uiBinding.root.findViewById<View>(R.id.map_controls_include)?.visibility =
+                if (isMapFullScreen) View.VISIBLE else View.GONE
+
+            // Двигаем панель "Классификатор/Разрыв" (drone_control_panel)
+            uiBinding.root.findViewById<View>(R.id.drone_control_panel)?.updateLayoutParams<ConstraintLayout.LayoutParams> {
+                bottomToTop = uiBinding.attitudeBall.id
+                bottomToBottom = ConstraintLayout.LayoutParams.UNSET
+                topToTop = ConstraintLayout.LayoutParams.UNSET
+                bottomMargin = resources.getDimensionPixelOffset(R.dimen.common_10dp)
+
+                if (isMapFullScreen) {
+                    endToEnd = ConstraintLayout.LayoutParams.PARENT_ID
+                    endToStart = ConstraintLayout.LayoutParams.UNSET
+                    marginEnd = resources.getDimensionPixelOffset(R.dimen.common_16dp)
+                } else {
+                    endToEnd = ConstraintLayout.LayoutParams.UNSET
+                    endToStart = uiBinding.codecToolRight.id
+                    marginEnd = resources.getDimensionPixelOffset(R.dimen.common_10dp)
+                }
+            }
+
+            uiBinding.root.post {
+                WidgetSettingsDialog.applyAllSavedSettings(this)
+            }
+        })
     }
 }

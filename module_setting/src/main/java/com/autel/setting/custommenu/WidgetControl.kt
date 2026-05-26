@@ -23,6 +23,6 @@ enum class WidgetControl(
 
     ATTRIBUTE_BALL_BALL_VIEW("Авиагоризонт (КРУГ)", R.drawable.outline_assistant_navigation_24, listOf("ballView", "iv_ball_visual")),
 
-    MAP("Карта", R.drawable.outline_map_24, listOf("acv_map")),
+//    MAP("Карта", R.drawable.outline_map_24, listOf("acv_map")),
 
 }

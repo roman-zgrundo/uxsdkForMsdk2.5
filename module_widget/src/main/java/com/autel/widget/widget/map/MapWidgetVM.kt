@@ -8,38 +8,34 @@ import com.autel.common.utils.DeviceUtils
 import com.autel.map.bean.AutelLatLng
 import com.autel.map.bean.AutelLatLng.Companion.isValid
 import com.autel.map.util.CompassManager
-import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
 
-/**
- *@Author autel
- *@Date 2025/5/30
- *
- */
 class MapWidgetVM : BaseWidgetModel() {
-    // Автоматически эмулируем пульт, если включен дебаг
-    private val IS_DEBUG = false
-    private var droneOffsetLat = 0.0
-    private var droneOffsetLng = 0.0
-    var droneInfoChanged: MutableSharedFlow<List<DroneInfoModel>> = MutableSharedFlow(replay = 1, extraBufferCapacity = 1)
-    var rcLocationChanged: MutableSharedFlow<DroneInfoModel> = MutableSharedFlow(replay = 1, extraBufferCapacity = 1)
+    private val IS_DEBUG = true
+
+    val droneInfoState = MutableStateFlow<List<DroneInfoModel>>(emptyList())
+    val rcLocationState = MutableStateFlow<DroneInfoModel?>(null)
+    var currentCompassHeading: Float = 0f
 
     private var compassDegree: Float = 0f
+    private var tick = 0.0
 
     private val rcObserver: Observer<AutelLatLng> = object : Observer<AutelLatLng> {
         override fun onChanged(value: AutelLatLng) {
             if (!value.isValid()) return
             val rcInfo = DroneInfoModel(
-                id = -1, // RC ID
+                id = -1,
                 latitude = value.latitude,
                 longitude = value.longitude,
                 height = value.altitude.toFloat(),
-                heading = compassDegree,
-                homeLatitude = 0.0, // Not applicable for RC
-                homeLongitude = 0.0 // Not applicable for RC
+                heading = currentCompassHeading,
+                homeLatitude = 0.0,
+                homeLongitude = 0.0
             )
-            rcLocationChanged.tryEmit(rcInfo)
+            rcLocationState.value = rcInfo
         }
     }
+
     override fun fixedFrequencyRefresh() {
         updateDroneInfo()
     }
@@ -48,10 +44,8 @@ class MapWidgetVM : BaseWidgetModel() {
         val list = mutableListOf<DroneInfoModel>()
 
         if (IS_DEBUG) {
-            // Эмуляция дрона
             list.add(getFakeDrone())
         } else {
-            // Работа с реальным железом
             val devices = DeviceUtils.allDrones()
             devices.forEach {
                 it.getDeviceStateData().flightControlData.let { data ->
@@ -69,9 +63,7 @@ class MapWidgetVM : BaseWidgetModel() {
                 }
             }
         }
-        droneInfoChanged.tryEmit(list)
-
-        // Автоматически эмулируем пульт, если включен дебаг
+        droneInfoState.value = list
         if (IS_DEBUG) testRc()
     }
 
@@ -87,36 +79,52 @@ class MapWidgetVM : BaseWidgetModel() {
         addRCObserver()
         CompassManager.getInstance(BaseApp.getContext()).startCompass()
         CompassManager.getInstance(BaseApp.getContext()).setCompassListener { degree ->
-            compassDegree = degree - 90
+            currentCompassHeading = degree - 90
         }
     }
 
     private fun getFakeDrone(): DroneInfoModel {
-        // Увеличиваем смещение при каждом вызове
-        droneOffsetLat += 0.0001
-        droneOffsetLng += 0.0001
+        tick += 0.1
+
+        val baseLat = 53.928611
+        val baseLng = 27.623633
+        val speedX = 0.0001
+        val amplitude = 0.001
+        val frequency = 1.0
+
+        val offsetLng = tick * speedX
+        val offsetLat = Math.sin(tick * frequency) * amplitude
+
+        val dx = speedX
+        val dy = Math.cos(tick * frequency) * amplitude * frequency
+
+        var heading = 90.0 - Math.toDegrees(Math.atan2(dy, dx))
+        if (heading < 0) heading += 360.0
 
         return DroneInfoModel(
             id = 555,
-            latitude = 22.57672069857987 + 0.002 + droneOffsetLat,
-            longitude = 114.03794480921324 + 0.002 + droneOffsetLng,
-            height = 20f,
-            heading = 45f, // Можно менять, чтобы он поворачивался
-            homeLatitude = 22.57672069857987,
-            homeLongitude = 114.03794480921324
+            latitude = baseLat + offsetLat,
+            longitude = baseLng + offsetLng,
+            height = 20f + (Math.sin(tick) * 5).toFloat(),
+            heading = heading.toFloat(),
+            // Координаты Дома
+            homeLatitude = 53.927611,
+            homeLongitude = 27.622633
         )
     }
+
     private fun testRc() {
         val rcInfo = DroneInfoModel(
-            id = -1, // RC ID
-            latitude = 22.57672069857987,
-            longitude = 114.03794480921324,
+            id = -1,
+            // ФИКС: Сдвинули пульт в сторону от Дома (было 22.57672)
+            latitude = 53.926611,
+            longitude = 27.621633,
             height = 0f,
-            heading = compassDegree,
-            homeLatitude = 0.0, // Not applicable for RC
-            homeLongitude = 0.0 // Not applicable for RC
+            heading = currentCompassHeading,
+            homeLatitude = 0.0,
+            homeLongitude = 0.0
         )
-        rcLocationChanged.tryEmit(rcInfo)
+        rcLocationState.value = rcInfo
     }
 
     override fun cleanup() {
@@ -124,5 +132,4 @@ class MapWidgetVM : BaseWidgetModel() {
         CompassManager.getInstance(BaseApp.getContext()).stopCompass()
         AutelPhoneLocationManager.locationLiveData.removeObserver(rcObserver)
     }
-
 }

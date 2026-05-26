@@ -244,22 +244,6 @@
             android:textSize="10sp" />
     </LinearLayout>
 
-<!--    <Button-->
-<!--        android:id="@+id/btn_fix_target"-->
-<!--        android:layout_width="160dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginStart="10dp"-->
-<!--        android:backgroundTint="#FF0000"-->
-<!--        android:visibility="invisible"-->
-<!--        android:alpha="0.7"-->
-<!--        android:text="ЗАФИКСИРОВАТЬ ЦЕЛЬ"-->
-<!--        android:textColor="#FFFFFF"-->
-<!--        android:textSize="11sp"-->
-<!--        android:textStyle="bold"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <LinearLayout
         android:id="@+id/ll_fixed_target_panel"
         android:layout_width="wrap_content"
@@ -316,46 +300,6 @@
         app:layout_constraintEnd_toStartOf="@id/codec_tool_right"
         app:layout_constraintBottom_toBottomOf="@id/codec_tool_right" />
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/drone_control_panel"-->
-<!--        android:layout_width="60dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginEnd="20dp"-->
-<!--        android:background="#CC222222"-->
-<!--        android:orientation="vertical"-->
-<!--        android:paddingVertical="10dp"-->
-<!--        android:gravity="center"-->
-<!--        app:layout_constraintEnd_toStartOf="@id/codec_tool_right"-->
-<!--        app:layout_constraintBottom_toBottomOf="@id/codec_tool_right" >-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/btn_burst_now"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:padding="12dp"-->
-<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--            android:src="@drawable/outline_arrows_input_24"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            app:tint="#FF3300" />-->
-
-<!--        <View-->
-<!--            android:layout_width="40dp"-->
-<!--            android:layout_height="1.5dp"-->
-<!--            android:layout_marginVertical="6dp"-->
-<!--            android:background="#66FFFFFF" />-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/btn_open_classifier"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="60dp"-->
-<!--            android:padding="12dp"-->
-<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--            android:src="@android:drawable/ic_menu_mylocation"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            app:tint="@android:color/white" />-->
-
-<!--    </LinearLayout>-->
-
     <LinearLayout
         android:id="@+id/side_panel_classifier"
         android:layout_width="300dp"
@@ -399,4 +343,16 @@
             android:backgroundTint="#444444"
             android:layout_marginTop="10dp"/>
     </LinearLayout>
+
+
+    <include
+        android:id="@+id/map_controls_include"
+        layout="@layout/layout_map_controls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="80dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/virtual_bar"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
