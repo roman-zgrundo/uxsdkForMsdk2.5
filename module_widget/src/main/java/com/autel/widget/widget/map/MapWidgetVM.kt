@@ -11,7 +11,7 @@ import com.autel.map.util.CompassManager
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class MapWidgetVM : BaseWidgetModel() {
-    private val IS_DEBUG = true
+    private val IS_DEBUG = false
 
     val droneInfoState = MutableStateFlow<List<DroneInfoModel>>(emptyList())
     val rcLocationState = MutableStateFlow<DroneInfoModel?>(null)

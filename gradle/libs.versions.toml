@@ -1,6 +1,7 @@
 [versions]
 android = "8.9.1"
 android_old = "7.2.2"
+androidSdk = "13.2.0"
 kotlin = "2.1.10"
 uiTooling = "1.7.8"
 kotlin_old = "1.7.10"
@@ -11,6 +12,7 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 [libraries]
+android-sdk = { module = "org.maplibre.gl:android-sdk", version.ref = "androidSdk" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "uiTooling" }
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" , version.ref= "kotlin" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }

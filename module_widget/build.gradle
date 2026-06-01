@@ -82,4 +82,6 @@ dependencies {
     implementation rootProject.ext.autel.uxsdk.map
     implementation rootProject.ext.autel.uxsdk.data
     implementation rootProject.ext.autel.uxsdk.gdal
+
+    implementation(libs.android.sdk)
 }
