@@ -54,7 +54,7 @@ class MapWidget @JvmOverloads constructor(context: Context, attrs: AttributeSet?
          * Максимальное количество точек в истории хвоста трека.
          * С нативным рендером через GeoJSON можно смело ставить от 2000 до 10000 точек без просадки FPS.
          */
-        private const val MAX_LINE_POINTS = 10000
+        private const val MAX_LINE_POINTS = 30000
 
         /**
          * Порог сдвига камеры (в метрах).
